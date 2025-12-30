@@ -1,0 +1,288 @@
+[
+    {
+        "user_input":"What does 대표이사 등의 확인 mean in Samsung's official documents?",
+        "reference_contexts":[
+            "【 대표이사 등의 확인 】\n대표이사 서명"
+        ],
+        "reference":"대표이사 등의 확인 refers to the confirmation by the representative director, which is indicated by the representative director's signature.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"What does 라. 주요 사업의 내용 describe about Samsung Electronics' business divisions?",
+        "reference_contexts":[
+            "I. 회사의 개요\n1. 회사의 개요\n가. 회사의 법적ㆍ상업적 명칭\n당사의 명칭은 삼성전자주식회사이고 영문명은 Samsung Electronics Co., Ltd.\n입니다.\n나. 설립일자\n당사는 1969년 1월 13일에 삼성전자공업주식회사로 설립되었으며,\n1975년 6월 11일 기업공개를 실시하였습니다.\n당사는 1984년 2월 28일 정기주주총회 결의에 의거하여 상호를\n삼성전자공업주식회사에서 삼성전자주식회사로 변경하였습니다.\n다. 본사의 주소, 전화번호 및 홈페이지\n주소: 경기도 수원시 영통구 삼성로 129(매탄동)\n전화번호: 031-200-1114\n홈페이지: https:\/\/www.samsung.com\/sec\n라. 주요 사업의 내용\n당사는 제품의 특성에 따라 DX(Device eXperience), DS(Device Solutions)\n2개의 부문과 패널 사업을 영위하는 SDC(삼성디스플레이㈜ 및 그 종속기업),\n전장부품사업 등을 영위하는 Harman(Harman International Industries, Inc.\n및 그 종속기업)으로 나누어 경영을 하고 있습니다."
+        ],
+        "reference":"라. 주요 사업의 내용 describes that Samsung Electronics operates its business through two main divisions based on product characteristics: DX (Device eXperience) and DS (Device Solutions). Additionally, it manages the panel business through SDC (Samsung Display Co., Ltd. and its subsidiaries) and the automotive parts business through Harman (Harman International Industries, Inc. and its subsidiaries).",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"DX 부문 매출은 어때?",
+        "reference_contexts":[
+            "당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄, DS 부문 산하 해외 5개 지\n역총괄의 생산ㆍ판매법인 및 SDC, Harman 산하 종속기업 등 230개의 종속기업으로 구성된\n글로벌 전자 기업입니다.\n각 부문별 주요 제품은 다음과 같습니다.\n\n| 부문 |  | 주 요 제 품 |  |\n| --- | --- | --- | --- |\n| DX 부문 |  | TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등 |  |\n| DS 부문 |  | DRAM, NAND Flash, 모바일AP 등 |  |\n| SDC |  | 스마트폰용 OLED 패널 등 |  |\n| Harman |  | 디지털 콕핏(Digital Cockpit), 카오디오, 포터블 스피커 등 |  |\n\n\n[DX 부문]\nDX 부문은 TV, 모니터, 냉장고, 세탁기, 에어컨 및 스마트폰, 태블릿, 웨어러블(Wearable)\n제품, 네트워크시스템 등을 생산ㆍ판매하는 사업으로 구성되어 있습니다.\nTV사업은 2006년부터 2024년까지 19년 연속 판매 1위를 지키고 있습니다. 업체간 경쟁이\n심화되는 가운데, 당사는 초대형 TV를 선두로 하여, 주력제품에 AI신기술을 대폭 적용해 경\n쟁사들과의 기술격차를 벌리고 있습니다. 또한, 가전 사업은 친환경·고효율 기술을 통해 제\n품의 기본 성능의 우위는 물론이고, 변화하는 라이프스타일에 대한 깊은 이해를 바탕으로 소\n비자의 삶을 편리하게 하는 제품과 서비스를 지속 출시하고 있습니다.\n모바일사업은 2011년부터 2024년까지 14년 연속 글로벌 출하량 1위를 유지하고 있습니다.\n'갤럭시(Galaxy)' 브랜드를 통해 프리미엄부터 보급형까지 다양하고 경쟁력 있는 스마트폰\n라인업과 태블릿, 웨어러블, 디지털 월렛 등을 활용하여 시장 상황에 최적화된 제품 포트폴\n리오를 운영하고 있습니다."
+        ],
+        "reference":"DX 부문은 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 태블릿, 웨어러블 제품, 네트워크시스템 등을 생산·판매하는 사업으로 구성되어 있습니다. TV 사업은 2006년부터 2024년까지 19년 연속 판매 1위를 지키고 있으며, 모바일 사업은 2011년부터 2024년까지 14년 연속 글로벌 출하량 1위를 유지하고 있습니다. 특히 '갤럭시' 브랜드를 통해 다양한 스마트폰 라인업과 태블릿, 웨어러블, 디지털 월렛 등을 활용하여 시장 상황에 최적화된 제품 포트폴리오를 운영하고 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explain what the [DS 부문] is and how it grow market share with new tech and products?",
+        "reference_contexts":[
+            "당사는 업계 최고 수준의 R&D 역량을 바탕으로 지속적인 기술 혁신 및 철저한 미래 준비를\n통해 고객에게 새로운 가치를 끊임없이 제공하겠습니다. 제품과 서비스의 지속적인 발전을\n통해 친환경 기술 혁신을 이어가고, 연구개발을 통해 시장 패러다임 변화를 선도해 나가겠습\n니다.\n[DS 부문]\nDS 부문은 DRAM, NAND Flash 등 제품을 생산ㆍ판매하는 메모리 반도체 사업과 모바일AP,\n카메라 센서칩 등을 설계ㆍ판매하는 System LSI 사업, 반도체 제조 위탁 생산을 하는\nFoundry 사업 등으로 구성되어 있습니다.\n메모리 반도체 사업은 DRAM, NAND Flash 제품 등에 선단 공정 기술을 적용하고,\n고부가 솔루션 중심의 사업 포트폴리오 운영을 통해 제품을 차별화하고 원가 경쟁력을 제고\n하는 등 질적 성장에 주력하여 전 세계 메모리 시장에서 선두 자리를 지속적으로 유지하고\n있습니다.\nSystem LSI 사업은 모바일용 반도체 사업에서 차량용 반도체 사업으로 확장을 추진 중이며,\nOn-Device AI 적용, 고성능 IP 탑재 등 제품의 차별화를 통해 고객과 협력 강화 및 응용처를\n다변화하여 시장 지배력을 확대하는 한편, 차세대 기술 개발도 지속 추진하고 있습니다.\nFoundry 사업은 Advanced 공정에서 지속적인 기술 경쟁력 강화를 통해 중장기 수요확보에\n집중하고 있으며, Mature 공정에서는 응용처를 확대하는 한편 원가 경쟁력을\n강화할 예정입니다.\n[SDC]\nSDC의 중소형 디스플레이 패널 사업은 차별화된 기술을 바탕으로 OLED 패널의 점유율을\n확대하는 한편 폴더블ㆍIT(태블릿\/노트북)ㆍAuto 등 다양한 응용처의 제품 출시를 통해 시장\n영역을 넓혀 나가고 있습니다. 또한, 대형 디스플레이 패널 사업은 고화질, 초대형, 퀀텀닷\n(Quantum Dot) 등 프리미엄 제품 중심으로 사업을 특화하고,기술 및 생산성 향상을 지속 추\n진하여 사업 경쟁력을 제고하고 있습니다."
+        ],
+        "reference":"[DS 부문] is made of memory semiconductor business producing and selling DRAM, NAND Flash products, System LSI business designing and selling mobile AP and camera sensor chips, and Foundry business doing semiconductor manufacturing contract production. Memory semiconductor business applies advanced process technology to DRAM and NAND Flash, focuses on qualitative growth by differentiating products and improving cost competitiveness, keeping leading position in global memory market. System LSI business is expanding from mobile semiconductors to automotive semiconductors, strengthening cooperation with customers and diversifying applications by differentiating products with On-Device AI and high-performance IP, and continuously developing next-generation technologies. Foundry business focuses on securing mid- to long-term demand by strengthening technology competitiveness in advanced processes and plans to expand applications and improve cost competitiveness in mature processes.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Harman의 Ⅱ. 사업의 내용에는 어떤 사업부문이 포함되어 있나요?",
+        "reference_contexts":[
+            "[Harman]\nHarman은 커넥티드카 제품 및 솔루션 등을 개발 및 공급하는 전장부품 사업과 컨슈머 오디\n오 제품 및 프로페셔널 오디오 솔루션을 제공하는 라이프스타일 오디오 사업을 운영하고 있\n습니다.\n전장부품 시장의 선두업체로서 완성차 업체들에게 경쟁력 있는 제품을 공급하고 있을 뿐만\n아니라, 오디오 시장에서도 혁신 제품 판매를 통해 일반 소비자들과 음악 애호가들 사이에서\n명성을 쌓아왔습니다.\n또한, 당사 타 제품군과의 협업 확대를 통해 차별화된 고객 경험을 제공하고 자체 개발 및 전\n략적 인수 등을 통해 각 사업 분야에서 경쟁력을 강화하고 있습니다.\n☞ 사업부문별 자세한 사항은 'Ⅱ. 사업의 내용'을 참고하시기 바랍니다."
+        ],
+        "reference":"Harman은 커넥티드카 제품 및 솔루션 등을 개발 및 공급하는 전장부품 사업과 컨슈머 오디오 제품 및 프로페셔널 오디오 솔루션을 제공하는 라이프스타일 오디오 사업을 운영하고 있습니다. 전장부품 시장에서는 완성차 업체들에게 경쟁력 있는 제품을 공급하며, 오디오 시장에서는 혁신 제품 판매를 통해 일반 소비자들과 음악 애호가들 사이에서 명성을 쌓아왔습니다. 또한, 타 제품군과의 협업 확대와 자체 개발 및 전략적 인수를 통해 각 사업 분야에서 경쟁력을 강화하고 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"바. 중소기업 해당 여부 삼성전자 해당 됩니까?",
+        "reference_contexts":[
+            "마. 연결대상 종속회사 현황(요약)\n기업회계기준서(K-IFRS) 제1110호 '연결재무제표'에 의한 지배회사(최상위)인 당사의 연결\n대상 종속기업은 2025년 반기말 현재 230개사입니다. 전년말 대비 3개 기업이 증가하고 1개\n기업이 감소하였습니다.\n(단위 : 사)\n\n| 구분 | 연결대상회사수 |  |  |  |  |  |  |  | 주요 종속회사수 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 기초 |  | 증가 |  | 감소 |  | 기말 |  | 종속회사수 |\n| 상장 | - |  | 1 |  | - |  | 1 |  | 1 |\n| 비상장 | 228 |  | 2 |  | 1 |  | 229 |  | 142 |\n| 합계 | 228 |  | 3 |  | 1 |  | 230 |  | 143 |\n\n\n※상세 현황은 '상세표-1. 연결대상 종속회사 현황(상세)' 참조\n(당기 연결대상회사의 변동내용)\n\n| 구 분 |  | 자회사 |  | 사 유 |  |\n| --- | --- | --- | --- | --- | --- |\n| 신규 연결 |  | ㈜레인보우로보틱스 |  | 지분취득 |  |\n|  |  | RAINBOW ROBOTICS USA Co., Ltd. |  | 지분취득 |  |\n|  |  | SVIC 74호 신기술투자조합 |  | 설립 |  |\n| 연결 제외 |  | Studer Professional Audio GmbH |  | 청산 |  |\n|  |  | - |  | - |  |\n\n\n바. 중소기업 해당 여부\n당사는「중소기업기본법」제2조에 의한 중소기업에 해당되지 않습니다.\n\n| 중소기업 해당 여부 |  | 미해당 |\n| --- | --- | --- |\n|  | 벤처기업 해당 여부 | 미해당 |\n| 중견기업 해당 여부 |  | 미해당 |\n"
+        ],
+        "reference":"당사는 「중소기업기본법」 제2조에 의한 중소기업에 해당되지 않습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"사. 신용평가에 관한 사항 우리 회사 신용등급 어떻게 됩니까?",
+        "reference_contexts":[
+            "사. 신용평가에 관한 사항\n당사는 Moody's(미국) 및 S&P(미국)로부터 신용등급 평가를 받고 있습니다. 2025년반기말\n현재 Moody's의 당사 평가등급은 Aa2, 전망치는 부정적(Negative)이고, S&P의 당사 평가등\n급은 AA-, 전망치는 안정적(Stable)입니다.\n\n|  | 평가일 | 평가대상 유가증권의 | 평가회사 | 비고 |\n| --- | --- | --- | --- | --- |\n| 유가증권 |  | 신용등급 |  |  |\n| 회사채 US$ Bond ('97년 발행, '27년 만기) | 2023.07 | AA- | S&P | 정기평가 |\n|  | 2023.08 | Aa2 | Moody's | 정기평가 |\n|  | 2024.02 | Aa2 | Moody's | 정기평가 |\n|  | 2024.07 | AA- | S&P | 정기평가 |\n|  | 2025.01 | Aa2 | Moody's | 정기평가 |\n\n\n※ 신용평가등급 범위: Moody's (Aaa~C), S&P (AAA~D)\n\n| 구 분 | Moody's |  |  |  | S&P |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 등 급 |  | 정 의 |  | 등 급 |  | 정 의 |  |\n| 투자 적격 등급 | Aaa |  | 채무상환능력 최상 , 신용위험 최소 |  | AAA |  | 채무상환능력이 극히 높 음, 최고등급 |  |\n|  | Aa1\/Aa2\/Aa3 |  | 채무상환능력 높음 , 신용위험 매우 낮 음 |  | AA+\/AA\/AA- |  | 채무상환능력이 매우 높 음 |  |\n|  | A1\/A2\/A3 |  | 채무상환능력 중상 , 신용위험 낮음 |  | A+\/A\/A- |  | 채무상환능력은 충분하나 경제 상황 악화 및 변화에 다소 취약함 |  |\n|  | Baa1\/Baa2\/ Baa3 |  | 채무상환능력 중간 , 신용위험 크지 않 으나 투기적 요소가 있 음 |  | BBB+\/BBB\/ BBB- |  | 채무상환능력은 충분하나 상위 등급에 비해 경제 상 황 악화에 좀 더 취약함 |  |\n| 투기 등급 | Ba1\/Ba2\/Ba3 |  | 투기적 성향, 신용 위험 상당함 |  | BB+\/BB\/BB- |  | 가까운 장래에 채무불이 행이 발생할 가능성은 비 교적 낮으나 경영, 재무, 경제 상황 악 화에 대한 불확실성이 큼 |  |\n|  | B1\/B2\/B3 |  | 투기적 성향, 신용 위험 높음 |  | B+\/B\/B- |  | 경영, 재무, 경제 상황 악 화에 좀 더 취약하나 현재로서는 채무상환능력 이 있음 |  |\n"
+        ],
+        "reference":"당사는 Moody's와 S&P로부터 신용등급 평가를 받고 있으며, 2025년 반기말 현재 Moody's 평가등급은 Aa2이고 전망치는 부정적(Negative)이며, S&P 평가등급은 AA-이고 전망치는 안정적(Stable)입니다. 회사채 US$ Bond는 2023년부터 2025년까지 Moody's에서 Aa2, S&P에서 AA- 등급을 정기평가 받고 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 아. 주권상장(또는 등록ㆍ지정)여부 및 특례상장에 관한 사항은 무엇인가요?",
+        "reference_contexts":[
+            "|  |  |  |  |  |\n| --- | --- | --- | --- | --- |\n|  | Caa | 투기적 성향 높음, 신용위험 매우 높 음 | CCC | 현재 채무불이행 가능성 이 있으며 채무상환은 경 영, 재무, 경제 상황이 호 의적일 경우에만 가능함 |\n|  | Ca | 투기적 성향 매우 높음, 가까운 시일 내 부도발생 가능, 원 리금 상환가능성 존재 | CC | 채무불이행 가능성이 높 음, 부도 상태는 아니지만 사실상 부도가 예상됨 |\n|  | C | 부도 상태, 원리금 상환가능성 낮음 | C | 현재 채무불이행 가능성 이 매우 높으며 최종 회수 율은 상위등급 채무보다 낮게 추정됨 |\n|  |  |  | D | 금융채무불이행 상태 혹 은 묵시적 계약 (imputed promises) 파기, 또는 파 산 신청 혹은 이와 유사한 상태 |\n\n\n☞ 당사 및 당사의 종속기업이 발행한 회사채 및 기업어음 등에 대한 신용등급\n평가결과는 'Ⅲ. 재무에 관한 사항'의 '7. 증권의 발행을 통한 자금조달에\n관한 사항'을 참고하시기 바랍니다.\n아. 주권상장(또는 등록ㆍ지정)여부 및 특례상장에 관한 사항\n당사는 1975년 6월 11일 유가증권시장에 기업공개를 실시하였습니다.\n\n|  |  | 특례상장 유형 |\n| --- | --- | --- |\n| (또는 등록ㆍ지정)현황 | (또는 등록ㆍ지정)일자 |  |\n| 유가증권시장 상장 | 1975년 06월 11일 | 해당사항 없음 |\n"
+        ],
+        "reference":"삼성전자는 1975년 6월 11일 유가증권시장에 기업공개를 실시하여 상장하였으며, 특례상장에 해당하는 사항은 없습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explain what important changes happened in 나. 경영진의 중요한 변동 during the reporting period and who are the current executives?",
+        "reference_contexts":[
+            "2. 회사의 연혁\n가. 회사의 본점소재지 및 그 변경\n당사의 본점소재지는 경기도 수원시 영통구 삼성로 129(매탄동)입니다.\n공시대상기간 중 본점소재지의 변경 사항은 없습니다.\n나. 경영진의 중요한 변동\n당사의 이사회는 주주총회에서 선임한 이사로 구성되며 회사 업무의 중요사항을 결의합니다\n. 2025년 반기말 현재 당사의 이사회는 사내이사 3인(전영현, 노태문, 송재혁), 사외이사 6인\n(신제윤, 김준성, 허은녕, 유명희, 조혜경, 이혁재) 총 9인의 이사로 구성되어 있습니다.\n당사의 대표이사는 이사회에서 선임하며 회사를 대표합니다. 2025년 반기말 현재 당사의 대\n표이사는 전영현 사내이사(2025년 3월 선임)입니다. 한종희 前대표이사는 2025년 3월 25일\n대표이사직과 사내이사직을 기타퇴임하였습니다.\n\n| 변동일자 | 주총종류 | 선임 |  |  |  | 임기만료 또는 해임 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  | 신규 |  | 재선임 |  |  |\n| 2021.03. 17 | 정기주총 | - |  | 사내이사 김기남 사내이사 김현석 사내이사 고동진 사외이사 박병국 사외이사 김종훈 (감사위원회 위원이 되 는) 사외이사 김선욱 |  | - |\n| 2021.03. 17 | - | - |  | 대표이사 김기남 대표이사 김현석 대표이사 고동진 |  | - |\n| 2021.12. 31 | - | - |  | - |  | 사내이사 최윤호(사임) |\n| 2022.02. 15 | 정기주총 | 대표이사 한종희 |  | - |  | 대표이사 김기남(사임) 대표이사 김현석(사임) 대표이사 고동진(사임) |\n| 2022.03. 16 | 정기주총 | 사내이사 경계현 사내이사 노태문 사내이사 박학규 사내이사 이정배 사외이사 한화진 |  | 사외이사 김한조 |  | 사내이사 김기남(사임) 사내이사 김현석(사임) 사내이사 고동진(사임) |\n"
+        ],
+        "reference":"During the reporting period, the company's board of directors, composed of 9 members including 3 inside directors (Jeon Young-hyun, Noh Tae-moon, Song Jae-hyuk) and 6 outside directors, made important changes. As of the end of the first half of 2025, Jeon Young-hyun was appointed as the representative director in March 2025. Former representative director Han Jong-hee resigned from both representative director and inside director positions on March 25, 2025. The board is responsible for deciding important company matters, and the representative director is appointed by the board to represent the company.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"공정가치금융자산 중 상장주식의 보유주식수 및 지분율에 대해 삼성중공업(주)의 공시에 따르면 각각 얼마인가요?",
+        "reference_contexts":[
+            "전기말 (단위 : 백만원)\n\n|  | 측정 전체 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 취득원가 |  |  |  |  |  |  |  |  | 공정가치 |  |  |  |  |  |  |  |  |\n|  | 금융자산, 분류 |  |  |  |  |  |  |  | 금 융 자 산, 분 류 합 계 | 금융자산, 분류 |  |  |  |  |  |  |  | 금 융 자 산, 분 류 합 계 |\n|  | 공정가치로 측정하는 금융자산 |  |  |  |  |  |  |  |  | 공정가치로 측정하는 금융자산 |  |  |  |  |  |  |  |  |\n|  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 금 |\n|  | 상장주식 |  |  |  |  |  |  |  |  | 상장주식 |  |  |  |  |  |  |  |  |\n|  | 삼 성 중 공 업 (주) | (주 )호 텔 신 라 | (주 | (주 )원 익 홀 딩 스 | (주 | Wa co m Co. , Ltd. | Cor nin g Inc orp orat ed | 기 타 | 자 | 삼 성 중 공 업 (주) | (주 )호 텔 신 라 | (주 )아 이 마 켓 코 리 아 | (주 )원 익 홀 딩 스 | (주 | Wa co m Co. , Ltd. | Cor nin g Inc orp orat ed | 기 타 | 자 |\n| 금 융 자 산 |  |  |  |  |  |  |  |  |  | 1,5 14, 508 | 73, 974 | 5,1 79 | 8,9 72 | 82, 737 | 57, 021 | 5,1 69, 226 | 861 ,11 5 | 7,7 72, 732 |\n\n\n공정가치금융자산 중 상장주식의 보유주식수 및 지분율에 대한 공시\n\n|  | 금융자산, 분류 |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 공정가치로 측정하는 금융자산 |  |  |  |  |  |  |\n|  | 상장주식 |  |  |  |  |  |  |\n|  | 삼성중공업 (주) | (주)호텔신 라 | (주)아이마 켓코리아 | (주)원익홀 딩스 | (주)원익아 이피에스 | Wacom Co., Ltd. | Corning |\n| 보유주식수 (주) | 134,027,2 81 | 2,004,717 | 647,320 | 3,518,342 | 3,701,872 | 8,398,400 | 71,000,00 0 |\n| 보유지분율 | 0.152 | 0.051 | 0.019 | 0.046 | 0.075 | 0.062 | 0.083 |\n| 지분율에 대한 설명 | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. | 총발행보통 주식수 기 준 지분율 입니다. |\n"
+        ],
+        "reference":"삼성중공업(주)의 공정가치금융자산 중 상장주식의 보유주식수는 134,027,281주이며, 보유지분율은 0.152입니다. 지분율은 총발행보통주식수를 기준으로 산정되었습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explane the changs in 6. 관계기업 및 공동기업 투자 (연결) during the current and previous half-year periods in detail?",
+        "reference_contexts":[
+            "5. 재고자산 (연결)\n재고자산 세부내역\n당반기말 (단위 : 백만원)\n\n|  |  | 평가전금액 | 재고자산 평가충당 | 장부금액 합계 |\n| --- | --- | --- | --- | --- |\n| 재고자산 |  | 57,490,817 | (6,453,404) | 51,037,413 |\n| 재고자산 | 제품 및 상품 | 14,484,654 | (1,598,558) | 12,886,096 |\n|  | 반제품 및 재공품 | 26,007,161 | (3,669,093) | 22,338,068 |\n|  | 원재료 및 저장품 | 16,419,545 | (1,185,753) | 15,233,792 |\n|  | 미착품 | 579,457 | 0 | 579,457 |\n\n\n전기말 (단위 : 백만원)\n\n|  |  | 평가전금액 | 재고자산 평가충당금 | 장부금액 합계 |\n| --- | --- | --- | --- | --- |\n|  |  |  |  |  |\n| 재고자산 |  | 56,737,864 | (4,982,999) | 51,754,865 |\n| 재고자산 | 제품 및 상품 | 15,061,526 | (1,219,250) | 13,842,276 |\n|  | 반제품 및 재공품 | 24,808,183 | (2,467,701) | 22,340,482 |\n|  | 원재료 및 저장품 | 15,442,327 | (1,296,048) | 14,146,279 |\n|  | 미착품 | 1,425,828 | 0 | 1,425,828 |\n\n\n6. 관계기업 및 공동기업 투자 (연결)\n가. 당반기 및 전반기 중 관계기업 및 공동기업 투자의 변동 내역은 다음과 같습니다.\n(단위 : 백만원)\n\n| 구 분 |  | 당반기 |  | 전반기 |  |\n| --- | --- | --- | --- | --- | --- |\n| 기초 |  | 12,592,117 |  | 11,767,444 |  |\n| 취득 |  | 385,764 |  | 9,342 |  |\n| 처분 |  | (3,143) |  | (18,995) |  |\n| 이익 중 지분해당액 |  | 277,871 |  | 413,347 |  |\n| 기타(*) |  | (408,715) |  | 5,592 |  |\n| 반기말 |  | 12,843,894 |  | 12,176,730 |  |\n\n\n(*) 기타는 배당, 손상, 계정재분류 등으로 구성되어 있습니다."
+        ],
+        "reference":"The changes in 6. 관계기업 및 공동기업 투자 (연결) during the current and previous half-year periods are as follows (unit: million KRW): For the current half-year, the beginning balance was 12,592,117, acquisitions amounted to 385,764, disposals were (3,143), equity in earnings was 277,871, and other changes, including dividends, impairments, and account reclassifications, totaled (408,715), resulting in an ending balance of 12,843,894. For the previous half-year, the beginning balance was 11,767,444, acquisitions were 9,342, disposals were (18,995), equity in earnings was 413,347, other changes were 5,592, and the ending balance was 12,176,730.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you provide a detailed overview of Samsung's current investments in 주요 관계기업 및 공동기업 as of the 보고기간종료일, including the shareholding percentages and main business areas?",
+        "reference_contexts":[
+            "나. 보고기간종료일 현재 주요 관계기업 및 공동기업 투자 현황은 다음과 같습니다.\n(1) 관계기업 투자\n\n| 기업명 | 관계의 성격 | 지분율 | 주사업장 | 결산월 |\n| --- | --- | --- | --- | --- |\n|  |  | (%)(*1) |  |  |\n| 삼성전기㈜ | 수동소자, 회로부품, 모듈 등 전자부품의 생산 및 공급 | 23.7 | 한국 | 12월 |\n| 삼성에스디에스㈜ | 컴퓨터 프로그래밍, 시스템 통합ㆍ관리 등 IT 서비스 및 물류서비스 제공 | 22.6 | 한국 | 12월 |\n| 삼성바이오로직스 ㈜ | 신사업 투자 | 31.2 | 한국 | 12월 |\n| 삼성SDI㈜ (*2)(*3) | 2차전지 등 전자부품의 생산 및 공급 | 19.4 | 한국 | 12월 |\n| ㈜제일기획 | 광고 대행업 | 25.2 | 한국 | 12월 |\n\n\n(*1) 총발행보통주식수 기준 지분율입니다.\n(*2) 유통보통주식수 기준 지분율은 20.3%입니다.\n(*3) 당기 중 불균등 유상증자에 참여하여 신주발행보통주 11,821,000주 중 2,201,295주를 취득함\n에 따라\n전기말 대비 총발행보통주식수 및 유통보통주식수 기준 지분율이 감소하였습니다.\n(2) 공동기업 투자\n\n| 기업명 | 관계의 성격 | 지분율 | 주사업장 | 결산월 |\n| --- | --- | --- | --- | --- |\n|  |  | (%)(*) |  |  |\n| 삼성코닝어드밴스드글라스 (유) | 기타 산업용 유리제품 생산 및 공 급 | 50.0 | 한국 | 12월 |\n\n\n(*) 총발행보통주식수 기준 지분율입니다.\n다. 보고기간종료일 현재 관계기업 및 공동기업 투자 내역은 다음과 같습니다.\n(1) 관계기업 투자\n(단위 : 백만원)\n\n| 기 업 명 | 당반기말 |  |  | 전기말 |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | 취득원가 | 순자산가액 | 장부금액 | 취득원가 | 순자산가액 | 장부금액 |\n|  |  | (*1) |  |  | (* |  |\n| 삼성전기㈜ | 359,237 | 2,058,265 | 2,072,183 | 359,237 | 2,058,412 | 2,067,669 |\n| 삼성에스디에스㈜ | 147,963 | 2,113,258 | 2,126,318 | 147,963 | 2,108,195 | 2,120,417 |\n| 삼성바이오로직스㈜ | 1,424,358 | 3,621,868 | 3,626,429 | 1,424,358 | 3,403,947 | 3,406,062 |\n| 삼성SDI㈜(*2) | 1,614,403 | 4,131,249 | 3,078,536 | 1,242,605 | 3,979,333 | 2,923,991 |\n"
+        ],
+        "reference":"As of the 보고기간종료일, Samsung's investments in 주요 관계기업 and 공동기업 are as follows. For 관계기업 투자, Samsung holds a 23.7% stake in 삼성전기㈜, which produces and supplies passive components, circuit parts, and modules. Samsung has a 22.6% share in 삼성에스디에스㈜, which provides IT services including computer programming, system integration, management, and logistics services. In 삼성바이오로직스㈜, focused on new business investments, Samsung holds a 31.2% stake. SamsungSDI㈜, producing secondary batteries and electronic components, has a 19.4% share based on total issued common shares, with a 20.3% share based on circulating common shares. Additionally, Samsung owns 25.2% of ㈜제일기획, an advertising agency. Regarding 공동기업 투자, Samsung holds a 50.0% stake in 삼성코닝어드밴스드글라스 (유), which produces and supplies industrial glass products. These investments reflect Samsung's diversified interests across electronic components, IT services, biotechnology, battery production, advertising, and industrial glass manufacturing.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explain what the term (1) 당반기 means in the context of Samsung Electronics' financial report and how it relates to the equity method evaluation details provided?",
+        "reference_contexts":[
+            "| ㈜제일기획 | 506,162 | 398,145 | 698,554 | 506,162 | 418,029 | 718,561 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 기타 | 626,562 | 876,541 | 1,008,573 | 674,721 | 844,623 | 1,131,648 |\n| 계 | 4,678,685 | 13,199,326 | 12,610,593 | 4,355,046 | 12,812,53 9 | 12,368,34 8 |\n\n\n(*1) 순자산가액은 지분해당액 기준입니다.\n(*2) 신주 취득원가 371,798백만원은 주금 납입액 308,181백만원과 신주인수권 63,617백만원으로\n구성되어 있습니다.\n(2) 공동기업 투자\n(단위 : 백만원)\n\n| 기 업 명 | 당반기말 |  |  | 전기말 |  |  |\n| --- | --- | --- | --- | --- | --- | --- |\n|  | 취득원가 | 순자산가액 | 장부금액 | 취득원가 | 순자산가액 | 장부금액 |\n|  |  | (*) |  |  | (*) |  |\n| 삼성코닝어드밴스드글 라스(유) | 215,000 | 145,746 | 145,726 | 215,000 | 143,198 | 143,178 |\n| 기타 | 259,994 | 79,380 | 87,575 | 259,994 | 74,075 | 80,591 |\n| 계 | 474,994 | 225,126 | 233,301 | 474,994 | 217,273 | 223,769 |\n\n\n(*) 순자산가액은 지분해당액 기준입니다.\n라. 당반기 및 전반기 중 지분법평가 내역은 다음과 같습니다.\n(1) 당반기\n(단위 : 백만원)\n\n| 기 업 명 | 기초 | 지분법평가 내역 |  |  | 반기말 |\n| --- | --- | --- | --- | --- | --- |\n|  |  | 지분법손익 | 지분법자본변 |  | 반기말 |\n|  |  |  | 동 | (*) |  |\n| 삼성전기㈜ | 2,067,669 | 66,362 | (30,000) | (31,848) | 2,072,183 |\n| 삼성에스디에스㈜ | 2,120,417 | 87,148 | (30,578) | (50,669) | 2,126,318 |\n| 삼성바이오로직스㈜ | 3,406,062 | 220,951 | (584) | - | 3,626,429 |\n| 삼성SDI㈜ | 2,923,991 | (126,206) | (77,585) | 358,336 | 3,078,536 |\n| ㈜제일기획 | 718,561 | 22,696 | (6,986) | (35,717) | 698,554 |\n| 삼성코닝어드밴스드글라 스(유) | 143,178 | 2,548 | - | - | 145,726 |\n| 기타 | 1,212,239 | 4,372 | (12,640) | (107,823) | 1,096,148 |\n| 계 | 12,592,117 | 277,871 | (158,373) | 132,279 | 12,843,894 |\n\n\n(*) 기타증감액은 취득, 처분, 배당 등으로 구성되어 있습니다.\n(2) 전반기\n(단위 : 백만원)\n\n| 기 업 명 | 기초 | 지분법평가 내역 |  | 반기말 |\n| --- | --- | --- | --- | --- |\n|  |  | 지분법손익 | 지분법자본변 | 반기말 |\n"
+        ],
+        "reference":"(1) 당반기 refers to the current half-year period in Samsung Electronics' financial report. It is used to present the equity method evaluation details for various investee companies during this period. The report shows the beginning balance (기초), equity method profit or loss (지분법손익), changes in equity method capital (지분법자본변동), and the ending balance (반기말) for each company. For example, Samsung Electro-Mechanics Co., Ltd. (삼성전기㈜) had a beginning balance of 2,067,669 million KRW, equity method profit of 66,362 million KRW, capital changes of (31,848) million KRW, resulting in an ending balance of 2,072,183 million KRW for the 당반기. This term helps to specify the financial position and performance of investments during the current half-year period.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"What is the role of 한국 in Samsung Electronics' business operations?",
+        "reference_contexts":[
+            "당사는 본사를 거점으로 한국과 "
+        ],
+        "reference":"The company is headquartered in 한국 and uses it as a base for its operations.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성 스마트폰 출하량 몇년 연속 1위임?",
+        "reference_contexts":[
+            "DX 부문 산하 해외 9개 지역총괄, DS 부문 산하 해외 5개 지\n역총괄의 생산ㆍ판매법인 및 SDC, Harman 산하 종속기업 등 230개의 종속기업으로 구성된\n글로벌 전자 기업입니다.\n각 부문별 주요 제품은 다음과 같습니다.\n\n| 부문 |  | 주 요 제 품 |  |\n| --- | --- | --- | --- |\n| DX 부문 |  | TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등 |  |\n| DS 부문 |  | DRAM, NAND Flash, 모바일AP 등 |  |\n| SDC |  | 스마트폰용 OLED 패널 등 |  |\n| Harman |  | 디지털 콕핏(Digital Cockpit), 카오디오, 포터블 스피커 등 |  |\n\n\n[DX 부문]\nDX 부문은 TV, 모니터, 냉장고, 세탁기, 에어컨 및 스마트폰, 태블릿, 웨어러블(Wearable)\n제품, 네트워크시스템 등을 생산ㆍ판매하는 사업으로 구성되어 있습니다.\nTV사업은 2006년부터 2024년까지 19년 연속 판매 1위를 지키고 있습니다. 업체간 경쟁이\n심화되는 가운데, 당사는 초대형 TV를 선두로 하여, 주력제품에 AI신기술을 대폭 적용해 경\n쟁사들과의 기술격차를 벌리고 있습니다. 또한, 가전 사업은 친환경·고효율 기술을 통해 제\n품의 기본 성능의 우위는 물론이고, 변화하는 라이프스타일에 대한 깊은 이해를 바탕으로 소\n비자의 삶을 편리하게 하는 제품과 서비스를 지속 출시하고 있습니다.\n모바일사업은 2011년부터 2024년까지 14년 연속 글로벌 출하량 1위를 유지하고 있습니다.\n'갤럭시(Galaxy)' 브랜드를 통해 프리미엄부터 보급형까지 다양하고 경쟁력 있는 스마트폰\n라인업과 태블릿, 웨어러블, 디지털 월렛 등을 활용하여 시장 상황에 최적화된 제품 포트폴\n리오를 운영하고 있습니다."
+        ],
+        "reference":"삼성 모바일사업은 2011년부터 2024년까지 14년 연속 글로벌 출하량 1위를 유지하고 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성의 DX와 DS 부문에서 지속적인 기술 혁신은 어떻게 이루어지고 있나요?",
+        "reference_contexts":[
+            "당사는 업계 최고 수준의 R&D 역량을 바탕으로 지속적인 기술 혁신 및 철저한 미래 준비를\n통해 고객에게 새로운 가치를 끊임없이 제공하겠습니다. 제품과 서비스의 지속적인 발전을\n통해 친환경 기술 혁신을 이어가고, 연구개발을 통해 시장 패러다임 변화를 선도해 나가겠습\n니다.\n"
+        ],
+        "reference":"삼성은 업계 최고 수준의 R&D 역량을 바탕으로 지속적인 기술 혁신과 철저한 미래 준비를 통해 고객에게 새로운 가치를 끊임없이 제공하고 있습니다. 제품과 서비스의 지속적인 발전을 통해 친환경 기술 혁신을 이어가며, 연구개발을 통해 시장 패러다임 변화를 선도하고 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Could you explain the current focus and expansion strategy of the System LSI 사업 within the DS division?",
+        "reference_contexts":[
+            "[DS 부문]\nDS 부문은 DRAM, NAND Flash 등 제품을 생산ㆍ판매하는 메모리 반도체 사업과 모바일AP,\n카메라 센서칩 등을 설계ㆍ판매하는 System LSI 사업, 반도체 제조 위탁 생산을 하는\nFoundry 사업 등으로 구성되어 있습니다.\n메모리 반도체 사업은 DRAM, NAND Flash 제품 등에 선단 공정 기술을 적용하고,\n고부가 솔루션 중심의 사업 포트폴리오 운영을 통해 제품을 차별화하고 원가 경쟁력을 제고\n하는 등 질적 성장에 주력하여 전 세계 메모리 시장에서 선두 자리를 지속적으로 유지하고\n있습니다.\nSystem LSI 사업은 모바일용 반도체 사업에서 차량용 반도체 사업으로 확장을 추진 중이며,\nOn-Device AI 적용, 고성능 IP 탑재 등 제품의 차별화를 통해 고객과 협력 강화 및 응용처를\n다변화하여 시장 지배력을 확대하는 한편, 차세대 기술 개발도 지속 추진하고 있습니다.\nFoundry 사업은 Advanced 공정에서 지속적인 기술 경쟁력 강화를 통해 중장기 수요확보에\n집중하고 있으며, Mature 공정에서는 응용처를 확대하는 한편 원가 경쟁력을\n강화할 예정입니다.\n"
+        ],
+        "reference":"The System LSI 사업 within the DS division is expanding from mobile semiconductor business to vehicle semiconductor business. It aims to strengthen cooperation with customers and diversify applications by differentiating products through On-Device AI application and high-performance IP integration. Additionally, it is continuously pursuing next-generation technology development to expand its market dominance.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"How SDC risk with 폴더블 product in small display panel business?",
+        "reference_contexts":[
+            "[SDC]\nSDC의 중소형 디스플레이 패널 사업은 차별화된 기술을 바탕으로 OLED 패널의 점유율을\n확대하는 한편 폴더블ㆍIT(태블릿\/노트북)ㆍAuto 등 다양한 응용처의 제품 출시를 통해 시장\n영역을 넓혀 나가고 있습니다. 또한, 대형 디스플레이 패널 사업은 고화질, 초대형, 퀀텀닷\n(Quantum Dot) 등 프리미엄 제품 중심으로 사업을 특화하고,기술 및 생산성 향상을 지속 추\n진하여 사업 경쟁력을 제고하고 있습니다."
+        ],
+        "reference":"SDC's small and medium display panel business expands market by launching various products including 폴더블, IT (tablet\/laptop), and Auto applications based on differentiated technology. This diversification could imply risks related to managing multiple product lines and ensuring competitive technology and production efficiency.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you tell me how Samsung's 라이프스타일 오디오 사업 work and why it good for growth in market?",
+        "reference_contexts":[
+            "[Harman]\nHarman은 커넥티드카 제품 및 솔루션 등을 개발 및 공급하는 전장부품 사업과 컨슈머 오디\n오 제품 및 프로페셔널 오디오 솔루션을 제공하는 라이프스타일 오디오 사업을 운영하고 있\n습니다.\n전장부품 시장의 선두업체로서 완성차 업체들에게 경쟁력 있는 제품을 공급하고 있을 뿐만\n아니라, 오디오 시장에서도 혁신 제품 판매를 통해 일반 소비자들과 음악 애호가들 사이에서\n명성을 쌓아왔습니다.\n또한, 당사 타 제품군과의 협업 확대를 통해 차별화된 고객 경험을 제공하고 자체 개발 및 전\n략적 인수 등을 통해 각 사업 분야에서 경쟁력을 강화하고 있습니다.\n☞ 사업부문별 자세한 사항은 '"
+        ],
+        "reference":"Samsung's 라이프스타일 오디오 사업 operates by providing consumer audio products and professional audio solutions. It has built a strong reputation among general consumers and music enthusiasts through innovative product sales. Additionally, by expanding collaboration with other product lines and strengthening competitiveness through in-house development and strategic acquisitions, the business enhances differentiated customer experiences and competitiveness in its field.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explane what is ment by '사업의 내용' in the report and why should i refer to it?",
+        "reference_contexts":[
+            "Ⅱ. 사업의 내용'을 참고하시기 바랍니다."
+        ],
+        "reference":"The term '사업의 내용' refers to the section titled 'Ⅱ. 사업의 내용' in the report, and it is advised to refer to this section for detailed information.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"How many 연결대상 종속기업 are there at the end of first half 2025 and what changes happened compare last year?",
+        "reference_contexts":[
+            "마. 연결대상 종속회사 현황(요약)\n기업회계기준서(K-IFRS) 제1110호 '연결재무제표'에 의한 지배회사(최상위)인 당사의 연결\n대상 종속기업은 2025년 반기말 현재 230개사입니다. 전년말 대비 3개 기업이 증가하고 1개\n기업이 감소하였습니다.\n(단위 : 사)\n\n| 구분 | 연결대상회사수 |  |  |  |  |  |  |  | 주요 종속회사수 |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | 기초 |  | 증가 |  | 감소 |  | 기말 |  | 종속회사수 |\n| 상장 | - |  | 1 |  | - |  | 1 |  | 1 |\n| 비상장 | 228 |  | 2 |  | 1 |  | 229 |  | 142 |\n| 합계 | 228 |  | 3 |  | 1 |  | 230 |  | 143 |\n\n\n※상세 현황은 '상세표-1. 연결대상 종속회사 현황(상세)' 참조\n(당기 연결대상회사의 변동내용)\n\n| 구 분 |  | 자회사 |  | 사 유 |  |\n| --- | --- | --- | --- | --- | --- |\n| 신규 연결 |  | ㈜레인보우로보틱스 |  | 지분취득 |  |\n|  |  | RAINBOW ROBOTICS USA Co., Ltd. |  | 지분취득 |  |\n|  |  | SVIC 74호 신기술투자조합 |  | 설립 |  |\n| 연결 제외 |  | Studer Professional Audio GmbH |  | 청산 |  |\n|  |  | - |  | - |  |\n\n\n"
+        ],
+        "reference":"As of the first half of 2025, there are 230 연결대상 종속기업. Compared to the end of the previous year, the number increased by 3 companies and decreased by 1 company.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explain why company is not 벤처기업 해당 여부 and what is status about 벤처기업 해당 여부 in report?",
+        "reference_contexts":[
+            "바. 중소기업 해당 여부\n당사는「중소기업기본법」제2조에 의한 중소기업에 해당되지 않습니다.\n\n| 중소기업 해당 여부 |  | 미해당 |\n| --- | --- | --- |\n|  | 벤처기업 해당 여부 | 미해당 |\n| 중견기업 해당 여부 |  | 미해당 |\n"
+        ],
+        "reference":"According to the report, the company is not classified as a 벤처기업 해당 여부. The table clearly indicates that the company is 미해당 (not applicable) for 벤처기업 해당 여부, meaning it does not meet the criteria to be considered a venture business.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Can you explain what 채무불이행 가능성 means in the context of Samsung Electronics' credit ratings and how it relates to different rating categories?",
+        "reference_contexts":[
+            "|  |  |  |  |  |\n| --- | --- | --- | --- | --- |\n|  | Caa | 투기적 성향 높음, 신용위험 매우 높 음 | CCC | 현재 채무불이행 가능성 이 있으며 채무상환은 경 영, 재무, 경제 상황이 호 의적일 경우에만 가능함 |\n|  | Ca | 투기적 성향 매우 높음, 가까운 시일 내 부도발생 가능, 원 리금 상환가능성 존재 | CC | 채무불이행 가능성이 높 음, 부도 상태는 아니지만 사실상 부도가 예상됨 |\n|  | C | 부도 상태, 원리금 상환가능성 낮음 | C | 현재 채무불이행 가능성 이 매우 높으며 최종 회수 율은 상위등급 채무보다 낮게 추정됨 |\n|  |  |  | D | 금융채무불이행 상태 혹 은 묵시적 계약 (imputed promises) 파기, 또는 파 산 신청 혹은 이와 유사한 상태 |\n\n\n☞ 당사 및 당사의 종속기업이 발행한 회사채 및 기업어음 등에 대한 신용등급\n평가결과는 '"
+        ],
+        "reference":"채무불이행 가능성 refers to the likelihood of default on debt repayment. According to the credit rating categories, a CCC rating indicates there is a current possibility of default, but repayment is possible if management, financial, and economic conditions are favorable. A CC rating means the possibility of default is high, and although the company is not yet in default, default is practically expected. A C rating signifies a very high likelihood of default, with a low chance of principal and interest repayment, and the final recovery rate is estimated to be lower than that of higher-rated debts. The D rating represents an actual default state or a situation where implicit contracts are broken, bankruptcy is filed, or a similar condition exists.",
+        "persona_name":"Financial Analyst",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성 주권상장 언제 됐나요?",
+        "reference_contexts":[
+            "Ⅲ. 재무에 관한 사항'의 '7. 증권의 발행을 통한 자금조달에\n관한 사항'을 참고하시기 바랍니다.\n 아. 주권상장(또는 등록ㆍ지정)여부 및 특례상장에 관한 사항\n당사는 1975년 6월 11일 유가증권시장에 기업공개를 실시하였습니다.\n\n|  |  | 특례상장 유형 |\n| --- | --- | --- |\n| (또는 등록ㆍ지정)현황 | (또는 등록ㆍ지정)일자 |  |\n| 유가증권시장 상장 | 1975년 06월 11일 | 해당사항 없음 |\n"
+        ],
+        "reference":"삼성은 1975년 6월 11일 유가증권시장에 기업공개를 실시하여 주권상장을 하였습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"회사 연혁에서 본점소재지와 그 변경 사항에 대해 자세히 알려주세요.",
+        "reference_contexts":[
+            "2. 회사의 연혁\n 가. 회사의 본점소재지 및 그 변경\n당사의 본점소재지는 경기도 수원시 영통구 삼성로 129(매탄동)입니다.\n공시대상기간 중 본점소재지의 변경 사항은 없습니다.\n"
+        ],
+        "reference":"당사의 본점소재지는 경기도 수원시 영통구 삼성로 129(매탄동)이며, 공시대상기간 중 본점소재지의 변경 사항은 없습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"주주총회에서 이사 선임과 관련된 주요 변동 사항은 무엇입니까?",
+        "reference_contexts":[
+            "나. 경영진의 중요한 변동\n당사의 이사회는 주주총회에서 선임한 이사로 구성되며 회사 업무의 중요사항을 결의합니다\n. 2025년 반기말 현재 당사의 이사회는 사내이사 3인(전영현, 노태문, 송재혁), 사외이사 6인\n(신제윤, 김준성, 허은녕, 유명희, 조혜경, 이혁재) 총 9인의 이사로 구성되어 있습니다.\n당사의 대표이사는 이사회에서 선임하며 회사를 대표합니다. 2025년 반기말 현재 당사의 대\n표이사는 전영현 사내이사(2025년 3월 선임)입니다. 한종희 前대표이사는 2025년 3월 25일\n대표이사직과 사내이사직을 기타퇴임하였습니다.\n\n| 변동일자 | 주총종류 | 선임 |  |  |  | 임기만료 또는 해임 |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  | 신규 |  | 재선임 |  |  |\n| 2021.03. 17 | 정기주총 | - |  | 사내이사 김기남 사내이사 김현석 사내이사 고동진 사외이사 박병국 사외이사 김종훈 (감사위원회 위원이 되 는) 사외이사 김선욱 |  | - |\n| 2021.03. 17 | - | - |  | 대표이사 김기남 대표이사 김현석 대표이사 고동진 |  | - |\n| 2021.12. 31 | - | - |  | - |  | 사내이사 최윤호(사임) |\n| 2022.02. 15 | 정기주총 | 대표이사 한종희 |  | - |  | 대표이사 김기남(사임) 대표이사 김현석(사임) 대표이사 고동진(사임) |\n| 2022.03. 16 | 정기주총 | 사내이사 경계현 사내이사 노태문 사내이사 박학규 사내이사 이정배 사외이사 한화진 |  | 사외이사 김한조 |  | 사내이사 김기남(사임) 사내이사 김현석(사임) 사내이사 고동진(사임) |\n"
+        ],
+        "reference":"주주총회에서 이사는 회사 업무의 중요사항을 결의하기 위해 선임되며, 2025년 반기말 현재 당사의 이사회는 사내이사 3인과 사외이사 6인으로 구성되어 있습니다. 대표이사는 이사회에서 선임하며, 2025년 3월 전영현 사내이사가 대표이사로 선임되었습니다. 과거 주요 변동으로는 2022년 2월 정기주총에서 대표이사 한종희가 선임되었고, 같은 해 3월 정기주총에서는 사내이사와 사외이사가 새로 선임되었으며, 이전 대표이사 및 이사들이 사임하였습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    }
+]
