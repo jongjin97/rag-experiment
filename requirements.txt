@@ -1,0 +1,22 @@
+# Core RAG Framework
+langchain
+langchain-community
+langchain-core
+langchain-openai
+
+# Vector Database (Local)
+chromadb
+
+# Embeddings
+sentence-transformers
+
+# Document Loading (PDF)
+pypdf
+pdfplumber
+
+# Environment Variables
+python-dotenv
+
+# Data Analysis
+pandas
+numpy
