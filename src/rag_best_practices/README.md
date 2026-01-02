@@ -53,3 +53,39 @@
 # 실험 실행 (결과 재현)
 python -m src.rag_best_practices.chunking
 ```
+
+## 6. 검색 전략 실험 (Retrieval Strategy)
+
+청크 사이즈(256 tokens)를 고정한 상태에서 다양한 검색 기법을 비교 실험하였습니다.
+
+### 실험 설정
+* **Baseline**: Dense Retriever (ChromaDB, `intfloat/multilingual-e5-large`)
+* **Hybrid**: BM25 (Sparse) + Dense (Ensemble Retriever)
+* **HyDE**: Hypothetical Document Embeddings (LLM이 가상의 답변 생성 후 검색)
+* **Metrics**:
+    * **Context Relevance**: 질문과 검색 결과의 의미적 연관성 (Ragas)
+    * **Hit Rate**: 정답 문맥(Ground Truth)이 상위 5개 내에 포함될 확률
+    * **MRR (Mean Reciprocal Rank)**: 정답 문맥의 순위 역수 평균
+    * **Latency**: 평균 검색 소요 시간 (초)
+
+### 실험 결과 (Top-K=5)
+
+| Method | Alpha (BM25 Weight) | Context Relevance | Hit Rate | MRR | Latency (s) |
+|--------|---------------------|-------------------|----------|-----|-------------|
+| **Baseline (Dense)** | - | 0.714 | 0.327 | 0.249 | **0.196** |
+| **Hybrid** | 0.3 | 0.829 | 0.471 | 0.292 | 0.223 |
+| **Hybrid** | **0.5** | **0.832** | **0.471** | **0.304** | 0.215 |
+| **Hybrid** | 0.7 | 0.827 | 0.471 | 0.308 | 0.218 |
+| **HyDE** | - | 0.702 | 0.308 | 0.245 | 3.498 |
+
+### 분석 및 결론
+1.  **Hybrid Search 우수성 입증**:
+    *   Dense Only 대비 **Hit Rate가 약 1.4배 향상** (0.33 -> 0.47).
+    *   금융 보고서 특성상 정확한 용어(Keyword) 매칭이 중요하여 BM25의 기여도가 큼.
+    *   **Optimal Alpha**: 0.5 (오차 범위 내에서 0.3~0.7 모두 유사하게 우수함).
+2.  **HyDE의 한계**:
+    *   Baseline과 유사하거나 약간 낮은 성능을 보임.
+    *   **Latency**: LLM 생성 과정으로 인해 3.5초가 소요되어 실시간 검색에는 부적합할 수 있음.
+3.  **최종 전략 선정**:
+    *   **Hybrid Search (Alpha=0.5)**를 최종 검색 전략으로 채택.
+    *   검색 속도 저하(0.02초 차이)는 미미하면서 성능 향상은 확실함.
