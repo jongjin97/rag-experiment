@@ -98,10 +98,7 @@ async def main():
         
     with open(EVAL_DATASET_PATH, "r", encoding="utf-8") as f:
         eval_data = json.load(f)
-    
-    # Optimization: Use subset for faster CPU experiment
-    eval_data = eval_data[:20]
-    print(f"Loaded {len(eval_data)} evaluation items (Subset for CPU experiment).")
+    print(f"Loaded {len(eval_data)} evaluation items.")
 
     # Initialize Components
     # 1. Retrieval (Hybrid Top-20 for Reranking, Top-5 for Baseline)
