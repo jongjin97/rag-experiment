@@ -13,6 +13,17 @@
 | **Retrieval** | **Hybrid (Alpha=0.5)** | 용어 매칭(BM25)과 의미 검색(Dense)의 조화로 Hit Rate 1.4배 향상 |
 | **Reranking** | **DLM (Cross-Encoder)** | 정확도가 최우선인 경우 필수 (MRR 0.30 -> 0.39). 단, 실시간성은 고려 필요. |
 
+### 📈 단계별 성능 향상 요약 (Evolution of Performance)
+
+전체 최적화 과정을 거치며 성능이 다음과 같이 단계적으로 향상되었습니다.
+
+| 단계 (Phase) | 핵심 변경 사항 | Hit Rate | CTX Relevance | MRR | 비고 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **P0: Baseline** | English Model (Dense) | ~0.10 | 0.156 | Low | 한국어 이해 실패 |
+| **P1: Embedding** | **Multilingual Model** | 0.327 | 0.704 | 0.249 | **성능 4.5배 급상승** (Foundation) |
+| **P2: Retrieval** | **Hybrid Search** | 0.471 | 0.832 | 0.304 | Hit Rate 1.4배 향상 (Precision) |
+| **P3: Reranking** | **DLM (BGE)** | **0.500** | **0.873** | **0.387** | **Final Polish** (Top-1 정확도 개선) |
+
 ---
 
 ## 1. 실험 환경 및 데이터셋
