@@ -17,12 +17,23 @@ def format_docs(docs: list[Document]):
 
 def rag_chain(query: str):
     llm = get_llm()
-    context = retrieve_context(query)
-    formatted_docs = format_docs(context)
-    print(formatted_docs)
+    # retrieve_context returns a list of Documents (or similar, depending on retriever)
+    # The retriever from src/naive_rag/retriever.py invokes an EnsembleRetriever which returns List[Document]
+    docs = retrieve_context(query)
+    
+    # helper to format
+    formatted_docs_str = format_docs(docs)
+    
+    # print(formatted_docs_str) # Optional logging
+    
     prompt = get_prompt()
     chain = prompt | llm | StrOutputParser()
-    return chain.invoke({"query": query, "context": formatted_docs})
+    answer = chain.invoke({"query": query, "context": formatted_docs_str})
+    
+    return {
+        "result": answer,
+        "context": [d.page_content for d in docs]
+    }
 
 if __name__ == "__main__":
     answer = rag_chain("DX 부문의 주요 제품은 무엇인가?")

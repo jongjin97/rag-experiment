@@ -1,0 +1,32 @@
+[
+    {
+        "category": "Specific Fact",
+        "question": "HBM3E 12단의 대역폭은 얼마인가?",
+        "difficulty": "Easy"
+    },
+    {
+        "category": "Specific Fact",
+        "question": "갤럭시 S24 시리즈에 탑재된 주요 AI 기능은 무엇인가?",
+        "difficulty": "Medium"
+    },
+    {
+        "category": "Broad Summary",
+        "question": "삼성전자의 2024년 DX 부문 주요 경영 전략은 무엇인가?",
+        "difficulty": "Hard"
+    },
+    {
+        "category": "Broad Summary",
+        "question": "글로벌 경기 침체에 대응하기 위한 삼성전자의 전사적 리스크 관리 방안은?",
+        "difficulty": "Hard"
+    },
+    {
+        "category": "Hybrid",
+        "question": "HBM 시장의 성장세가 삼성전자 DS 부문의 전체 매출에 미치는 영향은?",
+        "difficulty": "Very Hard"
+    },
+    {
+        "category": "Hybrid",
+        "question": "삼성전자의 친환경 경영 전략과 주요 제품(갤럭시, 반도체)의 연관성은?",
+        "difficulty": "Hard"
+    }
+]

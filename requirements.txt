@@ -20,3 +20,11 @@ python-dotenv
 # Data Analysis
 pandas
 numpy
+
+# GraphRAG Dependencies
+networkx
+tqdm
+nest_asyncio
+langchain-google-genai
+ragas
+datasets

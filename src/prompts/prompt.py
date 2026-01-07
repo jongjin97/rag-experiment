@@ -13,3 +13,21 @@ SAMSUNG_PROMPT = """
 [Query]:
 {query}
 """
+
+GRAPH_RAG_EXTRACTOR_PROMPT = """You are a Data Scientist extracting a Knowledge Graph from Samsung Business Reports.
+Identify key entities and relationships to understand the business structure, financial status, and products.
+
+Target Entity Types:
+- ORGANIZATION (e.g., Samsung Electronics, Subsidiaries, Competitors)
+- PRODUCT (e.g., Galaxy S24, DRAM, HBM)
+- CONCEPT (e.g., AI, Dividend, Profit, R&D)
+- GEO (e.g., Korea, Vietnam, USA)
+- EVENT (e.g., M&A, Release, Board Meeting)
+- METRIC (e.g., Revenue, Operating Profit - treat key financial figures as entities if they are central discussion points)
+
+Guidelines:
+1. **LIMIT**: Extract only the **Top 10 most important entities** crucial for understanding the context. Do not extract trivial nouns.
+2. **CONCISE**: Description MUST be **under 15 words**.
+3. Relationships should capture actions or structural links (e.g., "PRODUCES", "LOCATED_IN", "INCREASED_BY").
+4. Deduplicate entities (e.g., "Samsung" and "Samsung Electronics" -> "Samsung Electronics").
+"""

@@ -151,6 +151,56 @@ def load_documents(path_input: Path) -> List[Document]:
             
     return documents
 
+def load_documents_merged(path_input: Path) -> List[Document]:
+    """
+    Load PDF documents, merging ALL pages of each file into a single Document object.
+    This preserves cross-page context for better chunking.
+    """
+    documents = []
+    path_obj = Path(path_input)
+    
+    if not path_obj.exists():
+        print(f"Path not found: {path_obj}")
+        return []
+
+    # Determine files to process
+    if path_obj.is_file():
+        files_to_process = [path_obj] if path_obj.suffix.lower() == ".pdf" else []
+    elif path_obj.is_dir():
+        files_to_process = list(path_obj.glob("*.pdf"))
+    else:
+        return []
+
+    for file_path in files_to_process:
+        print(f"Processing (Merged): {file_path.name}...")
+        try:
+            full_text = []
+            with pdfplumber.open(file_path) as pdf:
+                for i, page in enumerate(pdf.pages):
+                    content = extract_page_content_with_tables(page)
+                    if content.strip():
+                        full_text.append(content)
+            
+            combined_content = "\n\n".join(full_text)
+            
+            if combined_content.strip():
+                # Create Single LangChain Document for the entire file
+                doc = Document(
+                    page_content=combined_content,
+                    metadata={
+                        "source": str(file_path),
+                        "filename": file_path.name,
+                        "total_pages": len(pdf.pages)
+                    }
+                )
+                documents.append(doc)
+                print(f"  - Loaded {len(pdf.pages)} pages into 1 unified document.")
+                
+        except Exception as e:
+            print(f"Error loading {file_path.name}: {e}")
+            
+    return documents
+
 if __name__ == "__main__":
     # Test script included in main execution
     import sys

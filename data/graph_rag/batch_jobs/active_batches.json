@@ -1,0 +1,26 @@
+{
+  "merged_batch_requests_part_1.jsonl": {
+    "batch_id": "batch_695c8ad95e3c8190862f7bf1f839c5de",
+    "file_id": "file-FRQeqiKM8RohK9btxR8dur",
+    "status": "processed",
+    "submitted_at": "1767672537"
+  },
+  "merged_batch_requests_part_2.jsonl": {
+    "batch_id": "batch_695c8ae272a08190bc171ee19971b1ad",
+    "file_id": "file-E9MS5jUAgCwq8gvpXqb5Hq",
+    "status": "processed",
+    "submitted_at": "1767672546"
+  },
+  "merged_batch_requests_part_3.jsonl": {
+    "batch_id": "batch_695c8ae92d34819097178ce2a4c1d90e",
+    "file_id": "file-C2Ls9FwWffa4o4vTFg3vVf",
+    "status": "processed",
+    "submitted_at": "1767672553"
+  },
+  "community_batch_part_1.jsonl": {
+    "batch_id": "batch_695cacb1bef48190a89cbf0ddd236fc9",
+    "file_id": "file-7tewsWC5sBLZvLvFcmRGbt",
+    "status": "processed",
+    "submitted_at": "1767681201"
+  }
+}
