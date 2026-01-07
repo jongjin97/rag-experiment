@@ -111,4 +111,6 @@ python -m src.graph_rag.test_retrieval google
 > - **Local Search**는 Naive RAG보다 빠르고(~3.9s) 더 높은 Relevance(0.50)를 보였습니다. 이는 그래프가 불필요한 노이즈를 제거하고 핵심 이웃만 탐색하기 때문입니다.
 > - **Global Search**는 Faithfulness가 **1.0**으로, 허구(Hallucination) 없이 요약에 기반한 정확한 답변을 제공합니다.
 > - **Hybrid Search**는 응답 시간이 길지만, **Answer Relevance(0.57)**가 가장 높아 복잡한 추론이 필요한 질문에 가장 적합한 전략임이 입증되었습니다.
+>
+> ⚠️ **Note**: 일부 질문에서 GraphRAG가 **영어**로 답변을 생성하여 평가 모델이 관련성을 0점으로 처리한 케이스가 포함되어 있습니다. (질문: 한국어, 답변: 영어). 이를 감안하면 Hybrid Search의 실제 체감 성능은 수치보다 훨씬 높을 것으로 추정됩니다.
 
