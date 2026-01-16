@@ -1,0 +1,30 @@
+[
+  {
+    "filename": "batch_input_part_1.jsonl",
+    "batch_id": "batch_6964a300b45481908f830fd10994a1e1",
+    "file_id": "file-5mXnXyDxDHizZfjjRTqd5j",
+    "status": "downloaded",
+    "submitted_at": "1768203008.8773384"
+  },
+  {
+    "filename": "batch_input_part_2.jsonl",
+    "batch_id": "batch_6964a30635d48190b162394a07e8c691",
+    "file_id": "file-VvzeGCX6gA5ZWc8YrabLKF",
+    "status": "downloaded",
+    "submitted_at": "1768203014.3785899"
+  },
+  {
+    "filename": "batch_input_part_3.jsonl",
+    "batch_id": "batch_6964a30bf9b48190a1665c73de88f54c",
+    "file_id": "file-Xj1XcyYsjD3YdPk7ukXySf",
+    "status": "downloaded",
+    "submitted_at": "1768203020.190056"
+  },
+  {
+    "filename": "batch_input_part_4.jsonl",
+    "batch_id": "batch_6964a311b56481909908aefcd55f6a8f",
+    "file_id": "file-6zHBMW3RW9BKN3YGhCed4y",
+    "status": "downloaded",
+    "submitted_at": "1768203025.8824499"
+  }
+]

@@ -1,0 +1,552 @@
+[
+    {
+        "user_input":"2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 선임이 뭐야?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일 주주총회에서 조혜경 사외이사가 감사위원회 위원이 되는 사외이사로 선임되었으며, 김선욱 사외이사는 2024년 3월 20일 사임 형식으로 퇴임하였고, 허은녕과 유명희 사외이사는 임기조정을 위해 자진사임 후 재선임되었습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2021년과 2023년 사이에 종속기업의 사명이 변경된 사례와 그 의미는 무엇이며, 이러한 상호의 변경이 회사의 비즈니스 리스크 평가에 어떤 영향을 미칠 수 있습니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"2021년에는 종속기업인 Samsung Electronics Portuguesa S.A.의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었고, 2023년에는 Emerald Intermediate, Inc.가 Samsung Display America Holdings, Inc.로 변경되었습니다. 이러한 상호의 변경은 회사의 구조조정이나 전략적 방향성 변화와 관련이 있을 수 있으며, 잠재적 비즈니스 리스크 평가 시 기업의 공식 명칭 변경이 기업의 법적 책임, 브랜드 인지도, 이해관계자와의 커뮤니케이션 등에 영향을 미칠 수 있으므로 신중히 고려해야 합니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"경영활동과 관련된 중요한 사항의 발생내용 중에서 2021년부터 2025년까지의 주요 사건들이 어떤 것들이 있으며, 이러한 사건들이 기업의 리스크 평가에 어떤 영향을 미칠 수 있는지 구체적으로 검색할 수 있나요?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"2021년부터 2025년까지의 주요 사건으로는 2021년 'Neo QLED TV' 공개, 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증, 업계 최선단 14나노 EUV DDR5 D램 양산, 미국 테일러市에 신규 파운드리 라인 투자 발표 등이 있으며, 2022년에는 BESPOKE 인피니트 라인 공개, 세계 최초 3나노 GAA 파운드리 양산, 차세대 반도체 R&D단지 기공식, 1Tb 8세대 V낸드 양산이 포함됩니다. 2023년에는 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시, 업계 최선단 12나노급 D램 양산, 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개, 현존 최대 용량 32Gb DDR5 D램 개발, 생성형 AI '삼성 가우스' 공개가 있으며, 2024년에는 'Galaxy S24 시리즈' 공개, 업계 최초 '9세대 V낸드' 양산, 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개, 브랜드가치 사상 첫 1천억 달러 기록, 업계 최초 '24Gb GDDR7 D램' 개발이 있습니다. 2025년에는 Galaxy S25ㆍS25+ㆍS25 Ultra, S25 Edge 공개, 업계 최선단 10나노급 6세대 D램 양산, 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개, 세계최초 자발광 최고 주사율 27인치 QHD 500Hz QD-OLED 디스플레이 개발이 포함됩니다. 이러한 사건들은 기업의 기술 발전, 시장 경쟁력, 환경 규제 준수 등 다양한 리스크에 영향을 미칠 수 있으므로, 리스크 평가에 중요한 참고자료가 될 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"소유주식수 및 지분율이 최대주주와 그 특수관계인들의 합산 내역을 반영하는 방식은 무엇이며, 이러한 지분 구조가 삼성전자의 재무 안정성과 의사결정에 어떤 영향을 미치는지 상세히 설명해 주실 수 있습니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"소유주식수 및 지분율은 최대주주와 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다. 이는 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다. 또한, 2021년에는 종속기업 Samsung Electronics Portuguesa S.A.의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었으며, 2023년에는 종속기업 Emerald Intermediate, Inc.의 사명이 Samsung Display America Holdings, Inc.로 변경되었습니다. 이러한 지분 구조와 기업명 변경 사항은 삼성전자의 재무 안정성과 의사결정에 영향을 미치는 중요한 요소로 작용할 수 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업이란 무엇입니까?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"종속기업은 2021년 중 Viv Labs, Inc.가 Samsung Research America, Inc.에 합병되었고, Prismview, LLC가 Samsung Electronics America, Inc.에 합병된 사례가 있으며, 2023년에는 Samsung Display America Holdings, Inc.가 eMagin Corporation의 지분을 인수하였고, 2025년에는 ㈜레인보우로보틱스의 지분을 인수한 것을 포함하여, 회사의 지배기업이 일정 지분을 소유하거나 통제하는 기업을 의미합니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자가 2021년에 공개한 Neo QLED TV는 시장에서 어떤 반응을 얻었으며, 이 제품이 회사의 DX 및 DS 부문 성장에 어떤 영향을 미쳤나요?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"2021년에 'Neo QLED TV'가 공개된 것은 중요한 경영활동의 발생 내용입니다. 이 제품의 공개는 시장에서의 반응과 함께 삼성전자의 DX 및 DS 부문 성장 잠재력에 영향을 미쳤을 것으로 보입니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 3월 20일 주주총회 이후 최대주주의 변동 및 주식 소유 현황이 어떻게 변화했으며, 2025년 6월 30일 기준으로 최대주주가 누구인지, 그리고 이 변동이 회사의 지배구조와 잠재적 비즈니스 리스크에 어떤 영향을 미칠 수 있는지에 대한 상세한 정보를 제공해 주세요.",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2021년 4월 29일에 기존 최대주주가 소유하던 주식을 상속받아 최대주주가 삼성생명보험㈜으로 변경되었습니다(기준일: 2025년 6월 30일). 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 조혜경이 선임되고, 김선욱 사외이사는 사임하였으며, 허은녕과 유명희 사외이사는 임기 조정을 위해 자진 사임 후 재선임되었습니다. 이러한 최대주주 변동과 주식 소유 현황의 변화는 회사의 지배구조에 영향을 미칠 수 있으며, 잠재적 비즈니스 리스크와 규제 문제에 영향을 줄 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"한국의 기업들이 '마. 합병 등에 관한 사항'을 공시할 때 어떤 잠재적 비즈니스 리스크와 규제 문제를 고려해야 하며, 이러한 공시가 기업의 재무 상태와 경영 전략에 어떤 영향을 미칠 수 있나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"공시 대상인 '마. 합병 등에 관한 사항'은 종속기업의 합병, 지분 인수, 기업명 변경 등 중요한 경영활동을 포함하며, 이러한 사항은 잠재적 비즈니스 리스크와 규제 문제를 야기할 수 있습니다. 예를 들어, 종속기업의 합병이나 지분 인수는 기업의 재무 상태에 영향을 미치고, 규제 문제는 법적 준수와 관련된 리스크를 증가시킬 수 있습니다. 또한, 이러한 공시는 기업의 경영 전략과 시장 내 신뢰도에 영향을 미칠 수 있으므로, 기업은 관련 법률과 규정을 준수하며 투명하게 공시하는 것이 중요합니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 경영활동과 관련된 중요한 사항의 발생내용 중 2021년부터 2025년까지의 주요 사건들은 무엇이며, 이러한 사건들이 회사의 성장 잠재력과 시장 점유율에 어떤 영향을 미칠 수 있나요?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"2021년에는 'Neo QLED TV' 공개, 전세계 반도체 업체 최초로 전 사업장 '탄소\/물\/폐기물 저감' 인증, 업계 최선단 14나노 EUV DDR5 D램 양산, 미국 테일러시의 신규 파운드리 라인 투자 발표가 있었습니다. 2022년에는 BESPOKE 인피니트 라인 공개, 세계 최초 3나노 GAA 파운드리 양산, 차세대 반도체 R&D단지 기공식, 1Tb 8세대 V낸드 양산이 이루어졌습니다. 2023년에는 초고화소 기술이 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시, 업계 최선단 12나노급 D램 양산, 'Galaxy Z 폴드5'와 'Galaxy Z 플립5' 공개, 현존 최대 용량 32Gb DDR5 D램 개발, 생성형 AI '삼성 가우스' 공개가 있었습니다. 2024년에는 'Galaxy S24 시리즈' 공개, 업계 최초 '9세대 V낸드' 양산, 'Galaxy Z 폴드6'와 'Galaxy Z 플립6' 공개, 브랜드가치 사상 첫 1천억 달러 기록과 5년 연속 세계 5위, 업계 최초 '24Gb GDDR7 D램' 개발이 이루어졌습니다. 2025년에는 Galaxy S25ㆍS25+ㆍS25 Ultra, S25 Edge 공개, 업계 최선단 10나노급 6세대 D램 양산, 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개, 세계최초 자발광 최고 주사율 27인치 QHD 500Hz QD-OLED 디스플레이 개발이 포함되어 있습니다. 이러한 사건들은 삼성전자의 기술력 강화와 시장 경쟁력 향상, 글로벌 브랜드 가치 증대에 기여하며, 시장 점유율 확대와 성장 잠재력을 높이는 데 중요한 역할을 할 것으로 기대됩니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"최대주주 및 그 특수관계인의 소유주식수 및 지분율은 어떻게 되나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다. 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"경영활동이 뭐야?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"경영활동은 중요한 사항의 발생과 관련된 것으로, 예를 들어 2021년 중 종속기업들이 합병되거나 2023년과 2025년에 지분 인수 등의 사건이 포함됩니다. 이는 회사의 업종 또는 주된 사업의 변화와는 별개로 발생하는 중요한 활동입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2021년에 전세계 반도체 업체 최초로 '탄소\/물\/폐기물 저감' 인증을 받은 것이 삼성전자의 경영활동에 어떤 의미를 가지며, 앞으로의 지속가능경영 전략에 어떤 영향을 미칠 것으로 예상하십니까?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"2021년에 삼성전자는 전세계 반도체 업체 최초로 '탄소\/물\/폐기물 저감' 인증을 받았습니다. 이는 경영활동과 관련된 중요한 사항의 발생으로, 회사의 지속가능경영과 환경 친화적 경영 전략에 중요한 의미를 갖습니다. 이러한 인증은 삼성전자가 환경 보호와 자원 절약에 적극적으로 노력하고 있음을 보여주며, 앞으로의 경영 전략에서도 친환경적이고 지속가능한 방향으로 나아갈 가능성을 시사합니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 선임이 뭐야?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일 주주총회에서 조혜경 사외이사가 감사위원회 위원이 되는 사외이사로 선임됩니다. 이에 따라 2021년 동일한 방식으로 감사위원회 위원이 된 김선욱 사외이사는 2024년 3월 20일에 사임 형식으로 퇴임하게 되었습니다. 또한, 2025년 3월 19일 허은녕과 유명희 사외이사는 임기 조정을 위해 자진 사임 후 주주총회에서 재선임되었습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"마. 합병 등에 관한 사항이 무엇인가요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에 합병되었으며, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics America, Inc. (SEA)에 합병되었습니다. 또한, 2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin Corporation 지분을 인수하였고, 2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다. 이 내용은 '마. 합병 등에 관한 사항'에 해당하며, 당사 및 주요 종속기업의 변화와 관련된 중요한 사항입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2025년 삼성전자의 주요 기술 개발 성과는 무엇입니까?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"2025년 삼성전자는 Galaxy S25 시리즈와 S25 Ultra, S25 Edge를 공개하였으며, 업계 최선단 6세대 D램인 10나노급 D램 양산과 강력한 CPU\/GPU\/NPU 통합 성능의 엑시노스 2500을 공개하였고, 세계 최초 자발광 최고 주사율 27인치 QHD 500Hz QD-OLED 디스플레이를 개발하였습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"최대주주 관련 사항이 뭐라고 잘못 쓰여있을까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"최대주주 관련 사항은 소유주식수 및 지분율이 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식 기준입니다. 자세한 내용은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"경영활동이 삼성전자의 성장에 어떤 영향을 미칠 수 있습니까?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"본문에서는 2021년부터 2025년까지 삼성전자의 종속기업들이 합병하거나 지분을 인수하는 등 경영활동이 이루어졌음을 언급하고 있습니다. 이러한 경영활동은 회사의 업종 또는 주된 사업의 변화는 없지만, 중요한 사항으로 간주되어 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"세계 최초 3나노 GAA 파운드리 양산이란 뭐야? 그리고 이게 왜 중요한거야?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"세계 최초 3나노 GAA 파운드리 양산은 2022년에 이루어진 중요한 경영활동으로, 반도체 업계에서 최초로 3나노 GAA 공정을 대량 생산하는 것을 의미합니다. 이는 반도체 기술의 최첨단을 보여주는 중요한 성과입니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 선임이 뭐야?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일 주주총회에서 조혜경 사외이사가 감사위원회 위원이 되는 사외이사로 선임되었고, 김선욱 사외이사는 2024년 3월 20일 사임 형식으로 퇴임하였으며, 허은녕과 유명희 사외이사는 임기조정을 위해 자진사임 후 재선임되었습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"라. 상호의 변경이 삼성전자의 성장 잠재력에 어떤 영향을 미칠까요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"2021년에는 종속기업인 Samsung Electronics Portuguesa S.A.의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었고, 2023년에는 Emerald Intermediate, Inc.의 사명이 Samsung Display America Holdings, Inc.로 변경되었습니다. 이러한 상호 변경은 회사의 구조와 브랜드 전략에 영향을 미칠 수 있으며, 시장 점유율과 신제품 출시, R&D 투자와 같은 성장 잠재력에 간접적인 영향을 줄 수 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2025년에 발생할 수 있는 잠재적 비즈니스 리스크는 무엇인가요?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"제공된 내용에는 2025년에 발생할 수 있는 구체적인 잠재적 비즈니스 리스크에 대한 정보가 포함되어 있지 않습니다. 다만, 2025년에는 Galaxy S25 시리즈와 S25 Ultra, S25 Edge의 공개, 업계 최선단 6세대 D램 양산, 강력한 CPU\/GPU\/NPU 통합 성능의 엑시노스 2500 공개, 세계 최초 자발광 최고 주사율 27인치 QHD 500Hz QD-OLED 디스플레이 개발 등 다양한 기술적 성과와 제품 출시가 예정되어 있습니다. 이러한 기술 발전과 제품 출시와 관련된 공급망, 규제, 시장 경쟁 등 잠재적 리스크를 평가하는 것이 중요할 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"최대주주 관련 사항이 어떻게 변경되었나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었으며, 2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America Holdings, Inc. (SDAH)로 변경되었습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업이란 정확하게 뭐야? 그리고 합병이나 인수와 관련해서 종속기업이 어떻게 변화하는지 좀 자세히 설명해줄 수 있어?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"마. 합병 등에 관한 사항에 따르면, 2021년 중 종속기업인 Viv Labs, Inc.는 종속기업인 Samsung Research America, Inc (SRA)에 합병되었고, Prismview, LLC는 Samsung Electronics America, Inc. (SEA)에 합병되었습니다. 또한, 2023년에는 종속기업인 Samsung Display America Holdings, Inc. (SDAH)가 eMagin Corporation의 지분을 인수하였으며, 2025년에는 지배기업이 ㈜레인보우로보틱스의 지분을 인수하였습니다. 종속기업은 이러한 합병이나 인수 등을 통해 변화하며, 자세한 내용은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)' 항목을 참고하시기 바랍니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2021년과 2022년 사이에 글로벌 반도체 산업에서 '탄소\/물\/폐기물 저감 인증'을 받은 주요 사례는 무엇이며, 이러한 인증이 기업의 지속 가능성 및 규제 준수에 어떤 영향을 미치는지 상세하게 설명해 주세요?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"2021년에는 전 세계 반도체 업체 최초로 전 사업장에서 '탄소\/물\/폐기물 저감' 인증을 받았으며, 2022년에는 세계 최초 3나노 GAA 파운드리 양산과 함께 관련 인증 사례가 나타났습니다. 이러한 인증은 기업의 지속 가능성을 높이고, 규제 준수와 환경 책임을 강화하는 데 중요한 역할을 합니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 3월 20일 주주총회 이후 최대주주의 변동 및 주식 소유 현황이 어떻게 변화하였나요?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 조혜경이 선임되었으며, 김선욱 사외이사는 2024년 3월 20일 사임하였습니다. 또한, 2025년 3월 19일 허은녕과 유명희 사외이사는 임기 조정을 위해 자진 사임 후 재선임되었습니다. 최대주주의 변동은 2021년 4월 29일 기존 최대주주가 소유하던 주식이 상속으로 인해 삼성생명보험㈜로 변경되었으며, 기준일은 2025년 6월 30일입니다. 당시 최대주주는 1,263,050,053주를 소유하며 지분율은 21.16%였습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"마. 합병 등에 관한 사항이 사업 보고서에 어떻게 영향을 미칠 수 있나요, 특히 잠재적 리스크와 규제 문제 측면에서 보면?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"본문에서는 2021년과 2023년, 2025년 중에 종속기업들이 각각 합병하거나 지분을 인수하는 내용이 언급되어 있습니다. 이러한 합병 및 지분 인수는 회사의 구조와 사업 범위에 변화를 가져올 수 있으며, 잠재적 리스크와 규제 문제를 야기할 가능성이 있습니다. 특히, 합병 과정에서 발생하는 법적, 재무적 문제와 관련 규제 준수 여부는 사업 보고서에 중요한 영향을 미칠 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2022년 뭐 중요한 일 있었어?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"2022년에는 BESPOKE 인피니트 라인 공개, 세계 최초 3나노 GAA 파운드리 양산, 차세대 반도체 R&D단지 기공식, 1Tb 8세대 V낸드 양산 등이 있었습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2021년과 2023년 사이에 삼성전자의 종속기업인 Samsung Electronics Portuguesa S.A.와 Emerald Intermediate, Inc.의 사명 변경이 각각 이루어진 것으로 나타나는데, 이러한 사명 변경이 회사의 재무 안정성이나 지분 구조에 어떤 영향을 미쳤는지 분석해 주실 수 있습니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"2021년에는 종속기업 Samsung Electronics Portuguesa S.A.의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었고, 2023년에는 Emerald Intermediate, Inc.의 사명이 Samsung Display America Holdings, Inc.로 변경되었습니다. 본 문서에서는 이러한 사명 변경이 회사의 재무 안정성이나 지분 구조에 미친 영향을 구체적으로 설명하지 않으며, 관련 내용은 제공된 맥락 내에서 확인할 수 없습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업이란 뭐야? 그리고 왜 중요한지 알려줘?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"종속기업은 2021년 중 Viv Labs, Inc.가 Samsung Research America, Inc.에 합병되고, Prismview, LLC가 Samsung Electronics America, Inc.에 합병된 것처럼, 다른 회사에 의해 지배받거나 합병된 기업을 의미합니다. 또한, 2023년에는 Samsung Display America Holdings, Inc.가 eMagin Corporation의 지분을 인수했고, 2025년에는 ㈜레인보우로보틱스의 지분을 인수하였으며, 이러한 종속기업들은 회사의 사업 구조와 경영활동에 중요한 영향을 미칩니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자 탄소물폐기물 저감 인증 뭐야?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증을 받았어요.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 선임은 어떤 의미가 있나요?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일 주주총회에서 조혜경 사외이사가 감사위원회 위원이 되는 사외이사로 선임됨에 따라, 김선욱 사외이사는 2024년 3월 20일에 사임 형식으로 퇴임하게 되었습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"라. 상호의 변경이 잠재적 비즈니스 리스크에 어떤 영향을 미칠 수 있나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"2021년에는 종속기업 Samsung Electronics Portuguesa S.A.의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었고, 2023년에는 종속기업 Emerald Intermediate, Inc.의 사명이 Samsung Display America Holdings, Inc.로 변경되었습니다. 이러한 상호 변경은 기업의 브랜드 이미지와 고객 신뢰에 영향을 미칠 수 있으며, 관련 규제 또는 법적 문제와 연관될 가능성도 고려해야 합니다. 또한, 상호 변경이 내부 조직이나 공급망에 미치는 영향을 평가하는 것도 중요합니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2023년 삼성전자 재무상태는 어떤데, 매출이랑 영업이익이랑 부채 비율이 어떻게 되는데?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"제공된 내용에는 2023년 삼성전자의 구체적인 재무상태, 매출, 영업이익, 부채 비율에 관한 정보가 포함되어 있지 않습니다. 따라서 해당 질문에 대한 정확한 답변을 드릴 수 없습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업인 Samsung Electronics Portuguesa S.A.의 현재 역할과 시장 내 위치는 무엇입니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"2021년 중에 종속기업 Samsung Electronics Portuguesa S.A. (SEP)는 Samsung Electronics Portuguesa, Unipessoal, Lda.로 사명이 변경되었으며, 이는 시장 내에서의 역할과 위치에 영향을 미쳤을 수 있습니다. 자세한 사항은 'VII. 주주에 관한 사항'과 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)' 항목을 참고하시기 바랍니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업이 뭐야?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"이 문서에서는 종속기업이 합병이나 지분 인수 등을 통해 회사의 일부로 편입된 기업을 의미하며, 예를 들어 2021년 중 Viv Labs, Inc.가 Samsung Research America, Inc.에 합병되었고, Prismview, LLC가 Samsung Electronics America, Inc.에 합병된 사례가 있습니다. 또한 2023년에는 Samsung Display America Holdings, Inc.가 eMagin Corporation 지분을 인수했고, 2025년에는 ㈜레인보우로보틱스 지분을 인수하였음을 언급하고 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"Neo QLED TV 공개는 어떤 경영활동과 관련이 있나요?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용에 따르면, 2021년에 Neo QLED TV 공개가 있었습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"최대주주의 변동 및 주식 소유 현황이 뭐야?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2021년 4월 29일에 기존 최대주주가 소유하던 주식이 상속으로 인해 최대주주가 삼성생명보험㈜으로 변동되었으며, 기준일은 2025년 6월 30일입니다. 당시 소유주식수는 1,263,050,053주이고 지분율은 21.16%입니다. 변동 원인은 변동전 최대주주의 피상속입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"소유주식수 및 지분율이 최대주주와 그 특수관계인의 합산 내역임이 어떤 의미를 가지며, 이는 의결권 행사와 어떤 관련이 있습니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다. 이는 최대주주와 그 특수관계인의 지분이 전체 지분에서 차지하는 비율을 나타내며, 의결권 행사에 영향을 미치는 중요한 지표입니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2023년 삼성전자의 주요 기술 및 제품 출시는 무엇이며, 이는 회사의 재무 안정성에 어떤 영향을 미칠 수 있습니까?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"2023년 삼성전자는 초고화소 기술이 집약된 2억 화소 이미지센서 '아이소셀 HP2'를 출시하고, 업계 최선단 12나노급 D램을 양산하며, 'Galaxy Z 폴드5'와 'Galaxy Z 플립5'를 공개하였으며, 현존 최대 용량인 32Gb DDR5 D램을 개발하였고, 생성형 AI '삼성 가우스'를 공개하였습니다. 이러한 기술 및 제품 출시는 회사의 재무 안정성에 긍정적인 영향을 미칠 수 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"소유주식수 및 지분율이 왜 중요한가요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함)을 기준으로 합니다. 이는 최대주주 관련 사항과 관련이 있으며, 당사 및 주요 종속기업의 지분 구조를 이해하는 데 중요합니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"이 문서에서 언급된 경영활동이 회사의 잠재적 비즈니스 리스크, 규제 문제 또는 공급망 문제에 어떤 영향을 미칠 수 있는지 구체적으로 설명해 주시겠습니까?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"이 문서에서는 2021년부터 2025년까지의 주요 합병 및 지분 인수와 같은 경영활동이 언급되어 있으며, 이는 회사의 사업 구조와 업종 또는 주된 사업의 변화와 관련이 있습니다. 또한, 경영활동과 관련된 중요한 사항의 발생이 언급되어 있어, 이러한 활동들이 회사의 잠재적 비즈니스 리스크, 규제 문제 또는 공급망 문제에 영향을 미칠 가능성을 시사합니다. 그러나 구체적인 영향 내용은 명시되어 있지 않으며, 문서의 내용은 주로 경영활동의 사실과 변화에 초점을 맞추고 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자가 2021년에 전 사업장에서 탄소\/물\/폐기물 저감 인증을 받은 의미는 무엇인가요?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"2021년에 삼성전자는 전 세계 반도체 업체 최초로 전 사업장에서 탄소\/물\/폐기물 저감 인증을 받았습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"임원 및 사외이사 임기와 사임 현황은 어떻게 되나요?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일에 조혜경 사외이사가 감사위원회 위원으로 선임되었으며, 김선욱 사외이사는 같은 날 사임하였습니다. 또한, 2025년 3월 19일 허은녕과 유명희 사외이사는 임기 조정을 위해 자진 사임 후 주주총회에서 재선임되었습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 최대주주 및 특수관계인의 소유주식수와 지분율이 시장 점유율이나 신제품 출시, R&D 투자에 어떤 영향을 미치는지 궁금합니다. 관련 정보는 어디에서 확인할 수 있나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다. 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2024년 삼성전자의 재무상태는 어떻게 되나요?",
+        "reference_contexts":[
+            "사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n| 2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n| 2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| 2023 |  | 초고화소 기술 집약된 2억 화소 이미지센서 '아이소셀 HP2' 출시 |  |\n|  |  | 업계 최선단 12나노급 D램 양산 |  |\n|  |  | 'Galaxy Z 폴드5', 'Galaxy Z 플립5' 공개 |  |\n|  |  | 현존 최대 용량 32Gb DDR5 D램 개발 |  |\n|  |  | 생성형 AI '삼성 가우스' 공개 |  |\n| 2024 |  | 'Galaxy S24 시리즈' 공개 |  |\n|  |  | 업계 최초 '9세대 V낸드' 양산 |  |\n|  |  | 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개 |  |\n|  |  | 브랜드가치 사상 첫 1천억 달러 기록, 5년 연속 세계 5위 |  |\n|  |  | 업계 최초 '24Gb GDDR7 D램' 개발 |  |\n| 2025 |  | Galaxy S25ㆍS25+ㆍS25 Ultra,S25 Edge 공개 |  |\n|  |  | 업계 최선단 10나노급 6세대 D램 양산 |  |\n|  |  | 강력한 CPU\/GPU\/NPU 통합 성능의 '엑시노스 2500' 공개 |  |\n|  |  | 세계최초 자발광 최고 주사율 27\"QHD 500Hz QD-OLED Display 개발 |  |"
+        ],
+        "reference":"제공된 내용에는 2024년 삼성전자의 재무상태에 대한 구체적인 정보가 포함되어 있지 않습니다. 다만, 2024년에는 'Galaxy S24 시리즈' 공개, 업계 최초 '9세대 V낸드' 양산, 'Galaxy Z 폴드6', 'Galaxy Z 플립6' 공개, 브랜드가치 사상 첫 1천억 달러 기록, 업계 최초 '24Gb GDDR7 D램' 개발 등 다양한 제품 출시와 기술 개발이 이루어진 것으로 나타나 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"소유주식수 및 지분율이 무엇인지 잘못 쓴 것 같은데, 맞나요?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며, 의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다. 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"이 문서에서 언급된 경영활동이 무엇인지 설명해 주시겠습니까?",
+        "reference_contexts":[
+            "마. 합병 등에 관한 사항\n2021년 중 종속기업 Viv Labs, Inc.는 종속기업 Samsung Research America, Inc (SRA)에\n합병되었습니다. 또한, 종속기업 Prismview, LLC는 종속기업 Samsung Electronics\nAmerica, Inc. (SEA)에 합병되었습니다.\n2023년 중 종속기업 Samsung Display America Holdings, Inc. (SDAH)는 eMagin\nCorporation 지분을 인수하였습니다.\n2025년 중 당사(지배기업)는 ㈜레인보우로보틱스 지분을 인수하였습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n바. 회사의 업종 또는 주된 사업의 변화\n공시대상기간 중 해당사항 없습니다.\n\n사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생"
+        ],
+        "reference":"이 문서에서는 2021년 중 종속기업들이 합병된 사항과 2023년 중 종속기업이 지분을 인수한 사항, 그리고 2025년 중 지배기업이 지분을 인수한 사항이 언급되어 있습니다. 또한, 회사의 업종 또는 주된 사업의 변화는 공시대상기간 동안 해당사항이 없으며, 경영활동과 관련된 중요한 사항의 발생 내용이 포함되어 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"탄소물 저감 인증 뭐야?",
+        "reference_contexts":[
+            "사. 그 밖에  경영활동과 관련된 중요한 사항의 발생내용\n(1) 경영활동과 관련된 중요한 사항의 발생\n\n| 연도 |  | 내용 |  |\n| --- | --- | --- | --- |\n|  2021 |  | 'Neo QLED TV' 공개 |  |\n|  |  | 전세계 반도체 업체 최초 전 사업장 '탄소\/물\/폐기물 저감' 인증 |  |\n|  |  | 업계 최선단 14나노 EUV DDR5 D램 양산 |  |\n|  |  | 미국 테일러市에 신규 파운드리 라인 투자 발표 |  |\n|  2022 |  | BESPOKE 인피니트 라인 공개 |  |\n|  |  | 세계 최초 3나노 GAA 파운드리 양산 |  |\n|  |  | 차세대 반도체 R&D단지 기공식 |  |\n|  |  | 1Tb 8세대 V낸드 양산 |  |\n| "
+        ],
+        "reference":"사. 그 밖에 경영활동과 관련된 중요한 사항의 발생내용에 따르면, 2021년에 전세계 반도체 업체 최초로 전 사업장에서 탄소\/물\/폐기물 저감 인증을 받았습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"임원 및 사외이사 임기 및 사임 현황이 뭐야?",
+        "reference_contexts":[
+            "※ 2024년 3월 20일 주주총회에서 감사위원회 위원이 되는 사외이사 1인으로 조혜경 사외이사가 선\n임됨에 따라 2021년 동일한\n방식으로 감사위원회 위원이 되는 사외이사로 선임된 김선욱 사외이사는 2024년 3월 20일 사임\n\n형식으로 퇴임하게 되었습니다.\n※ 2025년 3월19일 허은녕, 유명희 사외이사는 임기조정을 위하여 당일 자진사임 후 주주총회에서\n재선임되었습니다.\n\n다. 최대주주의 변동\n2021년 4월 29일에 기존 최대주주가 소유하던 당사 주식의 상속으로 인해 최대주주가 삼성\n생명보험㈜으로 변동되었습니다.\n(기준일 : 2025년 6월 30일 ) (단위 : 주, %)\n\n| 변동일 |  | 최대주주명 |  | 소유주식수 |  | 지분율 |  | 변동원인 |  | 비 고 |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| 2021.04.29 |  | 삼성생명보험 ㈜ |  | 1,263,050,05 3 |  | 21.16% |  | 변동전 최대주주의 피상속 |  | - |  |"
+        ],
+        "reference":"2024년 3월 20일에 조혜경 사외이사가 감사위원회 위원으로 선임되었고, 김선욱 사외이사는 같은 방식으로 선임된 후 사임했어요. 또한, 2025년 3월 19일 허은녕과 유명희 사외이사는 임기 조정을 위해 자진 사임 후 재선임됐어요.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"종속기업 Samsung Electronics Portuguesa S.A.의 변경 사항이 잠재적 리스크에 어떤 영향을 미칠 수 있습니까?",
+        "reference_contexts":[
+            "※ 소유주식수 및 지분율은 최대주주 및 그 특수관계인의 합산 내역이며,\n의결권 있는 주식(기타 법률에 의해 의결권 행사가 제한된 주식도 포함) 기준입니다.\n☞ 최대주주 관련 자세한 사항은 'VII. 주주에 관한 사항'을 참고하시기 바랍니다.\n 라. 상호의 변경\n2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP) 사명이 Samsung\nElectronics Portuguesa, Unipessoal, Lda. (SEP)로 변경되었습니다.\n2023년 중에는 종속기업 Emerald Intermediate, Inc. 사명이 Samsung Display America\nHoldings, Inc. (SDAH)로 변경되었습니다.\n☞ 당사(지배기업) 및 주요 종속기업 기준으로 작성하였습니다.\n주요 종속기업에 대한 사항은 'XII. 상세표'의 '1. 연결대상 종속회사 현황(상세)'\n항목을 참고하시기 바랍니다.\n\n"
+        ],
+        "reference":"본문에 따르면, 2021년 중에는 종속기업 Samsung Electronics Portuguesa S.A. (SEP)의 사명이 Samsung Electronics Portuguesa, Unipessoal, Lda.로 변경되었으며, 2023년 중에는 Emerald Intermediate, Inc.가 Samsung Display America Holdings, Inc.로 변경되었습니다. 이러한 사명 변경은 기업 구조나 운영에 영향을 미칠 수 있어 잠재적 리스크로 고려될 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    }
+]

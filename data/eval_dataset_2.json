@@ -1,0 +1,288 @@
+[
+    {
+        "user_input":"삼성전자의 홈페이지 주소는 무엇입니까?",
+        "reference_contexts":[
+            "분 기 보 고 서\n(제 57 기)\n2025.01.01 부터\n사업연도\n2025.03.31 까지\n금융위원회\n한국거래소 귀중 2025년 5월 15일\n제출대상법인 유형 : 주권상장법인\n면제사유발생 : 해당사항 없음\n회 사 명 : 삼성전자주식회사\n대 표 이 사 : 전 영 현\n본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동)\n(전 화) 031-200-1114\n(홈페이지) http:\/\/www.samsung.com\/sec\n작 성 책 임 자 : (직 책) 재경팀장 (성 명) 김 동 욱\n(전 화) 031-277-7218"
+        ],
+        "reference":"삼성전자의 홈페이지 주소는 http:\/\/www.samsung.com\/sec입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"회사개요에 포함되지 않는 내용들이 무엇인지 상세하게 설명해 주실 수 있나요?",
+        "reference_contexts":[
+            "I. 회사의 개요\n1. 회사의 개요\n회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n2. 회사의 연혁\n회사의 연혁은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n3. 자본금 변동사항\n자본금 변동사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n4. 주식의 총수 등\n주식의 총수 등은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n5. 정관에 관한 사항\n정관에 관한 사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.(반기\nㆍ사업보고서에 기재 예정)"
+        ],
+        "reference":"회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않으며, 구체적으로 회사의 연혁, 자본금 변동사항, 주식의 총수 등, 정관에 관한 사항은 반기ㆍ사업보고서에 기재될 예정입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"이 사업의 내용이 뭐야? 삼성전자가 하는 일들, 뭐하는지 자세히 말해줄래?",
+        "reference_contexts":[
+            "II. 사업의 내용\n1. 사업의 개요\n당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개\n지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.\n사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고,\n세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은\nDS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하\n고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.\n또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드\n바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다.\n☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사\n업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다.\n지역별로 보면, 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이\n사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되\n어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점\n판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운\n송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"II. 사업의 내용은 당사가 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성된 글로벌 전자 기업임을 설명합니다. 사업별로는 Set 사업이 DX 부문에서 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS 부문에서 DRAM, NAND Flash, 모바일AP 제품을 생산ㆍ판매하고, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏, 카오디오, 포터블\/사운드바 스피커 등 전장제품과 소비자오디오 제품을 생산ㆍ판매하는 내용을 포함하고 있습니다. 또한, 국내에서는 DX 부문과 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 있으며, 주요 기업으로는 삼성디스플레이, 삼성전자판매, 삼성전자서비스, 삼성전자로지텍 등이 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"글로벌 전자 기업이란 뭐야?",
+        "reference_contexts":[
+            "1. 사업의 개요 당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성 된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하 고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다. ☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사 업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다. 지역별로 보면, 국내에서는"
+        ],
+        "reference":"글로벌 전자 기업은 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성된 기업입니다. 사업별로는 Set 사업이 DX 부문에서 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS 부문에서 DRAM, NAND Flash, 모바일AP 등을 생산ㆍ판매하고, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏, 카오디오, 포터블\/사운드 바 스피커 등 전장제품과 소비자오디오 제품을 생산ㆍ판매하는 기업입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 DX 부문 및 DS 부문은 어떤 사업을 운영하며, 어떤 역할을 담당하나요?",
+        "reference_contexts":[
+            "II. 사업의 내용\n DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되 어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점 판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운 송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성전자의 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜, 국내 대리점 판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"해외 각 지역별로 운영되고 있는 비상장 종속기업들이 어떤 역할을 담당하며, 이들 기업이 사업 리스크 평가에 어떤 영향을 미칠 수 있는지 구체적으로 설명해 주실 수 있나요?",
+        "reference_contexts":[
+            "해외(미주, 유럽ㆍCIS, 중동ㆍ아프리카, 아시아 등지)에서는 생산, 판매, 연구활동 등을 담당 하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA(New Jersey, USA), TV 생산을 담당하는 SII(California, USA), 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI(California, USA), 반도체 생산을 담당하는 SAS(Texas, USA), Set 제품 복합 생산법인 SEDA(Brazil), 전장부품사업 등을 담당하는 Harman(Connecticut, USA) 등을 포함하여 총 48개의 판매ㆍ생산 등을 담당하는 법인이 있습니다. 유럽ㆍCIS에는 SEUK(UK), SEG(Germany), SEF(France), SEI(Italy) 등 Set 제품 판매법인 과 SEH(Hungary) 등 TV 생산법인, 가전제품 생산법인 SEPM(Poland) 등을 포함하여 총 68개의 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE(UAE), SSA(South Africa) 등 Set 제품 판매법인과 SEEG (Egypt), SSAP(South Africa) 등 TV 생산법인을 포함한 총 21개 법인이 운영되고 있습니다. 아시아(중국 제외)에는 SESP(Singapore), SEAU(Australia), SEPCO(Philippines), SME(Malaysia) 등 판매법인과 스마트폰 등 생산법인 SEVㆍSEVT(Vietnam), TV 등 생산법 인 SEHC(Vietnam), 디스플레이 패널 생산법인 SDV(Vietnam), 복합 생산법인 SIEL(India) 등을 포함한"
+        ],
+        "reference":"해외에서는 생산, 판매, 연구활동 등을 담당하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA, TV 생산을 담당하는 SII, 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI, 반도체 생산을 담당하는 SAS, 복합 생산법인 SEDA, 전장부품사업 등을 담당하는 Harman 등이 있으며, 총 48개의 법인이 있습니다. 유럽ㆍCIS에는 Set 제품 판매법인인 SEUK, SEG, SEF, SEI, TV 생산법인인 SEH, 가전제품 생산법인인 SEPM 등이 포함되어 있으며, 총 68개 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE, SSA, SEEG, SSAP 등 판매 및 생산 법인들이 있으며, 총 21개 법인이 있습니다. 아시아(중국 제외)에는 SESP, SEAU, SEPCO, SME 등 판매법인과 SEV, SEVT, SEHC, SDV, SIEL 등 생산법인들이 포함되어 있습니다. 이러한 비상장 종속기업들은 각 지역별 사업 운영에 중요한 역할을 담당하며, 이들의 운영상 문제나 규제 변화는 전체 사업 리스크 평가에 영향을 미칠 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"2025.03.31 까지 사업연도는 언제 끝나나요?",
+        "reference_contexts":[
+            "분 기 보 고 서\n(제 57 기)\n2025.01.01 부터\n사업연도\n2025.03.31 까지\n금융위원회\n한국거래소 귀중 2025년 5월 15일\n제출대상법인 유형 : 주권상장법인\n면제사유발생 : 해당사항 없음\n회 사 명 : 삼성전자주식회사\n대 표 이 사 : 전 영 현\n본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동)\n(전 화) 031-200-1114\n(홈페이지) http:\/\/www.samsung.com\/sec\n작 성 책 임 자 : (직 책) 재경팀장 (성 명) 김 동 욱\n(전 화) 031-277-7218"
+        ],
+        "reference":"사업연도는 2025년 1월 1일부터 2025년 3월 31일까지입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"회사개요가 뭐야? 기업공시서식에 왜 안 적혀있어?",
+        "reference_contexts":[
+            "I. 회사의 개요\n1. 회사의 개요\n회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n2. 회사의 연혁\n회사의 연혁은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n3. 자본금 변동사항\n자본금 변동사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n4. 주식의 총수 등\n주식의 총수 등은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n5. 정관에 관한 사항\n정관에 관한 사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.(반기\nㆍ사업보고서에 기재 예정)"
+        ],
+        "reference":"회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않으며, 반기ㆍ사업보고서에 기재될 예정입니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 II. 사업의 내용은 어떤 구조로 이루어져 있나요?",
+        "reference_contexts":[
+            "II. 사업의 내용\n1. 사업의 개요\n당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개\n지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.\n사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고,\n세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은\nDS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하\n고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.\n또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드\n바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다.\n☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사\n업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다.\n지역별로 보면, 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이\n사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되\n어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점\n판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운\n송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성전자는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성된 글로벌 전자 기업입니다. 사업별로는 Set 사업이 DX 부문에서 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS 부문에서 DRAM, NAND Flash, 모바일AP 등을 생산ㆍ판매하고, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏, 카오디오, 포터블\/사운드바 스피커 등 전장제품과 소비자오디오 제품을 생산ㆍ판매하고 있습니다. 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 있으며, 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되어 있고, 국내 종속기업으로는 삼성디스플레이㈜, 삼성전자판매㈜, 삼성전자서비스㈜, 삼성전자로지텍㈜ 등이 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"글로벌 전자 기업이 직면할 수 있는 잠재적 비즈니스 리스크는 무엇인가요?",
+        "reference_contexts":[
+            "1. 사업의 개요 당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성 된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하 고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다. ☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사 업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다. 지역별로 보면, 국내에서는"
+        ],
+        "reference":"이 글로벌 전자 기업은 본사를 중심으로 한국과 해외 여러 지역에서 생산ㆍ판매 법인과 종속기업으로 구성되어 있으며, 사업별로 다양한 제품을 생산ㆍ판매하고 있습니다. 이러한 구조와 사업 특성상, 잠재적 비즈니스 리스크에는 규제 문제, 공급망 문제, 시장 경쟁력 저하 등이 포함될 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성디스플레이㈜는 어떤 역할을 담당하며, 삼성전자의 사업 내용에서 어떤 위치를 차지하고 있나요?",
+        "reference_contexts":[
+            "II. 사업의 내용\n DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되 어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점 판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운 송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성디스플레이㈜는 디스플레이 패널을 생산하는 국내 종속기업으로, 본사의 사업 운영에 중요한 역할을 담당하고 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"해외 각 지역별로 생산, 판매, 연구활동을 담당하는 비상장 종속기업들이 어떤 역할을 수행하며, 이들 기업이 직면할 수 있는 잠재적 비즈니스 리스크와 규제 문제는 무엇일까요?",
+        "reference_contexts":[
+            "해외(미주, 유럽ㆍCIS, 중동ㆍ아프리카, 아시아 등지)에서는 생산, 판매, 연구활동 등을 담당 하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA(New Jersey, USA), TV 생산을 담당하는 SII(California, USA), 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI(California, USA), 반도체 생산을 담당하는 SAS(Texas, USA), Set 제품 복합 생산법인 SEDA(Brazil), 전장부품사업 등을 담당하는 Harman(Connecticut, USA) 등을 포함하여 총 48개의 판매ㆍ생산 등을 담당하는 법인이 있습니다. 유럽ㆍCIS에는 SEUK(UK), SEG(Germany), SEF(France), SEI(Italy) 등 Set 제품 판매법인 과 SEH(Hungary) 등 TV 생산법인, 가전제품 생산법인 SEPM(Poland) 등을 포함하여 총 68개의 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE(UAE), SSA(South Africa) 등 Set 제품 판매법인과 SEEG (Egypt), SSAP(South Africa) 등 TV 생산법인을 포함한 총 21개 법인이 운영되고 있습니다. 아시아(중국 제외)에는 SESP(Singapore), SEAU(Australia), SEPCO(Philippines), SME(Malaysia) 등 판매법인과 스마트폰 등 생산법인 SEVㆍSEVT(Vietnam), TV 등 생산법 인 SEHC(Vietnam), 디스플레이 패널 생산법인 SDV(Vietnam), 복합 생산법인 SIEL(India) 등을 포함한"
+        ],
+        "reference":"해외(미주, 유럽ㆍCIS, 중동ㆍ아프리카, 아시아 등지)에서는 생산, 판매, 연구활동 등을 담당하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA(New Jersey, USA), TV 생산을 담당하는 SII(California, USA), 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI(California, USA), 반도체 생산을 담당하는 SAS(Texas, USA), Set 제품 복합 생산법인 SEDA(Brazil), 전장부품사업 등을 담당하는 Harman(Connecticut, USA) 등이 있으며, 총 48개의 법인이 판매ㆍ생산 등을 담당하고 있습니다. 유럽ㆍCIS에는 SEUK(UK), SEG(Germany), SEF(France), SEI(Italy) 등 Set 제품 판매법인과 SEH(Hungary), SEPM(Poland) 등 TV 생산법인, 가전제품 생산법인들이 포함되어 있으며, 총 68개의 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE(UAE), SSA(South Africa) 등 판매법인과 SEEG(Egypt), SSAP(South Africa) 등 TV 생산법인을 포함하여 21개 법인이 있습니다. 아시아(중국 제외)에는 SESP(Singapore), SEAU(Australia), SEPCO(Philippines), SME(Malaysia) 등 판매법인과 SEVㆍSEVT(Vietnam), SEHC(Vietnam), SDV(Vietnam), SIEL(India) 등 생산법인들이 포함되어 있습니다. 이러한 기업들이 직면할 수 있는 잠재적 비즈니스 리스크와 규제 문제는 각 지역별 법률, 무역 규제, 환율 변동, 공급망 중단, 현지 규제 강화 등 다양한 요인에 의해 영향을 받을 수 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자주식회사의 공식 홈페이지인 http:\/\/www.samsung.com\/sec 가 사업 보고서에 언급되었는데, 이 주소가 정확한지 아니면 오타가 포함되어 있나요?",
+        "reference_contexts":[
+            "분 기 보 고 서\n(제 57 기)\n2025.01.01 부터\n사업연도\n2025.03.31 까지\n금융위원회\n한국거래소 귀중 2025년 5월 15일\n제출대상법인 유형 : 주권상장법인\n면제사유발생 : 해당사항 없음\n회 사 명 : 삼성전자주식회사\n대 표 이 사 : 전 영 현\n본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동)\n(전 화) 031-200-1114\n(홈페이지) http:\/\/www.samsung.com\/sec\n작 성 책 임 자 : (직 책) 재경팀장 (성 명) 김 동 욱\n(전 화) 031-277-7218"
+        ],
+        "reference":"제공된 문서에는 (홈페이지) http:\/\/www.samsung.com\/sec 가 언급되어 있으며, 이 주소가 정확한지 여부에 대한 정보는 포함되어 있지 않습니다. 따라서, 주소의 정확성 여부는 문서 내에서 확인할 수 없습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"회사개요는 무엇인가요?",
+        "reference_contexts":[
+            "I. 회사의 개요\n1. 회사의 개요\n회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n2. 회사의 연혁\n회사의 연혁은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n3. 자본금 변동사항\n자본금 변동사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n4. 주식의 총수 등\n주식의 총수 등은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n5. 정관에 관한 사항\n정관에 관한 사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.(반기\nㆍ사업보고서에 기재 예정)"
+        ],
+        "reference":"회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않으며, 반기ㆍ사업보고서에 기재될 예정입니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 사업의 개요에 대해 자세히 설명해 주실 수 있나요, 특히 글로벌 사업 구조와 각 부문별 주요 제품 및 생산ㆍ판매 현황에 관한 정보를 포함해서요?",
+        "reference_contexts":[
+            "II. 사업의 내용\n1. 사업의 개요\n당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개\n지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.\n사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고,\n세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은\nDS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하\n고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.\n또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드\n바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다.\n☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사\n업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다.\n지역별로 보면, 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이\n사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되\n어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점\n판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운\n송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성전자는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고 있습니다. 또한, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드바 스피커 등 소비자오디오 제품을 생산ㆍ판매하고 있습니다. 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 있으며, 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되어 있고, 국내 종속기업으로는 디스플레이 패널을 생산하는 삼성디스플레이㈜, 국내 대리점 판매를 담당하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운송을 담당하는 삼성전자로지텍㈜ 등이 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"사업별로 보면이란게 뭐야? 왜 중요한거야?",
+        "reference_contexts":[
+            "1. 사업의 개요 당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성 된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하 고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다. ☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사 업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다. 지역별로 보면, 국내에서는"
+        ],
+        "reference":"사업별로 보면은, 본문에서 각 사업 부문이 어떤 제품을 생산하고 판매하는지 설명하는 부분입니다. 예를 들어, Set 사업은 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DRAM, NAND Flash, 모바일AP, OLED 패널 등을 생산ㆍ판매하는 내용이 포함되어 있습니다. 이처럼 사업별로 보면은 각 부문이 어떤 역할을 하는지 이해하는 데 중요한 개념입니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성디스플레이㈜이 뭐하는 회사야? 왜 중요한 거야?",
+        "reference_contexts":[
+            "II. 사업의 내용\n DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되 어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점 판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운 송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성디스플레이㈜는 디스플레이 패널을 생산하는 국내 종속기업입니다. 이 회사는 삼성전자의 사업 내용 중 디스플레이 관련 부분을 담당하고 있으며, 시장에서 중요한 역할을 하고 있습니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"비상장 종속기업이란 뭐야?",
+        "reference_contexts":[
+            "해외(미주, 유럽ㆍCIS, 중동ㆍ아프리카, 아시아 등지)에서는 생산, 판매, 연구활동 등을 담당 하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA(New Jersey, USA), TV 생산을 담당하는 SII(California, USA), 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI(California, USA), 반도체 생산을 담당하는 SAS(Texas, USA), Set 제품 복합 생산법인 SEDA(Brazil), 전장부품사업 등을 담당하는 Harman(Connecticut, USA) 등을 포함하여 총 48개의 판매ㆍ생산 등을 담당하는 법인이 있습니다. 유럽ㆍCIS에는 SEUK(UK), SEG(Germany), SEF(France), SEI(Italy) 등 Set 제품 판매법인 과 SEH(Hungary) 등 TV 생산법인, 가전제품 생산법인 SEPM(Poland) 등을 포함하여 총 68개의 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE(UAE), SSA(South Africa) 등 Set 제품 판매법인과 SEEG (Egypt), SSAP(South Africa) 등 TV 생산법인을 포함한 총 21개 법인이 운영되고 있습니다. 아시아(중국 제외)에는 SESP(Singapore), SEAU(Australia), SEPCO(Philippines), SME(Malaysia) 등 판매법인과 스마트폰 등 생산법인 SEVㆍSEVT(Vietnam), TV 등 생산법 인 SEHC(Vietnam), 디스플레이 패널 생산법인 SDV(Vietnam), 복합 생산법인 SIEL(India) 등을 포함한"
+        ],
+        "reference":"해외에서는 생산, 판매, 연구활동 등을 담당하는 198개의 비상장 종속기업이 운영되고 있으며, 이들은 각각의 지역에서 다양한 제품의 판매와 생산을 담당하는 법인들입니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"MISSPELLED",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동) 이라는 주소가 삼성전자의 본사 위치를 정확하게 나타내는지요?",
+        "reference_contexts":[
+            "분 기 보 고 서\n(제 57 기)\n2025.01.01 부터\n사업연도\n2025.03.31 까지\n금융위원회\n한국거래소 귀중 2025년 5월 15일\n제출대상법인 유형 : 주권상장법인\n면제사유발생 : 해당사항 없음\n회 사 명 : 삼성전자주식회사\n대 표 이 사 : 전 영 현\n본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동)\n(전 화) 031-200-1114\n(홈페이지) http:\/\/www.samsung.com\/sec\n작 성 책 임 자 : (직 책) 재경팀장 (성 명) 김 동 욱\n(전 화) 031-277-7218"
+        ],
+        "reference":"네, 제공된 자료에 따르면 본 점 소 재 지는 경기도 수원시 영통구 삼성로 129(매탄동)으로 명시되어 있으며, 이는 삼성전자의 본사 위치를 나타내는 주소입니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"회사개요는 무엇을 포함하지 않나요?",
+        "reference_contexts":[
+            "I. 회사의 개요\n1. 회사의 개요\n회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n2. 회사의 연혁\n회사의 연혁은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n3. 자본금 변동사항\n자본금 변동사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(사업보고서 등에 기재 예정)\n4. 주식의 총수 등\n주식의 총수 등은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.\n(반기ㆍ사업보고서에 기재 예정)\n5. 정관에 관한 사항\n정관에 관한 사항은 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않습니다.(반기\nㆍ사업보고서에 기재 예정)"
+        ],
+        "reference":"회사의 개요는 기업공시서식 작성기준에 따라 분기보고서에 기재하지 않으며, 연혁, 자본금 변동사항, 주식의 총수 등, 정관에 관한 사항도 포함하지 않습니다. 이 내용들은 반기보고서 또는 사업보고서에 기재될 예정입니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"이거 사업의 개요가 뭐야?",
+        "reference_contexts":[
+            "II. 사업의 내용\n1. 사업의 개요\n당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개\n지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성\n된 글로벌 전자 기업입니다.\n사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고,\n세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은\nDS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하\n고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다.\n또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드\n바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다.\n☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사\n업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다.\n지역별로 보면, 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이\n사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되\n어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점\n판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운\n송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"사업의 개요는, 본사를 중심으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성된 글로벌 전자 기업입니다. 사업별로는 Set 사업이 DX 부문에서 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS 부문에서 DRAM, NAND Flash, 모바일AP 등을 생산ㆍ판매하고, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏, 카오디오, 포터블\/사운드바 스피커 등 전장제품과 소비자오디오 제품을 생산ㆍ판매하고 있습니다. 국내에서는 DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 있으며, 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되어 있고, 국내 종속기업으로는 삼성디스플레이㈜, 삼성전자판매㈜, 삼성전자서비스㈜, 삼성전자로지텍㈜ 등이 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"사업별로 보면, 삼성전자의 각 사업 부문이 어떤 제품과 서비스를 생산 및 판매하는지 구체적으로 설명해 주실 수 있습니까?",
+        "reference_contexts":[
+            "1. 사업의 개요 당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성 된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하 고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다. ☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사 업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다. 지역별로 보면, 국내에서는"
+        ],
+        "reference":"사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"PERFECT_GRAMMAR",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성디스플레이㈜ 뭐야?",
+        "reference_contexts":[
+            "II. 사업의 내용\n DX 부문 및 DS 부문 등을 총괄하는 본사와 32개의 종속기업이 사업을 운영하고 있습니다. 본사는 수원, 구미, 광주, 기흥, 화성, 평택사업장 등으로 구성되 어 있으며, 국내 종속기업은 디스플레이 패널을 생산하는 삼성디스플레이㈜와 국내 대리점 판매를 전담하는 삼성전자판매㈜, 제품 수리 서비스를 담당하는 삼성전자서비스㈜, 제품 운 송을 담당하는 삼성전자로지텍㈜ 등으로 구성되어 있습니다."
+        ],
+        "reference":"삼성디스플레이㈜는 디스플레이 패널을 생산하는 국내 종속기업입니다.",
+        "persona_name":"Tech Investor",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"생산 판매 연구활동 뭐임?",
+        "reference_contexts":[
+            "해외(미주, 유럽ㆍCIS, 중동ㆍ아프리카, 아시아 등지)에서는 생산, 판매, 연구활동 등을 담당 하는 198개의 비상장 종속기업이 운영되고 있습니다. 미주에는 TV, 스마트폰 등 Set제품의 미국판매를 담당하는 SEA(New Jersey, USA), TV 생산을 담당하는 SII(California, USA), 반도체ㆍ디스플레이 패널 판매를 담당하는 SSI(California, USA), 반도체 생산을 담당하는 SAS(Texas, USA), Set 제품 복합 생산법인 SEDA(Brazil), 전장부품사업 등을 담당하는 Harman(Connecticut, USA) 등을 포함하여 총 48개의 판매ㆍ생산 등을 담당하는 법인이 있습니다. 유럽ㆍCIS에는 SEUK(UK), SEG(Germany), SEF(France), SEI(Italy) 등 Set 제품 판매법인 과 SEH(Hungary) 등 TV 생산법인, 가전제품 생산법인 SEPM(Poland) 등을 포함하여 총 68개의 법인이 운영되고 있습니다. 중동ㆍ아프리카에는 SGE(UAE), SSA(South Africa) 등 Set 제품 판매법인과 SEEG (Egypt), SSAP(South Africa) 등 TV 생산법인을 포함한 총 21개 법인이 운영되고 있습니다. 아시아(중국 제외)에는 SESP(Singapore), SEAU(Australia), SEPCO(Philippines), SME(Malaysia) 등 판매법인과 스마트폰 등 생산법인 SEVㆍSEVT(Vietnam), TV 등 생산법 인 SEHC(Vietnam), 디스플레이 패널 생산법인 SDV(Vietnam), 복합 생산법인 SIEL(India) 등을 포함한"
+        ],
+        "reference":"해외에서는 생산, 판매, 연구활동 등을 담당하는 198개의 비상장 종속기업이 운영되고 있으며, 각 지역별로 다양한 법인들이 해당 활동을 수행하고 있습니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"POOR_GRAMMAR",
+        "query_length":"SHORT",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"삼성전자의 재무 보고서에서 '(전 화) 031-277-7218' 번호가 어떤 역할을 하며, 이 번호와 관련된 중요한 정보는 무엇인가요?",
+        "reference_contexts":[
+            "분 기 보 고 서\n(제 57 기)\n2025.01.01 부터\n사업연도\n2025.03.31 까지\n금융위원회\n한국거래소 귀중 2025년 5월 15일\n제출대상법인 유형 : 주권상장법인\n면제사유발생 : 해당사항 없음\n회 사 명 : 삼성전자주식회사\n대 표 이 사 : 전 영 현\n본 점 소 재 지 : 경기도 수원시 영통구 삼성로 129(매탄동)\n(전 화) 031-200-1114\n(홈페이지) http:\/\/www.samsung.com\/sec\n작 성 책 임 자 : (직 책) 재경팀장 (성 명) 김 동 욱\n(전 화) 031-277-7218"
+        ],
+        "reference":"해당 번호 '(전 화) 031-277-7218'은 삼성전자의 재무 보고서에 기재된 전화번호로, 재경팀장 김 동 욱의 연락처입니다. 이는 삼성전자의 공식 연락처로서, 관련 문의나 연락을 위해 사용됩니다.",
+        "persona_name":"Financial Analyst",
+        "query_style":"WEB_SEARCH_LIKE",
+        "query_length":"LONG",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    },
+    {
+        "user_input":"사업별로 보면이란게 뭐야?",
+        "reference_contexts":[
+            "1. 사업의 개요 당사는 본사를 거점으로 한국과 DX 부문 산하 해외 9개 지역총괄 및 DS 부문 산하 해외 5개 지역총괄의 생산ㆍ판매법인, SDC 및 Harman 산하 종속기업 등 230개의 종속기업으로 구성 된 글로벌 전자 기업입니다. 사업별로 보면, Set 사업은 DX(Device eXperience) 부문이 TV를 비롯하여 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하며, 부품 사업은 DS(Device Solutions) 부문에서 DRAM, NAND Flash, 모바일AP 등의 제품을 생산ㆍ판매하 고, SDC가 스마트폰용 OLED 패널 등을 생산ㆍ판매하고 있습니다. 또한, Harman에서는 디지털 콕핏(Digital Cockpit), 카오디오 등 전장제품과 포터블\/사운드 바 스피커 등 소비자오디오 제품 등을 생산ㆍ판매하고 있습니다. ☞ 부문별 사업에 관한 자세한 사항은 '7. 기타 참고사항'의 '다. 사업부문별 현황'과 '라. 사 업부문별 요약 재무 현황' 항목을 참고하시기 바랍니다. 지역별로 보면, 국내에서는"
+        ],
+        "reference":"사업별로 보면은, Set 사업은 DX 부문이 TV, 모니터, 냉장고, 세탁기, 에어컨, 스마트폰, 네트워크시스템, PC 등을 생산ㆍ판매하는 것을 의미하며, 부품 사업은 DS 부문에서 DRAM, NAND Flash, 모바일AP 제품을 생산ㆍ판매하고, SDC는 스마트폰용 OLED 패널 등을 생산ㆍ판매하며, Harman은 디지털 콕핏, 카오디오, 포터블\/사운드 바 스피커 등 전장제품과 소비자오디오 제품을 생산ㆍ판매하는 것을 가리킵니다.",
+        "persona_name":"Risk Manager",
+        "query_style":"MISSPELLED",
+        "query_length":"MEDIUM",
+        "synthesizer_name":"single_hop_specific_query_synthesizer"
+    }
+]
