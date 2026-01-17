@@ -16,8 +16,8 @@ graph TD
     KG -->|Leiden Algorithm| COMM[Communities]
     COMM -->|Map-Reduce Summarization| SUM[Community Summaries]
     
-    Q[User Query] -->|Keyword/Entity Match| LOCAL[Local Context\n(Neighbors)]
-    Q -->|Broad Context| GLOBAL[Global Context\n(Summaries)]
+    Q[User Query] -->|Keyword/Entity Match| LOCAL[Local Context]
+    Q -->|Broad Context| GLOBAL[Global Context]
     
     LOCAL --> HYBRID[Hybrid Context]
     GLOBAL --> HYBRID
