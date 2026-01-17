@@ -94,7 +94,7 @@ python -m src.graph_rag.test_retrieval
 
 # Google Gemini 사용 (Large Context)
 python -m src.graph_rag.test_retrieval google
-
+```
 
 ## 📊 Performance Benchmark
 
