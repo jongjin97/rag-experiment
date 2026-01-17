@@ -12,28 +12,28 @@ LightRAG는 **Indexing(인덱싱)**과 **Dual-Level Retrieval(이중 검색)** �
 
 ```mermaid
 graph TD
-    DOC[Document Chunks] -->|LLM Extraction| GEXF[GEXF Graph File]
+    DOC["Document Chunks"] -->|"LLM Extraction"| GEXF["GEXF Graph File"]
     
     subgraph Indexing Layer
-        GEXF -->|Node Embedding| EV[Entity Vector Store]
-        GEXF -->|Edge Embedding| RV[Relation Vector Store]
-        DOC -->|Text Embedding| CV[Chunk Vector Store]
+        GEXF -->|"Node Embedding"| EV["Entity Vector Store"]
+        GEXF -->|"Edge Embedding"| RV["Relation Vector Store"]
+        DOC -->|"Text Embedding"| CV["Chunk Vector Store"]
     end
     
-    Q[User Query] -->|Vector Search| E_RES[Retrieved Entities]
-    Q -->|Vector Search| R_RES[Retrieved Relations]
-    Q -->|Vector Search| C_RES[Retrieved Chunks]
+    Q["User Query"] -->|"Vector Search"| E_RES["Retrieved Entities"]
+    Q -->|"Vector Search"| R_RES["Retrieved Relations"]
+    Q -->|"Vector Search"| C_RES["Retrieved Chunks"]
     
     subgraph Dual-Level Retrieval
-        E_RES -->|1-Hop Traversal| LOW[Low-Level Context\n(Specific Facts)]
-        R_RES --> HIGH[High-Level Context\n(Broader Relations)]
+        E_RES -->|"1-Hop Traversal"| LOW["Low-Level Context\n(Specific Facts)"]
+        R_RES --> HIGH["High-Level Context\n(Broader Relations)"]
     end
     
-    LOW --> HYBRID[Hybrid Context]
+    LOW --> HYBRID["Hybrid Context"]
     HIGH --> HYBRID
     C_RES --> HYBRID
     
-    HYBRID -->|Generation| ANS[Final Answer]
+    HYBRID -->|"Generation"| ANS["Final Answer"]
 ```
 
 ---
