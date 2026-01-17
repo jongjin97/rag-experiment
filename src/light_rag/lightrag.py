@@ -16,9 +16,9 @@ class LightRAG:
     def __init__(self):
         # 1. Initialize Storages
         self.graph_storage = GraphStorage()
-        self.entity_vector_storage = VectorStorage(collection_name="lightrag_entities")
-        self.relation_vector_storage = VectorStorage(collection_name="lightrag_relations")
-        self.chunk_vector_storage = VectorStorage(collection_name="lightrag_chunks")
+        self.entity_vector_storage = VectorStorage(collection_name="light_rag_entities")
+        self.relation_vector_storage = VectorStorage(collection_name="light_rag_relations")
+        self.chunk_vector_storage = VectorStorage(collection_name="light_rag_chunks")
         
         # 2. Initialize Retriever
         self.retriever = LightRAGRetriever(

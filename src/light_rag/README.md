@@ -106,3 +106,15 @@ python src/light_rag/verify_system.py
 # RAGAS를 사용한 정량적 평가 (데이터셋: data/eval_dataset.json)
 python src/light_rag/evaluate_ragas.py
 ```
+
+## 📊 Performance Benchmark
+
+자체 구축한 평가 데이터셋(QA Testset, 20 samples)을 사용하여 **Ragas** 프레임워크로 측정한 정량적 성능 지표입니다.
+
+| Mode | Faithfulness | Answer Relevancy | Description |
+| :--- | :---: | :---: | :--- |
+| **LightRAG (Hybrid)** | **0.6641** | **0.7454** | Entity + Relation + Chunk 정보를 모두 활용한 하이브리드 검색 결과 |
+
+> **💡 Insight**:
+> - **Answer Relevancy (0.7454)**: 질문의 의도에 부합하는 적절한 답변을 생성하고 있음을 보여줍니다. 이는 High-Level(Global) 검색이 문맥 파악에 기여한 것으로 보입니다.
+> - **Faithfulness (0.6641)**: 생성된 답변이 검색된 문서(Context)에 기반하고 있음을 나타냅니다. 일부 복잡한 추론이 필요한 질문에서 검색 범위의 한계나 LLM의 환각(Hallucination) 가능성을 시사하므로, 추후 **Chunk Retrieval** 비중을 조절하거나 **Graph 탐색 깊이(Hop)**를 최적화하여 개선할 여지가 있습니다.

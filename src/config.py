@@ -29,7 +29,7 @@ CHROMA_DB_DIR: Path = PROJECT_ROOT / "chroma_db"
 MODEL_NAME: str = "gpt-4o-mini"
 GEMINI_MODEL_NAME: str = "gemini-2.5-flash"
 DEEPSEEK_MODEL_NAME: str = "deepseek-reasoner"
-
+HUGGINGFACE_EMBEDDING_MODEL: str = "intfloat/multilingual-e5-large"
 # API Keys
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")

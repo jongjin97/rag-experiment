@@ -36,9 +36,9 @@ async def process_batch_results():
         
     # Initialize Storages
     graph_storage = GraphStorage()
-    entity_vec = VectorStorage("lightrag_entities")
-    relation_vec = VectorStorage("lightrag_relations")
-    chunk_vec = VectorStorage("lightrag_chunks")
+    entity_vec = VectorStorage("light_rag_entities")
+    relation_vec = VectorStorage("light_rag_relations")
+    chunk_vec = VectorStorage("light_rag_chunks")
     
     embedding_fn = get_embedding_function()
     
