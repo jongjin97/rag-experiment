@@ -1,0 +1,20 @@
+{
+  "merged_batch_requests_part_3.jsonl": {
+    "batch_id": "batch_69717ad7c9b08190b2496f6b26f4045d",
+    "file_id": "file-WDMazn94GegQwymPrYJQbY",
+    "status": "processed",
+    "submitted_at": "1769044695"
+  },
+  "community_batch_part_1.jsonl": {
+    "batch_id": "batch_6971c4fb968481908306a227585e76a6",
+    "file_id": "file-UKqBPoqgraKUKCVqGSn5to",
+    "status": "processed",
+    "submitted_at": "1769063675"
+  },
+  "community_batch_part_2.jsonl": {
+    "batch_id": "batch_6971c4febc3881908b41e6c5bed1472a",
+    "file_id": "file-GW34MF5GcUShkXaFxLKDsT",
+    "status": "processed",
+    "submitted_at": "1769063678"
+  }
+}

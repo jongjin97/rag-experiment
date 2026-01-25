@@ -15,6 +15,10 @@ SAMSUNG_DIR: Path = DATA_DIR / "samsung"
 # GraphRAG
 GRAPH_RAG_DIR: Path = DATA_DIR / "graph_rag"
 KNOWLEDGE_GRAPH_PATH: Path = GRAPH_RAG_DIR / "knowledge_graph.gexf"
+
+# GraphRAG v2
+GRAPH_RAG_V2_DIR: Path = DATA_DIR / "graph_rag_v2"
+KNOWLEDGE_GRAPH_V2_PATH: Path = GRAPH_RAG_V2_DIR / "knowledge_graph.gexf"
 LIGHT_RAG_DIR: Path = DATA_DIR / "light_rag" # Artifacts for LightRAG
 KNOWLEDGE_LIGTH_GRAPH_PATH: Path = LIGHT_RAG_DIR / "lightrag_graph.gexf" # Updated to new graph
 SUBMIT_BATCH_SIZE: int = 50 # submitting to LLM
