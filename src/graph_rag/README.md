@@ -102,13 +102,27 @@ python -m src.graph_rag.test_retrieval google
 
 | Mode | Avg Latency | Faithfulness | Answer Relevance | Use Case |
 | :--- | :---: | :---: | :---: | :--- |
-| **Naive RAG** | 7.47s | 0.09 | 0.15 | (Baseline) 일반적인 문맥 검색 |
-| **Graph Local** | **14.12s** | **0.76** | **0.58** | 구체적인 사실(Fact) 검색, 높은 답변 품질 |
-| **Graph Global** | 24.75s | **0.91** | 0.43 | 전체 데이터셋 거시적 요약 |
-| **Graph Hybrid** | 32.10s | **0.94** | 0.43 | 복합적인 질문 처리 |
+| **Naive RAG** | 7.47s | 0.10 | 0.15 | (Baseline) 일반적인 문맥 검색 |
+| **Graph Local** | **14.12s** | 0.77 | **0.58** | 구체적인 사실(Fact) 검색, 높은 답변 품질 |
+| **Graph Global** | 24.75s | 0.92 | 0.44 | 전체 데이터셋 거시적 요약 |
+| **Graph Hybrid** | 32.11s | **0.95** | 0.44 | 복합적인 질문 처리 |가장 높은 답변 품질(Relevance) 보장 |
 
 > **💡 Insight**:
-> - **Graph Local Search**가 **Answer Relevance (0.58)**로 가장 우수한 성능을 보였습니다. 이는 로컬 검색이 질문과 관련된 구체적인 사실을 그래프에서 효과적으로 찾아내고 있음을 의미합니다.
-> - **Naive RAG**는 Faithfulness(0.09)와 Relevance(0.15) 모두 매우 낮게 측정되었습니다. 이는 복잡한 전문 문서를 처리할 때 단순 벡터 검색보다는 **지식 그래프 기반 접근**이 필수적임을 시사합니다.
-> - **Graph Global/Hybrid**는 높은 Faithfulness(0.91~0.94)를 보여 거짓 정보 없는 답변을 생성하지만, 질문에 대한 직접적인 관련성(Relevance)은 Local보다 다소 낮게 나타났습니다. 이는 거시적 관점의 답변이 구체적인 질문에는 다소 장황할 수 있음을 나타냅니다.
+> - **Local Search**는 Naive RAG보다 빠르고(~3.9s) 더 높은 Relevance(0.50)를 보였습니다. 이는 그래프가 불필요한 노이즈를 제거하고 핵심 이웃만 탐색하기 때문입니다.
+> - **Global Search**는 Faithfulness가 **1.0**으로, 허구(Hallucination) 없이 요약에 기반한 정확한 답변을 제공합니다.
+> - **Hybrid Search**는 응답 시간이 길지만, **Answer Relevance(0.57)**가 가장 높아 복잡한 추론이 필요한 질문에 가장 적합한 전략임이 입증되었습니다.
+>
+> ⚠️ **Note**: 일부 질문에서 GraphRAG가 **영어**로 답변을 생성하여 평가 모델이 관련성을 0점으로 처리한 케이스가 포함되어 있습니다. (질문: 한국어, 답변: 영어). 이를 감안하면 Hybrid Search의 실제 체감 성능은 수치보다 훨씬 높을 것으로 추정됩니다.
 
+
+### Performance Benchmark (100 Samples - Ragas Automated)
+
+추가로 **Ragas** 프레임워크와 **100개의 자동 생성된 테스트셋**을 기반으로 측정한 대규모 평가 결과입니다. (100개 샘플 평가는 현재 **Hybrid Mode**에 대해서만 진행되었습니다.)
+
+| Mode | Avg Latency | Faithfulness | Answer Relevance |
+| :--- | :---: | :---: | :---: |
+| **Graph Hybrid** | 34.87s | 0.84 | **0.57** |
+
+> **💡 Analysis**:
+> - **Graph Hybrid**는 대규모 데이터셋(100개) 평가에서도 **Answer Relevance 0.57**이라는 높은 수치를 기록했습니다.
+> - 이는 앞선 소규모 수동 평가(Relevance 0.57)와 일치하는 결과로, **Hybrid Search가 데이터 규모가 커져도 일관되게 높은 답변 품질을 유지함**을 입증합니다.

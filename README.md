@@ -12,7 +12,8 @@
 | :--- | :--- | :--- | :--- | :---: |
 | **1. Optimization** | `rag_best_practices` | **Naive RAG Optimization** <br> (Hybrid Search + Reranking + Adaptive Chunking) | 일반적인 사실 검색, <br> 빠른 응답이 필요한 서비스 | ⭐ |
 | **2. Light Graph** | `light_rag` | **Dual-Level Retrieval** <br> (Vector + 1-Hop Graph) | 핵심 개체(Entity)와 관계성 파악, <br> 비용 효율적인 그래프 검색 | ⭐⭐⭐ |
-| **3. Deep Graph** | `graph_rag` | **Community Detection** <br> (Leiden Alg + Global Summaries) | 거시적인 트렌드 분석, <br> 복합적인 추론이 필요한 심층 질문 | ⭐⭐⭐⭐⭐ |
+| **3. Deep Graph** | `graph_rag` | **Community Detection** <br> (Leiden Alg + Global Summaries) | 거시적인 트렌드 분석, <br> **높은 정확도의 사실(Fact) 검색**, <br> 복합적인 추론이 필요한 심층 질문 | ⭐⭐⭐⭐⭐ |
+| **4. Deep Graph (Kor)** | `graph_rag_v2` | **Native Korean Graph** <br> (Full-scale extraction w/o translation) | 삼성전자 사업보고서 등 <br> 대규모 한국어 문서 정밀 분석 실험 | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -58,9 +59,31 @@ Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집�
 - **기술적 해결**:
     - **Super Node 문제**: Top-K Pruning으로 토큰 폭발 방지.
     - **Cost Optimization**: OpenAI Batch API 도입으로 구축 비용 50% 절감.
-- **성능**: 복합 질문에 대해 **Answer Relevance 0.57**로 가장 우수한 추론 능력 입증.
+- **성능**:
+    - **Local Search**: **Answer Relevance 0.58**로 구체적인 사실 검색에서 가장 우수.
+    - **Hybrid Search**: 대규모 평가에서 **Answer Relevance 0.57**을 기록하며 복합 추론에서도 일관된 고성능 입증.
+    - (Baseline: Naive RAG 0.15)
 
 👉 [자세히 보기](src/graph_rag/README.md)
+
+---
+
+## 4️⃣ GraphRAG v2 (Native Korean Experiment) (`src/graph_rag_v2`)
+
+영어 프롬프트 기반의 v1과 달리, **순수 한국어 프롬프트**를 사용하여 4개의 삼성전자 사업보고서를 정밀 분석한 실험적 모듈입니다.
+
+- **실험 배경 (Context)**:
+    - 번역 과정을 배제하고 한국어 뉘앙스(예: '당사', '연결실체')를 직접 그래프에 반영하기 위해 설계되었습니다.
+- **성능 (Ragas Automated)**:
+    - **Faithfulness**: 0.75
+    - **Answer Relevance**: 0.50 (v1 대비 다소 낮음)
+- **주요 구조적 차이 (Key Structural Differences)**:
+    - **Quantity Strategy**: 
+        - **v1 (English)**: `Top 10 Limit` → **Sparse Graph** (희소하지만 핵심만 연결, 검색 빠름)
+        - **v2 (Korean)**: `No Limit` → **Dense Graph** (모든 관계 추출, 정보량 많지만 검색 속도 저하 및 노이즈 증가 가능성)
+    - **Normalization**: v2는 '당사' 등의 대명사를 '삼성전자'로 치환하는 정규화 로직이 엄격하게 적용됨.
+
+👉 [자세히 보기](src/graph_rag_v2/README.md)
 
 ---
 
