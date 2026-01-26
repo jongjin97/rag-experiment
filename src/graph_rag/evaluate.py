@@ -10,12 +10,12 @@ from ragas.metrics import faithfulness, answer_relevancy
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 
-from src.graph_rag_v2.retriever import GraphRetriever
+from src.graph_rag.retriever import GraphRetriever
 from src.config import DATA_DIR, MODEL_NAME, HUGGINGFACE_EMBEDDING_MODEL
 
 EVAL_DIR = DATA_DIR / "evaluation"
 TESTSET_FILE = DATA_DIR / "eval_dataset_merged.json"
-RESULTS_FILE = DATA_DIR / "graph_rag_v2" /"benchmark_results_graph_v2_hybrid_3.csv"
+RESULTS_FILE = DATA_DIR / "graph_rag" /"benchmark_results_graph_2.csv"
 
 def load_testset():
     if not TESTSET_FILE.exists():
@@ -154,7 +154,7 @@ def run_inference_and_evaluate():
     print(summary)
     
     # Save Summary Report
-    summary.to_markdown(EVAL_DIR / "summary_report_v2_hybrid_3.md")
+    summary.to_markdown(EVAL_DIR / "summary_report_hybrid_2.md")
 
 if __name__ == "__main__":
     run_inference_and_evaluate()

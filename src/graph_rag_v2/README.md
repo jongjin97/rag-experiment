@@ -65,12 +65,12 @@ src/graph_rag_v2/
 
 | Mode | Avg Latency (s) | Faithfulness | Answer Relevancy |
 | :--- | :---: | :---: | :---: |
-| **Graph Hybrid (v2)** | **26.29s** | **0.75** | **0.16** |
+| **Graph Hybrid (v2)** | **27.39s** | **0.75** | **0.50** |
 
 > **📝 Analysis**:
 > - **Faithfulness (0.75)**: 100개의 다양한 질문에서도 0.75 수준의 높은 사실 충실도를 기록했습니다. 이는 한국어 그래프 구축이 성공적으로 이루어져 환각(Hallucination)이 억제되고 있음을 시사합니다.
-> - **Answer Relevancy (0.16)**: 상대적으로 낮은 관련성 점수는 생성된 답변이 질문의 의도와 다소 빗나가거나 너무 장황할 수 있음을 나타냅니다. 향후 Global Search의 Summarization 프롬프트를 다듬어 개선할 예정입니다.
-> - **Latency (26.29s)**: Hybrid Search 특성상 Local과 Global 검색을 모두 수행하므로 시간이 소요되나, 심층적인 답변을 위해 감수할 만한 수준입니다.
+> - **Answer Relevancy (0.50)**: 기존 0.16에서 0.50으로 대폭 상승했습니다. 이는 평가 단계에서 **한국어 전용 임베딩 모델(HuggingFace Embeddings)**을 올바르게 적용하여 질문과 답변 간의 의미적 유사도를 정확히 측정한 결과입니다.
+> - **Latency (27.39s)**: Hybrid Search 특성상 Local과 Global 검색을 모두 수행하므로 시간이 소요되나, 심층적인 답변을 위해 감수할 만한 수준입니다.
 
 ---
 
@@ -87,3 +87,15 @@ Ragas를 이용한 전체 벤치마크 실행 (데이터셋 생성 및 평가 �
 ```bash
 python -m src.graph_rag_v2.evaluate_qa
 ```
+
+---
+
+## ⚠️ Limitations & Troubleshooting
+
+### Gleaning (Self-Reflection) Rate Limit (429 Error)
+- **증상**: `GleaningGraphExtractor`를 `max_gleanings=3`으로 설정하여 전체 데이터셋을 처리할 때, 약 60% 진행 시점에서 `openai.RateLimitError` (Requests Per Day limit exceeded)가 발생했습니다.
+- **원인**: Gleaning은 하나의 청크에 대해 '1차 추출 + (검토 + 추가 추출) * N회'로 다수의 API 호출을 연쇄적으로 수행합니다. 이는 단순 추출 대비 3~4배 이상의 요청(Request)을 단시간에 발생시켜 일일 요청량 제한(RPD)에 도달하게 합니다.
+- **권장 사항 (Workaround)**:
+    - **Concurrency 조절**: `asyncio.Semaphore` 값을 낮춰(예: 3~5) 동시 요청 수를 제한합니다.
+    - **Max Gleanings 축소**: `max_gleanings`를 1회로 줄이거나, 정말 중요한 문서에만 선별적으로 적용합니다.
+    - **Batch Processing 불가**: Gleaning 로직은 이전 단계의 결과에 의존하므로(Sequential), 현재의 OpenAI Batch API로는 구현이 까다롭습니다. 안정적인 대량 처리를 위해서는 RPD 한도가 높은 Tier로 승급하거나, 로컬 모델(Self-hosted)을 활용한 하이브리드 접근이 필요합니다.

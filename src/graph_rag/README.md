@@ -102,15 +102,13 @@ python -m src.graph_rag.test_retrieval google
 
 | Mode | Avg Latency | Faithfulness | Answer Relevance | Use Case |
 | :--- | :---: | :---: | :---: | :--- |
-| **Naive RAG** | ~5.8s | 0.98 | 0.37 | (Baseline) 일반적인 문맥 검색 |
-| **Graph Local** | **~3.9s** | **0.99** | 0.50 | 구체적인 사실(Fact) 검색, 빠른 응답 속도 |
-| **Graph Global** | ~8.0s | **1.00** | 0.48 | 전체 데이터셋에 대한 거시적 요약 및 트렌드 파악 |
-| **Graph Hybrid** | ~12.2s | 0.95 | **0.57** | 복합적인 질문, 가장 높은 답변 품질(Relevance) 보장 |
+| **Naive RAG** | 7.47s | 0.09 | 0.15 | (Baseline) 일반적인 문맥 검색 |
+| **Graph Local** | **14.12s** | **0.76** | **0.58** | 구체적인 사실(Fact) 검색, 높은 답변 품질 |
+| **Graph Global** | 24.75s | **0.91** | 0.43 | 전체 데이터셋 거시적 요약 |
+| **Graph Hybrid** | 32.10s | **0.94** | 0.43 | 복합적인 질문 처리 |
 
 > **💡 Insight**:
-> - **Local Search**는 Naive RAG보다 빠르고(~3.9s) 더 높은 Relevance(0.50)를 보였습니다. 이는 그래프가 불필요한 노이즈를 제거하고 핵심 이웃만 탐색하기 때문입니다.
-> - **Global Search**는 Faithfulness가 **1.0**으로, 허구(Hallucination) 없이 요약에 기반한 정확한 답변을 제공합니다.
-> - **Hybrid Search**는 응답 시간이 길지만, **Answer Relevance(0.57)**가 가장 높아 복잡한 추론이 필요한 질문에 가장 적합한 전략임이 입증되었습니다.
->
-> ⚠️ **Note**: 일부 질문에서 GraphRAG가 **영어**로 답변을 생성하여 평가 모델이 관련성을 0점으로 처리한 케이스가 포함되어 있습니다. (질문: 한국어, 답변: 영어). 이를 감안하면 Hybrid Search의 실제 체감 성능은 수치보다 훨씬 높을 것으로 추정됩니다.
+> - **Graph Local Search**가 **Answer Relevance (0.58)**로 가장 우수한 성능을 보였습니다. 이는 로컬 검색이 질문과 관련된 구체적인 사실을 그래프에서 효과적으로 찾아내고 있음을 의미합니다.
+> - **Naive RAG**는 Faithfulness(0.09)와 Relevance(0.15) 모두 매우 낮게 측정되었습니다. 이는 복잡한 전문 문서를 처리할 때 단순 벡터 검색보다는 **지식 그래프 기반 접근**이 필수적임을 시사합니다.
+> - **Graph Global/Hybrid**는 높은 Faithfulness(0.91~0.94)를 보여 거짓 정보 없는 답변을 생성하지만, 질문에 대한 직접적인 관련성(Relevance)은 Local보다 다소 낮게 나타났습니다. 이는 거시적 관점의 답변이 구체적인 질문에는 다소 장황할 수 있음을 나타냅니다.
 

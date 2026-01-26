@@ -12,7 +12,7 @@ from langchain_openai import ChatOpenAI
 
 from src.naive_rag.chain import rag_chain
 from src.graph_rag.retriever import GraphRetriever
-from src.config import DATA_DIR, MODEL_NAME
+from src.config import DATA_DIR, MODEL_NAME, HUGGINGFACE_EMBEDDING_MODEL
 
 EVAL_DIR = DATA_DIR / "evaluation"
 TESTSET_FILE = EVAL_DIR / "qa_testset.json"
@@ -34,7 +34,7 @@ def run_inference_and_evaluate():
     # Initialize Eval LLM & Embeddings (for RAGAS)
     print("Initializing Evaluator Models...")
     eval_llm = ChatOpenAI(model=MODEL_NAME)
-    eval_embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    eval_embeddings = HuggingFaceEmbeddings(model_name=HUGGINGFACE_EMBEDDING_MODEL)
 
     # Modes to evaluate
     modes = [
