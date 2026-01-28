@@ -114,29 +114,91 @@ def table_to_markdown(data: List[List[str]], row_colors: Optional[List[Optional[
 
     return markdown
 
-def extract_page_content_with_tables(page) -> str:
+def clean_table(table_data: List[List[str]]) -> List[List[str]]:
     """
-    Extracts text and tables from a page, preserving their vertical order.
-    1. Finds tables and their bounding boxes.
-    2. Defines text regions (above, between, below tables).
-    3. Extracts text from those regions.
-    4. Converts tables to Markdown.
-    5. Combines everything in order.
+    Removes columns that are completely empty/None across all rows.
+    """
+    if not table_data:
+        return []
+    
+    num_cols = len(table_data[0])
+    cols_to_keep = []
+    
+    for c in range(num_cols):
+        # Check if column c is empty in all rows
+        is_empty = True
+        for row in table_data:
+            val = row[c]
+            if val is not None and str(val).strip():
+                is_empty = False
+                break
+        if not is_empty:
+            cols_to_keep.append(c)
+            
+    # Reconstruct table
+    new_table = []
+    for row in table_data:
+        new_row = [row[c] for c in cols_to_keep]
+        new_table.append(new_row)
+        
+    return new_table
+
+def extract_page_elements(page) -> List[dict]:
+    """
+    Extracts text and tables from a page as structured elements.
+    Returns a list of dictionaries: {'type': 'text'|'table', 'content': str|List[List[str]], 'row_colors': [...], 'bbox': tuple}
     """
     # 1. Find all tables
     tables = page.find_tables()
     
     # 2. If no tables, just return text
     if not tables:
-        return page.extract_text() or ""
+        text = page.extract_text()
+        if text and text.strip():
+            return [{
+                'type': 'text',
+                'content': text.strip(),
+                'bbox': (0, 0, page.width, page.height)
+            }]
+        return []
 
-    # 3. Sort tables by vertical position (top) to process in order
-    sorted_tables = sorted(tables, key=lambda t: t.bbox[1])
+    # 3. Filter overlapping tables (sub-tables)
+    # If a table is fully contained within another, skip it.
+    filtered_tables = []
+    # Sort by size (area) descending first to prioritize larger tables when checking containment?
+    # No, usually we want the biggest table.
+    # Let's sort by Y first.
+    sorted_tables_by_y = sorted(tables, key=lambda t: t.bbox[1])
+    
+    # Simple N^2 check is fine for small N tables per page
+    for i, t1 in enumerate(sorted_tables_by_y):
+        is_contained = False
+        t1_area = (t1.bbox[2]-t1.bbox[0]) * (t1.bbox[3]-t1.bbox[1])
+        
+        for j, t2 in enumerate(sorted_tables_by_y):
+            if i == j:
+                continue
+            
+            # Check if t1 is inside t2
+            # Use small tolerance
+            if (t1.bbox[0] >= t2.bbox[0]-1 and t1.bbox[1] >= t2.bbox[1]-1 and
+                t1.bbox[2] <= t2.bbox[2]+1 and t1.bbox[3] <= t2.bbox[3]+1):
+                
+                # Verify t2 is actually larger/different
+                t2_area = (t2.bbox[2]-t2.bbox[0]) * (t2.bbox[3]-t2.bbox[1])
+                if t2_area > t1_area:
+                    is_contained = True
+                    break
+                    
+        if not is_contained:
+            filtered_tables.append(t1)
+            
+    sorted_tables = filtered_tables
     
     page_width = page.width
     page_height = page.height
     
-    content_parts = []
+    elements = []
     current_y = 0
 
     for table in sorted_tables:
@@ -146,7 +208,7 @@ def extract_page_content_with_tables(page) -> str:
         t_bottom = t_bbox[3]
 
         # Region before the table (Text Region)
-        if t_top > current_y:
+        if t_top > current_y + 1: # Buffer
             # Define bbox for text area: (0, current_y, page_width, t_top)
             # Use a small margin to avoid overlapping exact lines
             text_bbox = (0, current_y, page_width, t_top)
@@ -154,8 +216,12 @@ def extract_page_content_with_tables(page) -> str:
                 # crop() might fail if the area is too small
                 cropped_page = page.crop(text_bbox)
                 text_segment = cropped_page.extract_text()
-                if text_segment:
-                    content_parts.append(text_segment)
+                if text_segment and text_segment.strip():
+                    elements.append({
+                        'type': 'text',
+                        'content': text_segment.strip(),
+                        'bbox': text_bbox
+                    })
             except Exception:
                 # Ignore very small/invalid crops
                 pass
@@ -163,20 +229,27 @@ def extract_page_content_with_tables(page) -> str:
         # The Table itself (Table Region)
         try:
             table_data = table.extract()
+            # Clean the table immediately to avoid issues with spacer columns
+            cleaned_data = clean_table(table_data)
 
+            # Extract row colors
             row_colors = []
             for row in table.rows:
                 color = get_row_bg_color(row.bbox, page.rects, page.height)
                 row_colors.append(color)
-            print("row colors: ", row_colors)
-            md_table = table_to_markdown(table_data, row_colors)
-            print("md table: ", md_table)
-            content_parts.append(md_table)
+            
+            if cleaned_data:
+                elements.append({
+                    'type': 'table',
+                    'content': cleaned_data,
+                    'row_colors': row_colors,
+                    'bbox': t_bbox
+                })
         except Exception as e:
             print(f"Warning: Failed to extract table: {e}")
 
         # Update current Y position
-        current_y = t_bottom
+        current_y = max(current_y, t_bottom)
 
     # Region after the last table (Text Region)
     if current_y < page_height:
@@ -184,17 +257,130 @@ def extract_page_content_with_tables(page) -> str:
         try:
             cropped_page = page.crop(text_bbox)
             text_segment = cropped_page.extract_text()
-            if text_segment:
-                content_parts.append(text_segment)
+            if text_segment and text_segment.strip():
+                elements.append({
+                    'type': 'text',
+                    'content': text_segment.strip(),
+                    'bbox': text_bbox
+                })
         except Exception:
             pass
 
-    return "\n\n".join(content_parts)
+    return elements
 
-def load_documents_merged(path_input: Path) -> List[Document]:
+def get_header_rows(table_data, row_colors):
+    """
+    Helper to extract header rows based on color.
+    Returns (header_rows_data, header_row_count)
+    """
+    if not row_colors or not table_data:
+        return [table_data[0]], 1
+    
+    first_color = row_colors[0]
+    if first_color is None:
+        return [table_data[0]], 1
+        
+    count = 0
+    for color in row_colors:
+        if color == first_color:
+            count += 1
+        else:
+            break
+            
+    if count > 0:
+        return table_data[:count], count
+    return [table_data[0]], 1
+
+def merge_document_elements(all_elements: List[dict]) -> str:
+    """
+    Merges consecutive tables and converts everything to a single markdown string.
+    """
+    if not all_elements:
+        return ""
+        
+    merged_elements = []
+    
+    # Initial pass to merge consecutive tables
+    if not all_elements:
+        return ""
+        
+    current_element = all_elements[0]
+    
+    for next_element in all_elements[1:]:
+        # Check if both are tables and can be merged
+        if (current_element['type'] == 'table' and 
+            next_element['type'] == 'table'):
+            
+            table1 = current_element['content']
+            colors1 = current_element.get('row_colors')
+            
+            table2 = next_element['content']
+            colors2 = next_element.get('row_colors')
+            
+            # Check 1: Body Continuation
+            # If table2 starts with None color, it's a body.
+            # FORCE MERGE regardless of columns (User request)
+            is_body_continuation = False
+            if colors2 and len(colors2) > 0 and colors2[0] is None:
+                is_body_continuation = True
+
+            # Check 2: Header Continuation (Split Header)
+            # If table1 ended with Color AND table2 starts with Color -> Header Split
+            is_header_continuation = False
+            if (colors1 and len(colors1) > 0 and colors1[-1] is not None and
+                colors2 and len(colors2) > 0 and colors2[0] is not None):
+                is_header_continuation = True
+            
+            cols_match = (len(table1[0]) == len(table2[0]))
+
+            # Priority 1: Body Continuation (Force Merge)
+            if is_body_continuation:
+                 current_element['content'].extend(table2)
+                 if colors1 is not None and colors2 is not None:
+                     current_element['row_colors'].extend(colors2)
+                 elif colors1 is not None:
+                     current_element['row_colors'].extend([None] * len(table2))
+                 continue
+
+            # Priority 2: Header Continuation & Repeated Header (Require Column Match)
+            if cols_match:
+                if is_header_continuation:
+                    # Append directly
+                    current_element['content'].extend(table2)
+                    if colors1 is not None and colors2 is not None:
+                        current_element['row_colors'].extend(colors2)
+                    elif colors1 is not None:
+                        current_element['row_colors'].extend([None] * len(table2))
+                    continue
+
+                # Check 3: Repeated Header (Removed by user request)
+                # We do not merge based on repeated headers anymore.
+                pass
+                
+        # If not merged, push current and update
+        merged_elements.append(current_element)
+        current_element = next_element
+        
+    merged_elements.append(current_element)
+    
+    # Convert to string
+    final_output = []
+    for elem in merged_elements:
+        if elem['type'] == 'text':
+            final_output.append(elem['content'])
+        elif elem['type'] == 'table':
+            final_output.append(table_to_markdown(elem['content'], elem.get('row_colors')))
+            
+    return "\n\n".join(final_output).strip()
+
+def load_documents_merged(path_input: Path, page_range: Optional[tuple] = None) -> List[Document]:
     """
     Load PDF documents, merging ALL pages of each file into a single Document object.
     This preserves cross-page context for better chunking.
+    
+    :param path_input: Path to PDF file or directory.
+    :param page_range: Optional tuple (start_page, end_page) to process only specific pages. 0-indexed.
+                      If provided, e.g. (0, 5), pages 0 to 4 will be processed.
     """
     documents = []
     path_obj = Path(path_input)
@@ -214,17 +400,26 @@ def load_documents_merged(path_input: Path) -> List[Document]:
     for file_path in files_to_process:
         print(f"Processing (Merged): {file_path.name}...")
         try:
-            full_text = []
+            all_page_elements = []
             with pdfplumber.open(file_path) as pdf:
-                for i, page in enumerate(pdf.pages):
-                    if i != 151:
-                        continue
-                    print("testing")
-                    content = extract_page_content_with_tables(page)
-                    if content.strip():
-                        full_text.append(content)
+                # Determine pages to process
+                pages_to_process = pdf.pages
+                if page_range:
+                    start, end = page_range
+                    # Ensure range is valid
+                    start = max(0, start)
+                    end = min(len(pdf.pages), end)
+                    pages_to_process = pdf.pages[start:end]
+                    print(f"  - Processing pages {start} to {end-1} (of {len(pdf.pages)})")
+
+                for i, page in enumerate(pages_to_process):
+                    # if i != 151: # This line was for debugging, removing for general use
+                    #     continue
+                    # print("testing") # This line was for debugging, removing for general use
+                    page_elements = extract_page_elements(page)
+                    all_page_elements.extend(page_elements)
             
-            combined_content = "\n\n".join(full_text)
+            combined_content = merge_document_elements(all_page_elements)
             
             if combined_content.strip():
                 # Create Single LangChain Document for the entire file
@@ -251,7 +446,7 @@ if __name__ == "__main__":
     # Simple test with one file if available
     test_dir = Path("./data/samsung/[삼성전자] 반기보고서(일반법인) (2025.08.14).pdf")
     if test_dir.exists():
-        docs = load_documents_merged(test_dir)
+        docs = load_documents_merged(test_dir, page_range=(0, 10))
         print(f"\nTotal loaded documents: {len(docs)}")
         
         # Print a sample with a table if possible
