@@ -79,9 +79,9 @@ Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집�
     - **Answer Relevance**: 0.50 (v1 대비 다소 낮음)
 - **주요 구조적 차이 (Key Structural Differences)**:
     - **Quantity Strategy**: 
-        - **v1 (English)**: `Top 10 Limit` → **Sparse Graph** (희소하지만 핵심만 연결, 검색 빠름)
-        - **v2 (Korean)**: `No Limit` → **Dense Graph** (모든 관계 추출, 정보량 많지만 검색 속도 저하 및 노이즈 증가 가능성)
-    - **Normalization**: v2는 '당사' 등의 대명사를 '삼성전자'로 치환하는 정규화 로직이 엄격하게 적용됨.
+        - **v1 (English)**: `Top 10 Limit` → **Unnormalized Graph** (중복 노드 다수 존재, 연결성 낮음)
+        - **v2 (Korean)**: `No Limit` + `Strong Normalization` → **Dense Graph** (노드 수는 적지만 연결 밀도가 30% 더 높음, 정보 응집력 강화)
+    - **Normalization**: v2는 '당사' 등의 대명사를 '삼성전자'로 치환하여 파편화된 정보를 하나로 통합함.
 
 👉 [자세히 보기](src/graph_rag_v2/README.md)
 
