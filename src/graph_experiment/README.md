@@ -82,3 +82,30 @@ RAG 시스템의 성능을 최적화하기 위해 **대형 테이블 처리**와
 - **기능**: 단일 파일뿐만 아니라, 특정 디렉토리 내의 모든 PDF 파일을 일괄 처리하는 파이프라인을 구현했습니다.
 - **출력**: 각 파일별로 전용 결과 폴더를 생성하여 텍스트 파일과 JSON 데이터를 체계적으로 저장합니다.
 
+## Experiment 5: Table-Aware Chunking & Batch API Workflow (New)
+
+대규모 문서 처리를 위한 **OpenAI Batch API** 연동 파이프라인과 **테이블 문맥 보존(Table-Aware Chunking)** 전략을 고도화했습니다.
+
+### 1. Table-Aware Text Splitting (Recursive Expansion)
+- **Problem**: 텍스트 청킹 과정에서 `[TABLE_0_2]`(Table 0의 0~2번 청크 로드 필요)와 같은 플레이스홀더가 포함될 경우, 단순 텍스트 분할 시 테이블의 일부만 포함되거나 문맥이 끊길 위험이 있습니다.
+- **Solution (`TableAwareSplitter`)**:
+    - **Recursive Splitting**: 먼저 `RecursiveCharacterTextSplitter`로 텍스트를 적절한 크기(예: 4000자)로 나눕니다.
+    - **Placeholder Expansion**: 청크 내에서 테이블 플레이스홀더(`[TABLE_ID]`)가 발견되면, 해당 테이블의 실제 Markdown 내용을 주입하여 **Context를 완성**합니다.
+    - **Single Table Constraint**: 하나의 텍스트 청크에는 **최대 1개의 테이블**만 포함되도록 토큰 비용(Penalty)을 부여하여, LLM이 한 번에 하나의 복잡한 테이블에만 집중할 수 있도록 강제했습니다.
+
+### 2. Batch Processing Pipeline (3-Stage)
+비용 절감(50%)과 대량 처리를 위해 OpenAI Batch API를 활용하는 3단계 파이프라인을 구축했습니다.
+
+#### Step 1: Preparation (`prepare_batch.py`)
+- **기능**: 처리된 `final_chunks.json`을 읽어 OpenAI Batch API 입력 포맷(`.jsonl`)으로 변환.
+- **Table Injection**: 텍스트 내의 `[TABLE_ID]` 플레이스홀더를 `extracted_tables.json`에 저장된 **실제 Markdown Table** 원본으로 교체.
+- **Token Management**: `tiktoken`을 사용하여 각 배치 파일이 **1.5M 토큰**을 넘지 않도록 자동 분할 저장 (`batch_input_part_N.jsonl`).
+
+#### Step 2: Submission (`submit_batch.py`)
+- **기능**: 생성된 `.jsonl` 파일을 OpenAI 서버에 업로드하고 Batch Job을 생성.
+- **Tracking**: 작업 ID와 상태를 `submitted_jobs.json`에 기록하여 추적 관리.
+
+#### Step 3: Result Processing (`process_batch_results.py`)
+- **기능**: 제출된 작업의 상태를 확인(Polling)하고, 완료 시 결과를 다운로드하여 파싱.
+- **출력**: 최종적으로 그래프 추출 결과(Entity, Relationship)를 저장.
+
