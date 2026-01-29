@@ -109,3 +109,13 @@ RAG 시스템의 성능을 최적화하기 위해 **대형 테이블 처리**와
 - **기능**: 제출된 작업의 상태를 확인(Polling)하고, 완료 시 결과를 다운로드하여 파싱.
 - **출력**: 최종적으로 그래프 추출 결과(Entity, Relationship)를 저장.
 
+### 3. Error Handling: Split & Retry Strategy
+Batch 작업 중 **'실패(Failed)'** 또는 **'토큰 한도 초과(Token Limit Exceeded)'** 오류가 발생할 경우를 대비해 자동 복구 로직을 구현했습니다.
+
+- **Trigger**: 작업 상태가 `failed`, `expired`, `cancelled`인 경우.
+- **Action**:
+    1. 실패한 작업의 **원본 입력 파일(Input File)**을 다운로드.
+    2. 파일 내용을 **정확히 절반(Half)**으로 분할 (`Part A`, `Part B`).
+    3. 2개의 새로운 Batch Job으로 **재전송(Resubmit)**.
+- **Effect**: 한 번에 너무 많은 요청이 몰려 실패하는 경우, 작업을 더 작은 단위로 쪼개어 성공률을 높입니다.
+

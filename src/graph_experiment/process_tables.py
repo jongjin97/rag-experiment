@@ -102,17 +102,17 @@ def merge_elements_with_placeholders(all_elements: List[dict]) -> Tuple[str, Dic
             header = elem['content'][:h_count]
             body = elem['content'][h_count:]
 
-            # Convert header to string to check overhead
-            header_str = table_to_markdown(header)
-            header_tokens = count_tokens(header_str)
-            
             # Chunking Logic
             chunks = []
             current_chunk_body = []
-            current_chunk_tokens = header_tokens # Start with header cost
+            
+            # Recalculate header tokens to be safe
+            header_str = table_to_markdown(header)
+            header_tokens = count_tokens(header_str)
+            current_chunk_tokens = header_tokens 
 
             for row in body:
-                # Approximate row cost (converting single row to markdown string line)
+                # Approximate row cost
                 row_str = "| " + " | ".join([str(c).replace("\n", " ") if c else "" for c in row]) + " |\n"
                 row_tokens = count_tokens(row_str)
                 
@@ -150,8 +150,12 @@ def merge_elements_with_placeholders(all_elements: List[dict]) -> Tuple[str, Dic
                 }
                 chunk_placeholders.append(f"[{chunk_id}]")
             
-            # Insert Placeholders (New line separated)
-            final_text_parts.append("\n".join(chunk_placeholders))
+            # Insert Placeholders
+            # User request: Only provide the last chunk index. 
+            # The system should interpret [TABLE_X_N] as "Load TABLE_X_0 through TABLE_X_N".
+            if chunk_placeholders:
+                final_text_parts.append(chunk_placeholders[-1])
+            
             table_counter += 1
 
     return "\n\n".join(final_text_parts), tables_storage
