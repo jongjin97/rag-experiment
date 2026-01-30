@@ -98,16 +98,21 @@ RAG 시스템의 성능을 최적화하기 위해 **대형 테이블 처리**와
 
 #### Step 1: Preparation (`prepare_batch.py`)
 - **기능**: 처리된 `final_chunks.json`을 읽어 OpenAI Batch API 입력 포맷(`.jsonl`)으로 변환.
-- **Table Injection**: 텍스트 내의 `[TABLE_ID]` 플레이스홀더를 `extracted_tables.json`에 저장된 **실제 Markdown Table** 원본으로 교체.
-- **Token Management**: `tiktoken`을 사용하여 각 배치 파일이 **1.5M 토큰**을 넘지 않도록 자동 분할 저장 (`batch_input_part_N.jsonl`).
+- **Improved Schema Enforcement (v2)**: 단순 프롬프트 대신 **OpenAI Tools (Function Calling)**를 사용하여 `GraphExtraction` 스키마 100% 준수를 보장. Markdown 코드 블록이 아닌 순수 JSON 추출.
+- **Table Injection**: `[TABLE_ID]`를 실제 Markdown Table로 교체하여 Context 완성.
 
 #### Step 2: Submission (`submit_batch.py`)
-- **기능**: 생성된 `.jsonl` 파일을 OpenAI 서버에 업로드하고 Batch Job을 생성.
-- **Tracking**: 작업 ID와 상태를 `submitted_jobs.json`에 기록하여 추적 관리.
+- **기능**: `.jsonl` 파일을 업로드하고 Batch Job 생성.
+- **Selective Submission**: 명령줄 인자로 **특정 파일만 선택 전송** 가능 (예: `python -m src...submit_batch file1.jsonl`).
+- **Tracking**: `submitted_jobs.json`에 ID 및 파일명 기록.
 
-#### Step 3: Result Processing (`process_batch_results.py`)
-- **기능**: 제출된 작업의 상태를 확인(Polling)하고, 완료 시 결과를 다운로드하여 파싱.
-- **출력**: 최종적으로 그래프 추출 결과(Entity, Relationship)를 저장.
+#### Step 3: Monitoring & Processing (`check_batch_status.py`, `process_batch_results.py`)
+- **Status Check**: `check_batch_status.py`를 통해 모든 작업의 진행 상황을 테이블 형태로 한눈에 확인.
+- **Result Processing**: 작업 완료 시 결과를 다운로드/파싱. 재시도(Retry) 로직 포함.
+
+#### Step 4: Graph Construction (`create_graph_nx.py`)
+- **기능**: 로컬에 다운로드된 완료 결과(`batch_output_*.jsonl`)를 취합하여 **NetworkX 그래프**(`graph.gexf`, `graph.graphml`) 생성.
+- **Robust Parsing**: Tool Calls 포맷과 레거시 포맷 모두 지원, `None` 속성 자동 처리를 통한 에러 방지.
 
 ### 3. Error Handling: Split & Retry Strategy
 Batch 작업 중 **'실패(Failed)'** 또는 **'토큰 한도 초과(Token Limit Exceeded)'** 오류가 발생할 경우를 대비해 자동 복구 로직을 구현했습니다.

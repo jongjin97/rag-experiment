@@ -54,6 +54,121 @@ def process_batch_results(batch_dir: Path):
     with open(record_file, "w", encoding="utf-8") as f:
         json.dump(jobs, f, indent=2)
 
+    # After processing all jobs, parse and save graph data
+    parse_and_save_graph(batch_dir)
+
+def parse_and_save_graph(batch_dir: Path):
+    """
+    Parses all batch_output_*.jsonl files and aggregates graph data per document.
+    """
+    print("\n--- Parsing Batch Results & Building Graph ---")
+    
+    # Dictionary to hold graph data per document
+    # Structure: { "doc_name": { "entities": [], "relationships": [] } }
+    docs_graph_data = {}
+    
+    # Find all output files
+    output_files = list(batch_dir.glob("batch_output_*.jsonl"))
+    
+    if not output_files:
+        print("No batch output files found to parse.")
+        return
+        
+    for file_path in output_files:
+        print(f"Parsing: {file_path.name}")
+        
+        with open(file_path, "r", encoding="utf-8") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+                    
+                try:
+                    response = json.loads(line)
+                    
+                    # 1. Extract Custom ID
+                    custom_id = response.get("custom_id", "")
+                    if not custom_id:
+                        continue
+                        
+                    # Format: DOCNAME_CHUNKINDEX (e.g. 삼성전자_사업보고서_0)
+                    # We need to reconstruct the Doc Name. 
+                    # Simpler is to use the directories we know exist to match?
+                    # Or just split by last underscrore?
+                    # Ideally we should have stored a mapping, but let's infer based on existing dirs.
+                    
+                    # Heuristic: The last part is the index. Join the rest.
+                    parts = custom_id.rsplit("_", 1)
+                    if len(parts) != 2:
+                        continue
+                    doc_name_safe = parts[0]
+                    
+                    # 2. Extract Content
+                    # Response -> body -> choices -> message -> content
+                    # Note: Batch API response structure matches Chat Completion response
+                    
+                    if "response" not in response or not response["response"]:
+                        # Failed request within batch?
+                        continue
+                        
+                    response_body = response["response"]["body"]
+                    if not response_body:
+                        continue
+                        
+                    content_str = response_body["choices"][0]["message"]["content"]
+                    
+                    # Clean Markdown Code Blocks (```json ... ```)
+                    if content_str.strip().startswith("```"):
+                        content_str = content_str.strip().strip("`").replace("json", "", 1).strip()
+                    
+                    # 3. Parse JSON Content (GraphExtraction)
+                    # The LLM output should be a JSON string corresponding to GraphExtraction schema
+                    try:
+                        graph_data = json.loads(content_str)
+                    except json.JSONDecodeError:
+                        print(f"    ! Error decoding JSON content for {custom_id}")
+                        # Debug: Save failed content to inspect
+                        # with open(f"debug_failed_{custom_id}.txt", "w", encoding="utf-8") as df:
+                        #     df.write(content_str)
+                        continue
+                        
+                    # 4. Integrate into Document Graph
+                    if doc_name_safe not in docs_graph_data:
+                        docs_graph_data[doc_name_safe] = {"entities": [], "relationships": []}
+                        
+                    if "entities" in graph_data:
+                        docs_graph_data[doc_name_safe]["entities"].extend(graph_data["entities"])
+                    if "relationships" in graph_data:
+                        docs_graph_data[doc_name_safe]["relationships"].extend(graph_data["relationships"])
+                        
+                except Exception as e:
+                    print(f"    ! Error parsing line: {e}")
+
+    # Save to files
+    # We need to map 'doc_name_safe' back to the actual directory name.
+    # The 'doc_name_safe' was created by: doc_dir.name.replace(" ", "_").replace("[", "").replace("]", "")
+    # So we scan the processed directory to find the matching folder.
+    
+    processed_dir = batch_dir.parent # data/processed_experiment
+    
+    for safe_name, graph_content in docs_graph_data.items():
+        # Find matching directory
+        target_dir = None
+        for d in processed_dir.iterdir():
+            if not d.is_dir(): continue
+            
+            candidate_safe = d.name.replace(" ", "_").replace("[", "").replace("]", "")
+            if candidate_safe == safe_name:
+                target_dir = d
+                break
+        
+        if target_dir:
+            output_path = target_dir / "graph_data.json"
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(graph_content, f, ensure_ascii=False, indent=2)
+            print(f"Saved Graph Data: {output_path} (Entities: {len(graph_content['entities'])}, Relationships: {len(graph_content['relationships'])})")
+        else:
+            print(f"Warning: Could not find original directory for {safe_name}")
+
 def retry_failed_job(client, job_info, batch_dir, jobs_list):
     """
     Splits the failed job's input file into two and resubmits.

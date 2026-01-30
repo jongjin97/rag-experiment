@@ -1,11 +1,15 @@
 
 import json
 import os
-from pathlib import Path
-import tiktoken
-from src.prompts.prompt import GRAPH_RAG_HYBRID_PROMPT
-from src.config import MODEL_NAME
 import re
+import tiktoken
+from pathlib import Path
+from tqdm import tqdm
+from langchain_core.utils.function_calling import convert_to_openai_tool
+
+from src.config import MODEL_NAME
+from src.prompts.prompt import GRAPH_RAG_HYBRID_PROMPT
+from src.graph_experiment.extractor import GraphExtraction
 
 def count_tokens(text: str) -> int:
     try:
@@ -14,38 +18,23 @@ def count_tokens(text: str) -> int:
         enc = tiktoken.get_encoding("cl100k_base")
     return len(enc.encode(text))
 
-def create_batch_request(custom_id: str, content: str):
-    """
-    Creates a single request object for the OpenAI Batch API.
-    """
-    return {
-        "custom_id": custom_id,
-        "method": "POST",
-        "url": "/v1/chat/completions",
-        "body": {
-            "model": MODEL_NAME,
-            "messages": [
-                {"role": "system", "content": GRAPH_RAG_HYBRID_PROMPT},
-                {"role": "user", "content": f"Context:\n{content}"}
-            ],
-            "temperature": 0.0,
-            # Schema enforcement via response_format is optional but recommended
-            # "response_format": ... (omitted for flexibility, relying on prompt)
-        }
-    }
-
 def prepare_batch_files(
     data_dir: Path, 
     output_dir: Path, 
     max_tokens_per_file: int = 1500000
 ):
     """
-    Reads all final_chunks.json, creates batch requests, and splits them into .jsonl files.
+    Reads all final_chunks.json, creates batch requests using OpenAI Function Calling (Tools),
+    and splits them into .jsonl files.
     """
     if not output_dir.exists():
         output_dir.mkdir(parents=True)
 
-    # 1. Collect all chunks
+    # 1. Prepare Tool Schema
+    # This aligns with graph_rag_v2/prepare_batch.py using convert_to_openai_tool
+    tool_schema = convert_to_openai_tool(GraphExtraction)
+    
+    # 2. Collect all chunks
     all_chunks = []
     
     # Iterate document folders
@@ -75,28 +64,20 @@ def prepare_batch_files(
         # Add metadata to track origin and Replace Placeholders
         for idx, chunk_text in enumerate(chunks):
             # Replace placeholders: [TABLE_ID] -> markdown
-            # Find all placeholders
             placeholders = re.findall(r"\[(TABLE_[a-zA-Z0-9_]+)\]", chunk_text)
             
             processed_text = chunk_text
             for table_id in placeholders:
-                # Direct match might fail if table_id is e.g. TABLE_0_0 and json key is TABLE_0_0
-                # But sometimes placeholders are [TABLE_0_2] which implies range?
-                # No, we consolidated them. The text splitter expanded them to [TABLE_0_0], [TABLE_0_1] etc.
-                # So the placeholder in 'chunk_text' should match a key in 'tables_data' directly.
-                
                 if table_id in tables_data:
                     table_md = tables_data[table_id].get("markdown", "")
-                    # Replace the placeholder with the actual markdown
-                    # We use [] in replacement to match the text pattern exactly
                     processed_text = processed_text.replace(f"[{table_id}]", f"\n{table_md}\n")
                 else:
-                    print(f"    ! Warning: Table ID {table_id} not found in extracted_tables.json")
+                    print(f"    ! Warning: Table ID {table_id} not found in {doc_dir.name}")
 
             # Custom ID Format: DOCNAME_CHUNKINDEX
-            # Sanitize doc name for ID
             safe_doc_name = doc_dir.name.replace(" ", "_").replace("[", "").replace("]", "")
             custom_id = f"{safe_doc_name}_{idx}"
+            
             all_chunks.append({
                 "custom_id": custom_id,
                 "text": processed_text
@@ -104,29 +85,42 @@ def prepare_batch_files(
 
     print(f"Total Chunks to Process: {len(all_chunks)}")
     
-    # 2. Create Batches
+    # 3. Create Batches
     current_batch = []
     current_tokens = 0
     file_counter = 1
     
-    for item in all_chunks:
-        request_obj = create_batch_request(item["custom_id"], item["text"])
+    for item in tqdm(all_chunks, desc="Creating Batch Requests"):
+        text_content = item["text"]
         
-        # Estimate token size of the request JSON string (approximation)
-        # Accurate estimation involves tokenizing the entire message content + overhead.
-        # We focus on the prompt content size as the main driver.
-        # System Prompt + User Content
-        req_json_str = json.dumps(request_obj)
-        req_tokens = count_tokens(req_json_str) 
+        # Construct Request Body using Tools
+        request_body = {
+            "custom_id": item["custom_id"],
+            "method": "POST",
+            "url": "/v1/chat/completions",
+            "body": {
+                "model": MODEL_NAME,
+                "messages": [
+                    {"role": "system", "content": GRAPH_RAG_HYBRID_PROMPT},
+                    {"role": "user", "content": f"Context:\n{text_content}"}
+                ],
+                "tools": [tool_schema],
+                "tool_choice": {"type": "function", "function": {"name": tool_schema["function"]["name"]}},
+                "temperature": 0.0,
+            }
+        }
+        
+        # Estimate token size (content + overhead)
+        # Overhead for tools definition approx 500-1000 tokens depending on schema complexity
+        req_tokens = count_tokens(text_content) + 3000 
         
         if current_tokens + req_tokens > max_tokens_per_file:
-            # Save current batch
             save_batch_file(current_batch, output_dir, file_counter)
             file_counter += 1
             current_batch = []
             current_tokens = 0
             
-        current_batch.append(request_obj)
+        current_batch.append(request_body)
         current_tokens += req_tokens
         
     # Save last batch
