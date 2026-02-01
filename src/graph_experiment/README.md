@@ -124,3 +124,50 @@ Batch 작업 중 **'실패(Failed)'** 또는 **'토큰 한도 초과(Token Limit
     3. 2개의 새로운 Batch Job으로 **재전송(Resubmit)**.
 - **Effect**: 한 번에 너무 많은 요청이 몰려 실패하는 경우, 작업을 더 작은 단위로 쪼개어 성공률을 높입니다.
 
+
+## Experiment 6: Prompt Engineering for Graph Structure Optimization (New)
+
+지식 그래프의 품질을 저해하는 3대 문제(고립 노드, 성게 현상, 노드 충돌)를 해결하기 위해 **프롬프트 엔지니어링**을 통한 구조적 제약을 도입했습니다.
+
+### 1. 고립된 조직 (Isolates) 해결
+- **Problem**: 'MX사업부', 'DS부문' 등 하위 조직이 '삼성전자' 본사와 연결되지 않아, 검색 시 정보가 단절되는 현상.
+- **Solution (Implicit Subject Enforcement)**:
+    - 프롬프트에 **"이 문서는 삼성전자의 보고서이다"** 라는 전제를 명시.
+    - 모든 추출된 하위 조직(Division)이나 투자 대상 기업이 **반드시 '삼성전자'와 `HAS_DIVISION` 또는 `INVESTED_IN` 관계로 연결되도록 강제**.
+    - **Effect**: 그래프의 연결성(Connectivity)이 대폭 향상되어 '거대 컴포넌트(Giant Component)' 비율이 상승함.
+
+### 2. 날짜의 노드화 (Date as Node) 방지 - "성게 현상" 해결
+- **Problem**: '2024년 1월', '2023년' 등이 별도의 노드로 생성되면서, 수많은 엔티티가 이 날짜 노드 하나에 몰리는 **성게(Sea Urchin) 모양의 클러스터** 발생. 이는 그래프 탐색 효율을 떨어뜨림.
+- **Solution (Event-Centric Extraction)**:
+    - **Rule**: "날짜(Date)는 노드로 만들지 말고, **관계(Edge)의 설명(Description)이나 속성**으로 내린다."
+    - **Exceptions**: '갤럭시 언팩'과 같이 고유한 **사건(Event)** 명칭만 노드로 추출.
+    - **Effect**: 그래프가 의미 없는 날짜 허브로 인해 복잡해지는 것을 방지하고, 정보의 맥락이 엣지에 보존됨.
+
+### 3. 수치의 노드화 (Metric as Node) 방지 - "노드 충돌" 해결
+- **Problem**: '77.8%', '100억원' 같은 수치가 노드가 될 경우, 서로 다른 맥락(매출 증가율 vs 점유율)에서 같은 숫자가 나오면 **잘못된 연결(Collision)**이 발생함.
+- **Solution (Metric to Edge Property)**:
+    - **Rule**: **"분석 목적이 아니라면 숫자는 노드로 생성 금지."**
+    - 숫자는 엔티티 간의 관계를 설명하는 **텍스트(Description)**에 포함시킴.
+    - 예: `(삼성전자) -> [RECORDED_REVENUE] -> (HBM 시장)` 엣지의 설명에 "2024년 3분기 매출 10조원 달성"이라고 기록.
+    - **Effect**: 그래프의 의미적 정확도가 향상되고, 불필요한 노드 생성을 억제함.
+
+### 4. 띄어쓰기 및 OCR 오류 (OCR Error) 해결
+- **Problem**: '삼 성 웰 스 토 리', '삼성 전자 로지 텍'과 같이 PDF 추출 과정에서 글자 사이에 공백이 삽입되거나, 표의 세로선이 문자를 가르는 현상.
+- **Solution (Mental Reconstruction)**:
+    - **Rule**: "텍스트를 추출하기 전에 **정신적 복구(Mental Reconstruction)** 과정을 거쳐라."
+    - 구체적인 예시 명시: "삼 성 웰 스 토 리 (주)" -> "삼성웰스토리(주)".
+    - **Effect**: 엔티티명 중복(삼성웰스토리 vs 삼 성 웰 스 토 리)을 방지하고 정확한 노드 병합 유도.
+
+### 5. 불필요한 노드 (Noise) 차단
+- **Problem**: '기타', '합계', '상장주식', '총계' 등 일반 명사나 집계용 단어가 조직(Organization) 노드로 잘못 추출됨.
+- **Solution (Blocklist)**:
+    - **Rule**: "일반 명사나 집계용 단어는 **노드 생성 금지 목록(Blocklist)**에 포함하여 절대 추출하지 말 것."
+    - 금지어: '시장', '기술', '변화', '미래', '기타', '계', '합계', '총계', 'Others', 'Total'.
+    - **Effect**: 그래프의 품질(S/N Ratio)을 높이고, 무의미한 허브 생성 방지.
+
+### 6. 값 매핑 오류 (Table Alignment) 해결
+- **Problem**: 테이블의 '합계(Total)' 행에 있는 수치(전체 매출 등)를 리스트의 첫 번째 회사나 엉뚱한 회사에 매핑하는 환각(Hallucination) 발생.
+- **Solution (Explicit Mapping Rule)**:
+    - **Rule**: "테이블의 **'Total' 또는 '계' 행은 무시**하고, 개별 항목(Individual Items)만 연결하라."
+    - 헤더와 값의 수직 매핑(Vertical Alignment)을 재확인하도록 지시.
+    - **Effect**: 재무 데이터나 통계 수치의 관계 추출 정확도 개선.
