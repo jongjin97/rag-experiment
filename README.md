@@ -2,7 +2,7 @@
 
 이 프로젝트는 삼성전자 사업보고서 및 관련 기술 문서를 대상으로 **Retrieval-Augmented Generation (RAG)** 시스템의 성능을 극대화하기 위한 다양한 접근 방식을 연구하고 구현한 실험실입니다.
 
-단순한 텍스트 검색부터 복잡한 지식 그래프(Knowledge Graph) 기반 추론까지, 3가지 서로 다른 아키텍처를 구현하고 비교 분석했습니다.
+단순한 텍스트 검색부터 복잡한 지식 그래프(Knowledge Graph) 기반 추론까지, 서로 다른 아키텍처를 구현하고 비교 분석했습니다.
 
 ---
 
@@ -14,6 +14,7 @@
 | **2. Light Graph** | `light_rag` | **Dual-Level Retrieval** <br> (Vector + 1-Hop Graph) | 핵심 개체(Entity)와 관계성 파악, <br> 비용 효율적인 그래프 검색 | ⭐⭐⭐ |
 | **3. Deep Graph** | `graph_rag` | **Community Detection** <br> (Leiden Alg + Global Summaries) | 거시적인 트렌드 분석, <br> **높은 정확도의 사실(Fact) 검색**, <br> 복합적인 추론이 필요한 심층 질문 | ⭐⭐⭐⭐⭐ |
 | **4. Deep Graph (Kor)** | `graph_rag_v2` | **Native Korean Graph** <br> (Full-scale extraction w/o translation) | 삼성전자 사업보고서 등 <br> 대규모 한국어 문서 정밀 분석 실험 | ⭐⭐⭐⭐⭐ |
+| **5. Graph Experiment** | `graph_experiment` | **Table RAG & Topology Opt** <br> (PDF Tables, Batch API, Super-Node Logic) | 복잡한 표가 많은 문서, <br> 비용 효율적인 대규모 그래프 구축 | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -87,6 +88,26 @@ Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집�
 
 ---
 
+## 5️⃣ Graph Experiment (`src/graph_experiment`)
+
+**"GraphRAG v2"의 진화형**으로, 실제 서비스 레벨의 파이프라인 구축을 위해 **데이터 전처리(Table)**와 **그래프 품질(Topology)**, **비용 효율성(Batch API)**을 극한으로 최적화한 실험실입니다.
+
+- **핵심 혁신 (Key Innovations)**:
+    1.  **Table RAG**: 
+        - PDF 내 복잡한 표를 **Multi-page Merging**, **Color-based Header Detection**으로 완벽 복원.
+        - `[TABLE_ID]` 플레이스홀더와 **Table-Aware Chunking**으로 LLM에 테이블 문맥을 온전하게 전달.
+    2.  **Topology Optimization**:
+        - **Super Node Removal**: 삼성전자와 같은 초거대 노드를 탐지 시 제외하여, **Sub-Hub(사업부 등)** 중심의 커뮤니티 형성 유도.
+        - **Prompt Engineering**: 고립 노드(Isolates) 71% 감소, 성게 현상(Sea Urchin) 방지.
+    3.  **Local Search Retriever**:
+        - 단순 키워드 매칭이 아닌 **LLM 기반 Entity Extraction**으로 시작 노드를 스마트하게 탐색.
+    4.  **Cost Efficiency**:
+        - **OpenAI Batch API**를 활용한 3단계 파이프라인(Prepare-Submit-Process)으로 구축 비용 50% 절감.
+
+👉 [자세히 보기](src/graph_experiment/README.md)
+
+---
+
 ## 🚀 Quick Start
 
 각 모듈은 독립적으로 실행 및 테스트가 가능합니다.
@@ -109,4 +130,10 @@ python src/light_rag/verify_system.py
 ```bash
 # 로컬/글로벌/하이브리드 검색 테스트
 python -m src.graph_rag.test_retrieval
+```
+
+### 4. Graph Experiment (New Strategy)
+```bash
+# 로컬 검색 (Graph Traversal)
+python -m src.graph_experiment.retriever
 ```
