@@ -8,7 +8,7 @@ from tqdm import tqdm
 from langchain_core.utils.function_calling import convert_to_openai_tool
 
 from src.config import MODEL_NAME
-from src.prompts.prompt import GRAPH_RAG_HYBRID_PROMPT
+from src.prompts.prompt import GRAPH_RAG_REFINED_PROMPT
 from src.graph_experiment.extractor import GraphExtraction
 
 def count_tokens(text: str) -> int:
@@ -101,7 +101,7 @@ def prepare_batch_files(
             "body": {
                 "model": MODEL_NAME,
                 "messages": [
-                    {"role": "system", "content": GRAPH_RAG_HYBRID_PROMPT},
+                    {"role": "system", "content": GRAPH_RAG_REFINED_PROMPT},
                     {"role": "user", "content": f"Context:\n{text_content}"}
                 ],
                 "tools": [tool_schema],
@@ -138,6 +138,6 @@ def save_batch_file(batch_data: list, output_dir: Path, file_num: int):
 
 if __name__ == "__main__":
     DATA_DIR = Path("./data/processed_experiment")
-    BATCH_DIR = DATA_DIR / "batch_input"
+    BATCH_DIR = DATA_DIR / "batch_input2"
     
     prepare_batch_files(DATA_DIR, BATCH_DIR)

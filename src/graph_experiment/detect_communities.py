@@ -11,7 +11,7 @@ except ImportError:
 
 from src.config import DATA_DIR
 
-GRAPH_FILE = DATA_DIR / "processed_experiment" / "batch_input" /"graph.gexf"
+GRAPH_FILE = DATA_DIR / "processed_experiment" / "batch_input2" /"graph.gexf"
 
 def detect_communities_standalone():
     print(f"Loading Graph from {GRAPH_FILE}...")
@@ -32,38 +32,47 @@ def detect_communities_standalone():
     # L0: No limit (Root)
     
     levels_config = [
-        {"level": 3, "max_comm_size": 20}, # Bottom
-        {"level": 2, "max_comm_size": 30}, 
-        {"level": 1, "max_comm_size": 40},
-        {"level": 0, "max_comm_size": None} # Top
+        {"level": 3, "max_comm_size": 10, "resolution": 0.1}, # Bottom
+        {"level": 2, "max_comm_size": 20, "resolution": 0.2}, 
+        {"level": 1, "max_comm_size": 100, "resolution": 0.3},
+        {"level": 0, "max_comm_size": None, "resolution": 0.4} # Top
     ]
     
-    current_graph = G
+    # --- Super Node Removal Strategy ---
+    # Temporarily remove "삼성전자" to allow sub-hubs (DS, DX, etc.) to form distinct clusters.
+    SUPER_NODE = "삼성전자"
+    removed_super_node = False
+    
+    if G.has_node(SUPER_NODE):
+        print(f"\n[Strategy] Temporarily removing Super Node '{SUPER_NODE}' for detection...")
+        current_graph = G.copy()
+        current_graph.remove_node(SUPER_NODE)
+        removed_super_node = True
+    else:
+        print(f"\n[Strategy] Super Node '{SUPER_NODE}' not found. Proceeding normally.")
+        current_graph = G
+
     # Mapping from current_graph node -> original entity name (list)
     # Ideally we track: original ID -> L3 ID -> L2 ID -> L1 ID -> L0 ID
     
     # Initialize hierarchy map: node_name -> {level: comm_id}
-    hierarchy = {n: {} for n in G.nodes()}
+    # Note: hierarchy initially only covers nodes in current_graph (excluding Samsung)
+    hierarchy = {n: {} for n in current_graph.nodes()}
     
-    # For induced graph construction
-    # We need to map: node_in_current_graph -> community_id
+    # current_node_to_members maps the ID in 'current_graph' to list of original entity names
+    current_node_to_members = {n: [n] for n in current_graph.nodes()}
     
-    # Base Mapping: The nodes of current_graph are the entities themselves initially
-    # If we induce, the nodes of next graph are the community IDs.
+    prev_partition_count = 0 
     
-    # We need to track which original nodes belong to which current node
-    # current_node_id -> [original_node_names]
-    current_node_to_members = {n: [n] for n in G.nodes()}
-    
-    for config in levels_config:
+    for i, config in enumerate(levels_config):
         level = config["level"]
-        max_size = config["max_comm_size"] # Max nodes in *current_graph* per community
+        max_size = config["max_comm_size"] # Cap for THIS level
+        resolution = config.get("resolution", 1.0)
         
         print(f"\n--- Running Level {level} Detection ---")
-        print(f"  - Input Graph: {current_graph.number_of_nodes()} nodes, {current_graph.number_of_edges()} edges")
-        print(f"  - Max Comm Size Constraint: {max_size if max_size else 'None'}")
+        print(f"  - Input Graph: {current_graph.number_of_nodes()} nodes")
         
-        # 1. Convert to iGraph
+        # 1. Convert to iGraph & Run Leiden
         node_names = list(current_graph.nodes())
         node_map = {name: i for i, name in enumerate(node_names)}
         
@@ -75,93 +84,122 @@ def detect_communities_standalone():
                 weights.append(data.get('weight', 1.0))
         
         ig_graph = ig.Graph(n=len(node_names), edges=edges, directed=False)
-        if weights:
-            ig_graph.es['weight'] = weights
+        if weights: ig_graph.es['weight'] = weights
+        
+        # Leiden with Resolution
+        kwargs = {
+            'weights': 'weight' if weights else None,
+            'n_iterations': 5,
+            'seed': 42,
+            'resolution_parameter': resolution
+        }
+        if max_size: kwargs['max_comm_size'] = max_size
             
-        # 2. Run Leiden
-        if max_size:
-            partition = leidenalg.find_partition(
-                ig_graph, 
-                leidenalg.ModularityVertexPartition,
-                weights='weight' if weights else None,
-                max_comm_size=max_size,
-                n_iterations=5,
-                seed=42
-            )
-        else:
-            partition = leidenalg.find_partition(
-                ig_graph, 
-                leidenalg.ModularityVertexPartition,
-                weights='weight' if weights else None,
-                n_iterations=5,
-                seed=42
-            )
+        partition = leidenalg.find_partition(ig_graph, leidenalg.CPMVertexPartition, **kwargs)
             
         print(f"  -> Detected {len(partition)} communities.")
         
-        # 3. Update Hierarchy & Prepare Next Graph
-        # comm_id -> [member_original_nodes]
-        next_node_to_members = defaultdict(list)
+        # 2. Assign Attributes & Identify Candidates for Next Level
+        merge_threshold = 5 if max_size is None or max_size > 5 else 2 
         
-        # Mapping for this specific level: original_node -> comm_id
-        # We need to broadcast the result to all original members
+        candidates = [] 
+        next_node_to_members = defaultdict(list)
+        current_level_mapping = {} # current_node_name -> new_comm_id
         
         for c_id, cluster_nodes in enumerate(partition):
-            # cluster_nodes: indices in current_graph
+            size = len(cluster_nodes)
+            
+            # Constraint Check
+            is_candidate = True
+            if max_size:
+                is_candidate = (size >= int(max_size * 0.9)) # 90% full
+                
+            unique_c_id = f"L{level}_{c_id}" 
+            
+            if is_candidate:
+                candidates.append(unique_c_id)
+                
             for node_idx in cluster_nodes:
                 current_node_name = node_names[node_idx]
+                current_level_mapping[current_node_name] = unique_c_id
                 
-                # Get all original entities belonging to this current node
                 original_members = current_node_to_members[current_node_name]
-                
-                # Assign this level's ID to them
                 for member in original_members:
-                    hierarchy[member][level] = c_id
-                    
-                # Aggregate for next level
-                next_node_to_members[c_id].extend(original_members)
+                    hierarchy[member][level] = unique_c_id
                 
-        # 4. Build Induced Graph for Next Level (if not Top)
-        if level > 0:
-            print("  -> Building Induced Graph for next level...")
-            G_next = nx.Graph()
-            next_comm_ids = list(next_node_to_members.keys())
-            G_next.add_nodes_from(next_comm_ids)
-            
-            # Edges between communities
-            # Iterate current edges, map valid ends to communities
-            # current_node -> comm_id (c_id)
-            current_to_comm = {}
-            for c_id, cluster_nodes in enumerate(partition):
-                for node_idx in cluster_nodes:
-                    current_node_name = node_names[node_idx]
-                    current_to_comm[current_node_name] = c_id
-            
-            edge_log = defaultdict(float)
-            
-            for u, v, data in current_graph.edges(data=True):
-                w = data.get('weight', 1.0)
-                c1 = current_to_comm.get(u)
-                c2 = current_to_comm.get(v)
-                
-                if c1 is not None and c2 is not None and c1 != c2:
-                    key = tuple(sorted((c1, c2)))
-                    edge_log[key] += w
-            
-            for (c1, c2), w in edge_log.items():
-                G_next.add_edge(c1, c2, weight=w)
-                
-            current_graph = G_next
-            current_node_to_members = next_node_to_members
-        else:
-            print("  -> Top level reached.")
+                if is_candidate:
+                    next_node_to_members[unique_c_id].extend(original_members)
 
-    # --- Save to Graph ---
+        print(f"  -> {len(candidates)} communities hit constraint and will merge.")
+        
+        if level == 0 or len(candidates) < 2:
+            print("  -> Stopping recursion (Top level or no candidates).")
+            break
+
+        # 3. Build Induced Graph
+        print("  -> Building Induced Graph...")
+        G_next = nx.Graph()
+        G_next.add_nodes_from(candidates)
+        
+        edge_log = defaultdict(float)
+        
+        for u, v, data in current_graph.edges(data=True):
+            c1 = current_level_mapping.get(u)
+            c2 = current_level_mapping.get(v)
+            
+            if c1 in candidates and c2 in candidates and c1 != c2:
+                key = tuple(sorted((c1, c2)))
+                edge_log[key] += data.get('weight', 1.0)
+                
+        for (c1, c2), w in edge_log.items():
+            G_next.add_edge(c1, c2, weight=w)
+            
+        current_graph = G_next
+        current_node_to_members = next_node_to_members
+
+    # --- Finalize Hierarchy & Super Node Restoration ---
     print("\nApplying Hierarchy to NetworkX Graph...")
+    
+    # 1. Fill gaps for existing nodes
+    for node, levels in hierarchy.items():
+        last_val = levels.get(3)
+        for lvl in [2, 1, 0]:
+             if lvl not in levels and last_val is not None:
+                 levels[lvl] = last_val
+             elif lvl in levels:
+                 last_val = levels[lvl]
+                 
+    # 2. Restore Super Node using Majority Voting
+    if removed_super_node and G.has_node(SUPER_NODE):
+        print(f"[Restoration] Assigning community to '{SUPER_NODE}' via Majority Voting...")
+        
+        # Get neighbors
+        neighbors = list(G.neighbors(SUPER_NODE))
+        
+        # For each level, find dominant community
+        super_node_comms = {}
+        from collections import Counter
+        
+        for lvl in [3, 2, 1, 0]:
+            neighbor_comms = []
+            for nbr in neighbors:
+                if nbr in hierarchy and lvl in hierarchy[nbr]:
+                    neighbor_comms.append(hierarchy[nbr][lvl])
+            
+            if neighbor_comms:
+                # Pick most common
+                most_common = Counter(neighbor_comms).most_common(1)[0][0]
+                super_node_comms[lvl] = most_common
+            else:
+                # Fallback if disconnected
+                super_node_comms[lvl] = "L0_0" # Default or create new
+                
+        hierarchy[SUPER_NODE] = super_node_comms
+        print(f"  -> Assigned to: {super_node_comms}")
+
     for node_name, levels in hierarchy.items():
         for level, c_id in levels.items():
             G.nodes[node_name][f'community_level_{level}'] = c_id
-            # Backward compatibility for 'community' (use Level 3)
             if level == 3:
                 G.nodes[node_name]['community'] = c_id
 
@@ -172,7 +210,18 @@ def detect_communities_standalone():
             cid = d.get(f'community_level_{level}')
             if cid is not None:
                 counts[cid] += 1
-        print(f"  Level {level} Communities: {len(counts)} (Avg Size: {G.number_of_nodes() / len(counts):.1f})")
+        
+        num_comms = len(counts)
+        avg_size = G.number_of_nodes() / num_comms if num_comms > 0 else 0
+        sorted_sizes = sorted(counts.values(), reverse=True)
+        
+        print(f"  Level {level} Communities: {num_comms} (Avg Size: {avg_size:.1f})")
+        
+        if num_comms <= 200:
+            print(f"    - Sizes: {sorted_sizes}")
+        else:
+            print(f"    - Top 20 Sizes: {sorted_sizes[:20]} ...")
+            print(f"    - Smallest 5 Sizes: {sorted_sizes[-5:]}")
 
     print(f"\nSaving updated graph to {GRAPH_FILE}...")
     nx.write_gexf(G, GRAPH_FILE)

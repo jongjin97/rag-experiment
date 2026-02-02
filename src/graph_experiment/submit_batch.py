@@ -87,7 +87,7 @@ def submit_all_batches(batch_dir: Path, target_files: list = None):
     print(f"\nSubmitted jobs details saved to {record_file}")
 
 if __name__ == "__main__":
-    BATCH_DIR = Path("./data/processed_experiment/batch_input")
+    BATCH_DIR = Path("./data/processed_experiment/batch_input2")
     
     # Check for command line arguments
     targets = None

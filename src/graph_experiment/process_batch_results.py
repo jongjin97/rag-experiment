@@ -134,14 +134,15 @@ def parse_and_save_graph(batch_dir: Path):
                     # 4. Integrate into Document Graph
                     if doc_name_safe not in docs_graph_data:
                         docs_graph_data[doc_name_safe] = {"entities": [], "relationships": []}
-                        
+                    
                     if "entities" in graph_data:
                         docs_graph_data[doc_name_safe]["entities"].extend(graph_data["entities"])
                     if "relationships" in graph_data:
                         docs_graph_data[doc_name_safe]["relationships"].extend(graph_data["relationships"])
                         
                 except Exception as e:
-                    print(f"    ! Error parsing line: {e}")
+
+                    print(f"    ! Error parsing line: {e} {content_str}")
 
     # Save to files
     # We need to map 'doc_name_safe' back to the actual directory name.
@@ -241,5 +242,5 @@ def retry_failed_job(client, job_info, batch_dir, jobs_list):
     job_info["status"] = "failed_retried"
             
 if __name__ == "__main__":
-    BATCH_DIR = Path("./data/processed_experiment/batch_input")
+    BATCH_DIR = Path("./data/processed_experiment/batch_input2")
     process_batch_results(BATCH_DIR)

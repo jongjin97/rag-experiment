@@ -1,0 +1,58 @@
+[
+  {
+    "file": "batch_input_part_1.jsonl",
+    "file_id": "file-EQ9h8q5yKX24zh6j6BXSdv",
+    "job_id": "batch_697f10e81f0481908c5af4630d0a305e",
+    "status": "validating",
+    "created_at": 1769935080
+  },
+  {
+    "file": "batch_input_part_2.jsonl",
+    "file_id": "file-6HP4vDaUv3vRjiaXzEzYHR",
+    "job_id": "batch_697f114e65c88190a2c46a70b27b5dce",
+    "status": "validating",
+    "created_at": 1769935182
+  },
+  {
+    "file": "batch_input_part_3.jsonl",
+    "file_id": "file-W8UjMNqrUhmbFEote8kWBm",
+    "job_id": "batch_697f2356376c8190b263502d79003142",
+    "status": "validating",
+    "created_at": 1769939798
+  },
+  {
+    "file": "batch_input_part_4.jsonl",
+    "file_id": "file-SEvbXh7K3NhehZCst5uwoK",
+    "job_id": "batch_697f23bdde8c81908b87e9e75ed5bd8d",
+    "status": "validating",
+    "created_at": 1769939901
+  },
+  {
+    "file": "batch_input_part_5.jsonl",
+    "file_id": "file-QndNf7dhVFCoB44ky7tXeU",
+    "job_id": "batch_697f25cd620481908e0c0e1d6bd6fa8a",
+    "status": "validating",
+    "created_at": 1769940429
+  },
+  {
+    "file": "batch_input_part_6.jsonl",
+    "file_id": "file-56jTSD7NaPdzreW1aeHZhj",
+    "job_id": "batch_697f25ebabcc8190bd80f1d1e3fb1354",
+    "status": "validating",
+    "created_at": 1769940459
+  },
+  {
+    "file": "batch_input_part_7.jsonl",
+    "file_id": "file-Dt1Uqm8Wpk5hXs1oR7Uz4B",
+    "job_id": "batch_697f295e74e4819085aa048fa67d3eec",
+    "status": "validating",
+    "created_at": 1769941342
+  },
+  {
+    "file": "batch_input_part_8.jsonl",
+    "file_id": "file-UDmk4yKPC5e1nq6g4iEktp",
+    "job_id": "batch_697f2964333c819082a28c8238098646",
+    "status": "validating",
+    "created_at": 1769941348
+  }
+]

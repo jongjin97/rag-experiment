@@ -8,7 +8,7 @@ import sys
 
 # Define Path Manually or Import
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-GRAPH_FILE = BASE_DIR / "data" / "processed_experiment" / "batch_input" / "graph.gexf"
+GRAPH_FILE = BASE_DIR / "data" / "processed_experiment" / "batch_input2" / "graph.gexf"
 
 def diagnose_graph_health():
     print(f"Loading Graph from {GRAPH_FILE}...")

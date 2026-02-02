@@ -171,3 +171,27 @@ Batch 작업 중 **'실패(Failed)'** 또는 **'토큰 한도 초과(Token Limit
     - **Rule**: "테이블의 **'Total' 또는 '계' 행은 무시**하고, 개별 항목(Individual Items)만 연결하라."
     - 헤더와 값의 수직 매핑(Vertical Alignment)을 재확인하도록 지시.
     - **Effect**: 재무 데이터나 통계 수치의 관계 추출 정확도 개선.
+    - **Effect**: 재무 데이터나 통계 수치의 관계 추출 정확도 개선.
+
+## Experiment 7: Quantitative Diagnosis of Graph Health (Results)
+
+프롬프트 엔지니어링(Experiment 6) 적용 전후의 그래프 건강 상태를 정량적으로 비교 분석했습니다.
+
+### Metric Comparison
+
+| Metric | Before (Initial Prompt) | After (Refined Prompt) | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Nodes** | 9,500 | **5,034** | **-47%** (노이즈/중복 제거) |
+| **Edges** | 11,982 | 6,167 | -48% (무의미한 연결 감소) |
+| **Components** | 644 | **103** | **-84%** (연결성 대폭 강화) |
+| **Giant Component** | 92.99% | **97.52%** | **+4.53%p** (거의 완전한 연결) |
+| **Isolates (고립)** | 629 (6.62%) | **90 (1.79%)** | **-71%** (고립 문제 해결) |
+| **Leaves (잔가지)** | 6,692 (70.44%) | 3,908 (77.63%) | 절대 수 감소, 구조적 정리됨 |
+
+### Analysis
+1.  **Noise Reduction**: 노드 수가 47% 감소했습니다. 이는 날짜(Date), 단순 수치(Metric), 불용어(Stopwords) 등이 노드에서 제거되고 엣지 속성으로 올바르게 흡수되었음을 의미합니다.
+2.  **Connectivity Surge**: 컴포넌트(섬)의 개수가 644개에서 103개로 급감하고, 거대 컴포넌트 비율이 97.5%에 도달했습니다. 이는 `Implicit Subject Enforcement` 규칙이 매우 효과적으로 작동했음을 보여줍니다.
+3.  **High-Quality Graph**: 고립 노드가 1.79%에 불과하여, 생성된 지식 그래프의 정보 도달 가능성(Accessibility)이 매우 높아졌습니다.
+
+### Conclusion
+**"Refined Prompt"**는 단순한 텍스트 추출을 넘어, 그래프의 **토폴로지(Topology)를 최적화**하는 데 결정적인 역할을 수행했습니다. 이제 이 고품질 그래프를 기반으로 커뮤니티 탐지 및 서머리를 진행합니다.

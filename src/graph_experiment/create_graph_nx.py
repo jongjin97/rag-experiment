@@ -146,5 +146,5 @@ def create_graph_nx(batch_dir: Path):
     print(f"Saved graph to {output_graphml}")
 
 if __name__ == "__main__":
-    BATCH_DIR = Path("./data/processed_experiment/batch_input")
+    BATCH_DIR = Path("./data/processed_experiment/batch_input2")
     create_graph_nx(BATCH_DIR)
