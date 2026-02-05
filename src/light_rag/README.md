@@ -114,6 +114,7 @@ python src/light_rag/evaluate_ragas.py
 | Mode | Faithfulness | Answer Relevancy | Description |
 | :--- | :---: | :---: | :--- |
 | **LightRAG (Hybrid)** | **0.6641** | **0.7454** | Entity + Relation + Chunk 정보를 모두 활용한 하이브리드 검색 결과 |
+| **LightRAG (100 samples)** | **0.7626** | **0.6039** | 데이터셋 100개 확장 평가 결과 (v2 평가셋 활용) |
 
 > **💡 Insight**:
 > - **Answer Relevancy (0.7454)**: 질문의 의도에 부합하는 적절한 답변을 생성하고 있음을 보여줍니다. 이는 High-Level(Global) 검색이 문맥 파악에 기여한 것으로 보입니다.

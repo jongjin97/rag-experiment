@@ -20,7 +20,11 @@ KNOWLEDGE_GRAPH_PATH: Path = GRAPH_RAG_DIR / "knowledge_graph.gexf"
 GRAPH_RAG_V2_DIR: Path = DATA_DIR / "graph_rag_v2"
 KNOWLEDGE_GRAPH_V2_PATH: Path = GRAPH_RAG_V2_DIR / "knowledge_graph.gexf"
 LIGHT_RAG_DIR: Path = DATA_DIR / "light_rag" # Artifacts for LightRAG
+LIGHT_RAG_V2_DIR: Path = DATA_DIR / "light_rag_v2" # Artifacts for LightRAG v2
 KNOWLEDGE_LIGTH_GRAPH_PATH: Path = LIGHT_RAG_DIR / "lightrag_graph.gexf" # Updated to new graph
+KNOWLEDGE_LIGTH_GRAPH_V2_PATH: Path = LIGHT_RAG_V2_DIR / "lightrag_graph.gexf" # Updated to new graph
+
+
 SUBMIT_BATCH_SIZE: int = 50 # submitting to LLM
 MAP_BATCH_SIZE: int = 10     # parallel map processing
 MAX_COMMUNITY_TOKENS: int = 2000 # max tokens for a single community summary
@@ -43,6 +47,7 @@ def init_directories() -> None:
     """Ensure critical directories exist."""
     CHROMA_DB_DIR.mkdir(parents=True, exist_ok=True)
     SAMSUNG_DIR.mkdir(parents=True, exist_ok=True)
+    LIGHT_RAG_V2_DIR.mkdir(parents=True, exist_ok=True)
 
 # Initialize directories on module import (optional, but convenient for scripts)
 init_directories()

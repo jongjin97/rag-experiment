@@ -12,9 +12,10 @@
 | :--- | :--- | :--- | :--- | :---: |
 | **1. Optimization** | `rag_best_practices` | **Naive RAG Optimization** <br> (Hybrid Search + Reranking + Adaptive Chunking) | 일반적인 사실 검색, <br> 빠른 응답이 필요한 서비스 | ⭐ |
 | **2. Light Graph** | `light_rag` | **Dual-Level Retrieval** <br> (Vector + 1-Hop Graph) | 핵심 개체(Entity)와 관계성 파악, <br> 비용 효율적인 그래프 검색 | ⭐⭐⭐ |
-| **3. Deep Graph** | `graph_rag` | **Community Detection** <br> (Leiden Alg + Global Summaries) | 거시적인 트렌드 분석, <br> **높은 정확도의 사실(Fact) 검색**, <br> 복합적인 추론이 필요한 심층 질문 | ⭐⭐⭐⭐⭐ |
-| **4. Deep Graph (Kor)** | `graph_rag_v2` | **Native Korean Graph** <br> (Full-scale extraction w/o translation) | 삼성전자 사업보고서 등 <br> 대규모 한국어 문서 정밀 분석 실험 | ⭐⭐⭐⭐⭐ |
-| **5. Graph Experiment** | `graph_experiment` | **Table RAG & Topology Opt** <br> (PDF Tables, Batch API, Super-Node Logic) | 복잡한 표가 많은 문서, <br> 비용 효율적인 대규모 그래프 구축 | ⭐⭐⭐⭐⭐ |
+| **3. Light Graph (v2)** | `light_rag_v2` | **Graph Exp Integration** <br> (Sanitized Graph Data) | **높은 관련성(Relevancy)**이 필요한 <br> 질의응답, 데이터 무결성 강화 | ⭐⭐⭐ |
+| **4. Deep Graph** | `graph_rag` | **Community Detection** <br> (Leiden Alg + Global Summaries) | 거시적인 트렌드 분석, <br> **높은 정확도의 사실(Fact) 검색**, <br> 복합적인 추론이 필요한 심층 질문 | ⭐⭐⭐⭐⭐ |
+| **5. Deep Graph (Kor)** | `graph_rag_v2` | **Native Korean Graph** <br> (Full-scale extraction w/o translation) | 삼성전자 사업보고서 등 <br> 대규모 한국어 문서 정밀 분석 실험 | ⭐⭐⭐⭐⭐ |
+| **6. Graph Experiment** | `graph_experiment` | **Table RAG & Topology Opt** <br> (PDF Tables, Batch API, Super-Node Logic) | 복잡한 표가 많은 문서, <br> 비용 효율적인 대규모 그래프 구축 | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -43,13 +44,31 @@ GraphRAG의 복잡도와 구축 비용을 줄이면서도 그래프의 이점을
 - **주요 특징**:
     - **Standardized GEXF**: 네트워크 표준 포맷인 GEXF를 통해 그래프 데이터 관리.
     - **Hybrid Retrieval**: Entity + Relation + Chunk 벡터를 모두 활용하여 답변 생성.
-    - **Performance**: Ragas 평가 결과 **Faithfulness 0.66**, **Answer Relevancy 0.74** 달성.
+    - **Performance (100 Samples)**: 
+        - **Faithfulness**: 0.76 (높은 신뢰성)
+        - **Answer Relevancy**: 0.60
+        - 기본 추출 로직 사용으로 인해 관련성에서 다소 한계 확인.
 
 👉 [자세히 보기](src/light_rag/README.md)
 
 ---
 
-## 3️⃣ GraphRAG (`src/graph_rag`)
+## 3️⃣ LightRAG v2 (`src/light_rag_v2`)
+
+LightRAG v1의 구조에 **Graph Experiment**의 고품질 데이터를 통합하여 **정답 관련성(Answer Relevancy)**을 대폭 개선한 고도화 모듈입니다.
+
+- **개선 사항 (Improvements)**:
+    - **Data Sanitization**: `Description` 및 `Type` 필드의 결측치를 자동 보정하여 데이터 파이프라인 안정화.
+    - **Optimized Graph Data**: `Graph Experiment`에서 정제된(Topology Optimized) 그래프 데이터를 마이그레이션하여 활용.
+- **Comparative Performance (v1 vs v2)**:
+    - **Answer Relevancy**: **0.60 (v1) → 0.66 (v2)** (약 10% 향상)
+    - 고품질의 그래프 컨텍스트가 주입됨에 따라 사용자의 질문 의도를 더 정확히 파악하고 답변함.
+
+👉 [자세히 보기](src/light_rag_v2/README.md)
+
+---
+
+## 4️⃣ GraphRAG (`src/graph_rag`)
 
 Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집합 전체를 아우르는 **Global Context** 이해에 초점을 맞춥니다.
 
@@ -69,7 +88,7 @@ Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집�
 
 ---
 
-## 4️⃣ GraphRAG v2 (Native Korean Experiment) (`src/graph_rag_v2`)
+## 5️⃣ GraphRAG v2 (Native Korean Experiment) (`src/graph_rag_v2`)
 
 영어 프롬프트 기반의 v1과 달리, **순수 한국어 프롬프트**를 사용하여 4개의 삼성전자 사업보고서를 정밀 분석한 실험적 모듈입니다.
 
@@ -88,7 +107,7 @@ Microsoft GraphRAG의 개념을 고도화하여 구현한 모듈로, 문서 집�
 
 ---
 
-## 5️⃣ Graph Experiment (`src/graph_experiment`)
+## 6️⃣ Graph Experiment (`src/graph_experiment`)
 
 **"GraphRAG v2"의 진화형**으로, 실제 서비스 레벨의 파이프라인 구축을 위해 **데이터 전처리(Table)**와 **그래프 품질(Topology)**, **비용 효율성(Batch API)**을 극한으로 최적화한 실험실입니다.
 
@@ -126,13 +145,22 @@ python -m src.rag_best_practices.experiment_retrieval
 python src/light_rag/verify_system.py
 ```
 
-### 3. GraphRAG 검색
+### 3. LightRAG v2 실행 (New)
+```bash
+# 데이터 마이그레이션 (Graph Experiment -> LightRAG)
+python -m src.light_rag_v2.indexer.process_batch
+
+# Ragas 평가
+python src/light_rag_v2/evaluate_ragas.py
+```
+
+### 4. GraphRAG 검색
 ```bash
 # 로컬/글로벌/하이브리드 검색 테스트
 python -m src.graph_rag.test_retrieval
 ```
 
-### 4. Graph Experiment (New Strategy)
+### 5. Graph Experiment (New Strategy)
 ```bash
 # 로컬 검색 (Graph Traversal)
 python -m src.graph_experiment.retriever
