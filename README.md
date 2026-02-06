@@ -63,6 +63,7 @@ LightRAG v1의 구조에 **Graph Experiment**의 고품질 데이터를 통합�
 - **Comparative Performance (v1 vs v2)**:
     - **Answer Relevancy**: **0.60 (v1) → 0.66 (v2)** (약 10% 향상)
     - 고품질의 그래프 컨텍스트가 주입됨에 따라 사용자의 질문 의도를 더 정확히 파악하고 답변함.
+> ⚠️ **Critical Analysis**: `v2`의 점수 변동은 문서에 없는 답변을 거부하는 **엄격한 Hallucination 방지 메커니즘**과 **데이터셋의 외부 지식 혼입/평가 지표의 불안정성**에 기인합니다. (상세 분석은 [LightRAG v2 README](./src/light_rag_v2/README.md#%EF%B8%8F-dataset-constraints--insights-%ED%8F%89%EA%B0%80-%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%85%8B%EC%9D%98-%ED%95%9C%EA%B3%84) 참조)
 
 👉 [자세히 보기](src/light_rag_v2/README.md)
 

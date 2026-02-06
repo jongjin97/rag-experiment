@@ -120,7 +120,7 @@ async def main():
     rag = LightRAG()
     
     print(f"Loading dataset from {Dataset_Path}...")
-    eval_data = load_evaluation_dataset(Dataset_Path)[:100]
+    eval_data = load_evaluation_dataset(Dataset_Path)
     
     # Generate answers and contexts
     # limit=5 for testing, remove limit=None for full run
