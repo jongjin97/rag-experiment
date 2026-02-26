@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import asyncio
 import pandas as pd
@@ -121,22 +122,34 @@ async def generate_dataset_v3():
     print(f"Documents split into {len(docs)} chunks (filtered short chunks).")
 
     # -------------------------
-    # 2-1. Placeholder를 실제 Markdown 테이블로 치환
+    # 2-1. Placeholder를 실제 Markdown 테이블로 누적 병합(치환)
+    # [TABLE_0_1] 발견 시 TABLE_0_0과 TABLE_0_1을 모두 합칩니다.
     # -------------------------
     print("Replacing table placeholders with Markdown...")
     with open(TABLES_FILE, 'r', encoding='utf-8') as f:
         tables = json.load(f)
         
+    pattern = re.compile(r'\[TABLE_(\d+)_(\d+)\]')
+    
     for doc in docs:
-        if "[" in doc.page_content and "TABLE_" in doc.page_content:
-            for table_id, table_data in tables.items():
-                placeholder = f"[{table_id}]"
-                if placeholder in doc.page_content:
-                    markdown_table = table_data.get('markdown', '')
-                    if markdown_table:
-                        doc.page_content = doc.page_content.replace(placeholder, f"\n\n{markdown_table}\n\n")
-                    else:
-                        doc.page_content = doc.page_content.replace(placeholder, "")
+        matches = pattern.findall(doc.page_content)
+        for x_str, y_str in set(matches):
+            placeholder = f"[TABLE_{x_str}_{y_str}]"
+            y = int(y_str)
+            
+            combined_markdown = []
+            for i in range(y + 1):
+                chunk_id = f"TABLE_{x_str}_{i}"
+                if chunk_id in tables:
+                    chunk_md = tables[chunk_id].get('markdown', '')
+                    if chunk_md:
+                        combined_markdown.append(chunk_md)
+            
+            if combined_markdown:
+                full_table_md = "\n\n".join(combined_markdown)
+                doc.page_content = doc.page_content.replace(placeholder, f"\n\n{full_table_md}\n\n")
+            else:
+                doc.page_content = doc.page_content.replace(placeholder, "")
 
     # -------------------------
     # 3. LLM & Embedding 설정

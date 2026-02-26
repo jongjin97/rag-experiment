@@ -6,7 +6,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Project Root Directory
-PROJECT_ROOT: Path = Path(__file__).resolve().parent.parent
+# 구글 코랩(Colab) 환경인지 자동 감지하여 경로를 변경합니다.
+if "COLAB_GPU" in os.environ or "COLAB_RELEASE_TAG" in os.environ or os.path.exists("/content"):
+    print("Google Colab Environment Detected. Setting PROJECT_ROOT to /content/drive/MyDrive/rag")
+    PROJECT_ROOT = Path("/content/drive/MyDrive/rag")
+else:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Data Directories
 DATA_DIR: Path = PROJECT_ROOT / "data"

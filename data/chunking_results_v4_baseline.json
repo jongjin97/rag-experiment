@@ -1,0 +1,20 @@
+[
+    {
+        "chunk_size": 256,
+        "mean_relevance": 0.8972044466666666,
+        "mean_precision": 0.7709044466666666,
+        "mean_recall": 0.7217044466666666
+    },
+    {
+        "chunk_size": 512,
+        "mean_relevance": 0.8984771573604061,
+        "mean_precision": 0.7312605752678434,
+        "mean_recall": 0.7269035532994923
+    },
+    {
+        "chunk_size": 1024,
+        "mean_relevance": 0.8743654822335025,
+        "mean_precision": 0.7303863507893928,
+        "mean_recall": 0.7370558375634517
+    }
+]
