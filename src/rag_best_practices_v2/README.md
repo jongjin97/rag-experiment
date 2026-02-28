@@ -11,7 +11,7 @@
 | **Embedding** | `intfloat/multilingual-e5-large` | 한국어 텍스트 및 마크다운 테이블 구조 이해도 우수 |
 | **Table Processing** | **Placeholder + Markdown Restoration** | 테이블 파편화 방지 및 구조적 의미 보존 (Precision 상승) |
 | **Chunking** | **512 Tokens (w/ Table Weight)** | 테이블 마크다운을 훼손하지 않고 텍스트 문맥과 함께 담을 수 있는 최적의 밸런스 구간 |
-| **Retrieval** | **Hybrid (Dense + BM25)** | 키워드 중심의 표 검색과 의미론적 검색을 결합하여 정보 누락(Recall)을 최소화 |
+| **Retrieval** | **Hybrid (Dense + BM25) + HyDE** | 키워드/의미론적 검색 결합(Hybrid)에 가상 답변(HyDE) 확장을 더해 지표 전반(Relevance, Precision, Recall) 상승 확인 |
 
 ### 📈 테이블 처리 유무에 따른 성능 비교 요약 (v4 Baseline vs v4)
 
@@ -75,11 +75,29 @@
 
 > **💡 Insight**: 
 > 1. **재현율(Recall) 향상을 위한 Hybrid 전략의 우수성**: Hybrid 검색은 정답 문서를 놓치지 않고 찾아낼 확률(Recall 0.858)이 가장 높고, Context Relevance 역시 0.931로 매우 뛰어납니다. 반기보고서 내 특정 수치나 표 내 부속 정보를 찾을 때, 키워드망(BM25)과 시맨틱(Dense)이 보완 작용을 일으켜 큰 시너지를 냈습니다.
-> 2. **Precision vs Recall 트레이드오프 현상**: 다만 Hybrid 사용 시 BM25가 가져온 일부 중복/노이즈로 인해 정밀도(Precision)는 Dense 단독(0.808) 대비 소폭 하락(0.723)하는 한계를 보였습니다. 추후 이 현상을 보완하기 위해서는 높은 Recall로 가져온 컨텍스트를 다시 꼼꼼히 걸러내는 **Re-ranker 모델의 도입이 필수적**입니다.
+> 2. **Precision vs Recall 트레이드오프 현상**: 다만 Hybrid 사용 시 BM25가 가져온 일부 중복/노이즈로 인해 정밀도(Precision)는 Dense 단독(0.808) 대비 소폭 하락(0.723)하는 한계를 보였습니다. 이를 보완하기 위해 쿼리 확장(HyDE) 혹은 Re-ranker 모델의 도입이 권장됩니다.
 
 ---
 
-## 4. 핵심 아키텍처 요소: Table Weight & Custom Length Function
+## 4. 실험: HyDE (Hypothetical Document Embeddings) 적용 효과
+
+### 실험 내용
+가장 높은 재현율(Recall)을 보여준 **Hybrid (Dense + BM25)** 방식을 베이스라인으로 설정하고, 여기에 **HyDE** 전략을 추가하여 검색 성능의 완전한 개선 여부를 측정했습니다.
+- **HyDE 동작 원리**: 사용자의 질문에 대해 빠른 추론 모델(`gpt-4o-mini`)이 먼저 "가상의 이상적인 답변"을 생성하고, 원본 질문과 가상 답변 텍스트를 하나로 합쳐서 VectorDB/BM25 검색을 수행하는 방식.
+
+### 주요 결과 (Hybrid vs HyDE + Hybrid)
+| Strategy | CR (Relevance) | Precision | Recall | 평가 📝 |
+|:---|:---|:---|:---|:---|
+| **Hybrid (Baseline)** | 0.931 | 0.728 | 0.853 | 준수한 성능을 보여주는 기존 베이스라인 |
+| **HyDE + Hybrid** | **0.940** | **0.736** | **0.877** | **모든 지표(Relevance, Precision, Recall) 동반 상승** |
+
+> **💡 Insight**: 
+> 1. **검색의 한계(Recall) 돌파**: 가상의 답변을 통해 검색어(Query)를 확장하는 HyDE 전략은, 묻는 '키워드'를 넘어서 정답 문서가 가질 법한 '문맥과 전문 용어'까지 매칭 단위로 끌어올립니다. 결과적으로 정답 문서를 다 잡아내는 **Recall 지표가 0.853에서 0.877로 추가 상승**했습니다.
+> 2. **Hybrid의 약점(Precision) 극복**: 기존 Hybrid 방식의 약점이었던 불필요한 노이즈 혼입(Precision 저하) 현상을 HyDE의 정교한 시맨틱 지향적 쿼리 확장이 보완해 줬습니다. 그 결과 **Precision 또한 0.736으로 반등**하며, 복잡한 표(Table) 위주의 문서 환경에서도 쿼리 확장이 최상의 검색 전략임을 증명해냈습니다.
+
+---
+
+## 5. 핵심 아키텍처 요소: Table Weight & Custom Length Function
 
 마크다운 표본이 통째로 복원될 시 LLM 프롬프트가 지원하는 '최대 토큰 길이를 초과'하는 에러를 막기 위해 **커스텀 가중치 로직**을 새롭게 고안하여 적용했습니다 (`chunking.py`).
 
@@ -89,22 +107,26 @@
 
 ---
 
-## 5. 결론 및 실무 제언 (Next Step)
+## 6. 결론 및 실무 제언 (Next Step)
 
-1. **테이블 데이터의 1원칙 "분리, 보존, 그리고 병합"**: 금융업 또는 공공기관 기술 보고서처럼 정형 데이터(표)와 비정형 데이터(텍스트)가 거미줄처럼 엮어있는 문서는 일반 추출기가 한 번에 삼키게 둬선 안 됩니다. 
-   PDF 파싱 단계에서 미리 표를 모두 독립 추출(Extraction) 한 뒤 마크다운의 형태로 텍스트 사이에 다시 끼워주는 것이 검색 품질 향상의 황금열쇠입니다.
-2. **청크 사이즈의 재조정**: 앞으로 마크다운 테이블이 포함되는 데이터베이스에서는 청크 사이즈를 최소 **512 이상** 넓게 가져가십시오.
-3. **Hybrid 검색 + Re-ranker 방어 구조 설계**: 정보의 누락(Recall 실패)이 치명적인 도메인에서는 Hybrid 방식이 정답입니다. 단, 그에 따른 단점인 노이즈 혼입(Precision 저하) 현상을 방어하기 위해 검색 후순위 정렬 과정인 **Re-ranking 모델을 Next Step으로 반드시 설계**해야 합니다.
+1. **테이블 데이터의 1원칙 "분리, 보존, 그리고 병합"**: 금융업 또는 공공기관 기술 보고서처럼 정형 데이터(표)와 비정형 데이터(텍스트)가 엮어있는 문서는 일반 추출기가 한 번에 삼키게 둬선 안 됩니다. PDF 파싱 단계에서 미리 표를 모두 독립 추출(Extraction) 한 뒤 마크다운의 형태로 텍스트 사이에 다시 끼워주는 것이 품질 향상의 황금열쇠입니다.
+2. **청크 사이즈의 재조정**: 마크다운 테이블이 포함되는 데이터베이스에서는 행이 잘려나가지 않도록 청크 사이즈를 최소 **512 토큰 이상** 넉넉하게 가져가시길 권장합니다.
+3. **HyDE 기반 Hybrid 검색 파이프라인 정립**: 정보의 누락이 치명적인 도메인에서는 Hybrid 방식이 정답입니다. 또한, 질의 의도를 모델이 미리 추론케 하는 **HyDE 기법**을 덧씌우면 키워드(BM25)로 딸려오는 노이즈를 훌륭하게 상쇄하고 Precision과 Recall을 모두 우상향 시킬 수 있는 최적의 검색망이 완성됩니다.
 
-## 6. 실행 및 재현 방법 (Reproduction)
+## 7. 실행 및 재현 방법 (Reproduction)
 
-Google Colab (GPU 하드웨어 가속 권장) 환경에 최적화된 스크립트가 탑재되어 있습니다.
+Google Colab (GPU 하드웨어 가속 권장) 환경에 최적화된 연산 스크립트가 탑재되어 있습니다.
 
 ```bash
 # 구글 드라이브 마운트 후 프로젝트 내 경로로 이동
 cd /content/drive/MyDrive/rag
+
 # 모델 연동 및 Ragas 부분(Chunking/Table 셋팅) 평가
-python src/rag_best_practices_v2/chunking.py
+python -m src.rag_best_practices_v2.chunking
+
 # Retrieval 전략 (Dense/BM25/Hybrid) 비교 실험 평가
-python src/rag_best_practices_v2/retrieval.py
+python -m src.rag_best_practices_v2.retrieval
+
+# 심화 전략 (HyDE 기반 Hybrid 결합) 비교 실험 평가
+python -m src.rag_best_practices_v2.hyde_experiment
 ```
