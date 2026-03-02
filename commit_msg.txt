@@ -1,0 +1,15 @@
+docs(rag_best_practices_v2): RAG 최적화 파이프라인 (Reranking 및 HyDE 적용) 성능 평가 결과 문서화
+
+What
+- 루트 디렉토리 `README.md` 및 `src/rag_best_practices_v2/README.md`에 리랭킹(Cross-Encoder)을 최종 적용한 시스템 성능 수치(Context Relevance 0.969, Precision 0.872) 기록 및 권장 아키텍처 업데이트.
+- RAG 파이프라인(테이블 치환, 하이브리드 검색, HyDE, 리랭킹) 실험 과정 및 비교 결과를 Executive Report 형식으로 재구성.
+- `src/rag_best_practices_v2/reranking.py` 등 리랭킹 스크립트 기능 추가.
+- 실험간 생성된 불필요한 중간 파일 무시를 위해 `.gitignore` 업데이트.
+
+Why
+- 거대한 표 데이터와 텍스트가 혼재된 사업보고서 내 검색 시, 단순 Retriever만으로는 부족했던 정밀도(Precision)를 Reranking을 통해 오답률 0%에 가깝게 폭발적으로 끌어올린 성과를 증명하기 위함.
+- 프로젝트 전반을 훑어보는 사용자에게 완성된 파이프라인의 압도적인 아키텍처 우수성과 Colab 단위 실행 가이드라인(Quick Start)을 제시하기 위함.
+
+How
+- 기존 `README.md` 파일들의 Module Overview에 `rag_best_practices_v2` (Table-Aware Advanced RAG) 과정을 추가 명시.
+- `HyDE + Hybrid` 베이스라인 대비 `bge-reranker-m3` 크로스 인코더 도입에 따른 지표 상승 수치를 표기하고 관련한 인사이트(💡) 문구 직관적 수정.
