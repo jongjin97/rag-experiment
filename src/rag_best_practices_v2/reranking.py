@@ -43,8 +43,8 @@ class BGEReranker:
         # [ [query, doc1_text], [query, doc2_text], ... ] 구조로 페어 생성
         pairs = [[query, doc.page_content] for doc in documents]
         
-        # 스코어 예측
-        scores = self.model.predict(pairs)
+        # OOM(Out of Memory) 방지를 위해 batch_size를 명시적으로 낮춥니다. (기본 32 -> 4 또는 8)
+        scores = self.model.predict(pairs, batch_size=8)
         
         # 내림차순 정렬
         sorted_indices = np.argsort(scores)[::-1]

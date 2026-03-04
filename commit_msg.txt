@@ -1,15 +1,14 @@
-docs(rag_best_practices_v2): RAG 최적화 파이프라인 (Reranking 및 HyDE 적용) 성능 평가 결과 문서화
+docs(rag_best_practices_v2): Answer Relevancy 및 Faithfulness 평가 결과 추가
 
-What
-- 루트 디렉토리 `README.md` 및 `src/rag_best_practices_v2/README.md`에 리랭킹(Cross-Encoder)을 최종 적용한 시스템 성능 수치(Context Relevance 0.969, Precision 0.872) 기록 및 권장 아키텍처 업데이트.
-- RAG 파이프라인(테이블 치환, 하이브리드 검색, HyDE, 리랭킹) 실험 과정 및 비교 결과를 Executive Report 형식으로 재구성.
-- `src/rag_best_practices_v2/reranking.py` 등 리랭킹 스크립트 기능 추가.
-- 실험간 생성된 불필요한 중간 파일 무시를 위해 `.gitignore` 업데이트.
+What:
+- rag_best_practices_v2 및 루트 디렉토리의 README.md에 생성 품질(Generation Quality) 평가 결과를 기재했습니다.
+- 0점 에러 케이스 관련 심층 분석 내용을 문서화했습니다.
+- .gitignore 파일에 /portfolio 및 /commit*.txt 항목을 추가했습니다.
 
-Why
-- 거대한 표 데이터와 텍스트가 혼재된 사업보고서 내 검색 시, 단순 Retriever만으로는 부족했던 정밀도(Precision)를 Reranking을 통해 오답률 0%에 가깝게 폭발적으로 끌어올린 성과를 증명하기 위함.
-- 프로젝트 전반을 훑어보는 사용자에게 완성된 파이프라인의 압도적인 아키텍처 우수성과 Colab 단위 실행 가이드라인(Quick Start)을 제시하기 위함.
+Why:
+- 신규 데이터셋 기반의 생성 품질(Faithfulness, Answer Relevancy)을 명시하고, 환각(Hallucination) 통제 관련 인사이트를 제공하기 위함입니다.
+- 불필요한 파일이 Git에 추적되지 않도록 방지하기 위함입니다.
 
-How
-- 기존 `README.md` 파일들의 Module Overview에 `rag_best_practices_v2` (Table-Aware Advanced RAG) 과정을 추가 명시.
-- `HyDE + Hybrid` 베이스라인 대비 `bge-reranker-m3` 크로스 인코더 도입에 따른 지표 상승 수치를 표기하고 관련한 인사이트(💡) 문구 직관적 수정.
+How:
+- 두 README 문서 상에 평가 지표 점수 및 0점 사례(80.6%가 문맥 부족 응답) 분석 내용을 작성했습니다.
+- .gitignore 목록에 예외 처리를 반영했습니다.

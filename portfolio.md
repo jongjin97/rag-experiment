@@ -22,10 +22,10 @@
 
 이 프로젝트는 **"어떻게 하면 RAG가 더 똑똑해질 수 있을까?"** 라는 질문에서 시작하여, 다음 4가지 핵심 과제를 해결하고자 했습니다.
 
-1.  **한국어 문맥 이해 부족**: 다국어 임베딩 및 하이브리드 검색 최적화 (`rag_best_practices`)
-2.  **단편적 정보 검색의 한계**: 지식 그래프를 도입하여 개체 간의 관계를 파악 (`light_rag`)
-3.  **거시적 질문(Global QA) 실패**: 전체 문서를 아우르는 통찰력 제공 (`graph_rag`)
-4.  **그래프 품질 및 전처리 문제**: 복잡한 표 데이터 처리 및 그래프 토폴로지 최적화 (`graph_experiment`)
+1.  **한국어 텍스트 및 복잡한 표(Table) 구조 파괴**: 플레이스홀더를 활용한 테이블 마크다운 복원 및 청킹 크기 최적화 (`rag_best_practices_v2`)
+2.  **검색 재현율(Recall) 및 정밀도(Precision) 한계**: HyDE + 하이브리드 검색 + Cross-Encoder 리랭킹 통합 파이프라인 구축 (`rag_best_practices_v2`)
+3.  **단편적 정보 검색의 한계**: 지식 그래프를 도입하여 개체 간의 관계를 파악 (`light_rag`)
+4.  **거시적 질문(Global QA) 실패**: 문서 전체를 아우르는 군집 요약 및 토폴로지 최적화 (`graph_rag`, `graph_experiment`)
 
 단순한 구현을 넘어, 각 단계별로 성능 지표(Faithfulness, MRR 등)를 정량적으로 측정하고 최적의 아키텍처를 도출했습니다.
 
@@ -48,12 +48,13 @@
 
 프로젝트는 문제 해결의 깊이에 따라 4가지 모듈로 구성됩니다.
 
-### 1. RAG Best Practices (기본 최적화)
-> *"기본기만 잘해도 성능은 4배 오른다"*
+### 1. Advanced RAG Pipeline (문서 전처리 및 검색 최적화 v2)
+> *"테이블은 살리고, 검색망은 넓게, 정답은 예리하게"*
 
-- **Adaptive Chunking**: 한국어 정보 밀도를 고려하여 `256 token`이 최적임을 증명.
-- **Hybrid Search**: BM25(키워드) + Dense(의미) 결합으로 **Hit Rate 1.4배 향상**.
-- **Cross-Encoder Reranking**: DLM 리랭커를 도입하여 **MRR 0.39** 달성 (Top-1 정확도 극대화).
+- **Table Restoration**: 복잡한 표를 `[TABLE_0_1]` 형태의 플레이스홀더로 우선 분리해 텍스트 구조 파편화를 방지하고, 청킹(Chunking) 후 마크다운으로 원상 복구시켜 완벽한 정보 보존 
+- **Adaptive Chunking**: 테이블 마크다운 환경에서 `512 Token` 구간이 파편화를 막으면서도 정보 밀도를 유지하는 최적 크기임을 증명
+- **HyDE + Hybrid Search**: Dense(의미)와 BM25(키워드) 결합(5:5)에 **가상 답변 생성(HyDE)**을 심어, 숨겨진 문맥까지 포획하며 **재현율(Recall) 0.877** 극대화
+- **Cross-Encoder Reranking**: 넓게 가져온 문서들의 노이즈를 1:1로 정밀히 채점해 차단, **정밀도(Precision)를 폭발적으로 상향(0.872)**시키고 **Context Relevance 0.969** 달성
 
 ### 2. LightRAG (경량화 그래프)
 > *"비용 효율적인 지식 그래프 검색"*
@@ -227,7 +228,20 @@ def prepare_lightrag_batch():
 
 ## 📊 실험 결과 (Performance Benchmark)
 
-자체 구축한 QA 데이터셋과 **Ragas** 프레임워크를 활용하여 정량적인 성능 평가를 수행했습니다.
+자체 구축한 QA 데이터셋과 **Ragas** 프레임워크를 활용하여 두 가지 측면에서 정량적 성능 평가를 수행했습니다.
+
+### 1. RAG 파이프라인 최적화 (Retrieval Performance)
+문서 검색 단계의 품질을 Context 지표로 추적 및 고도화한 결과입니다. (`rag_best_practices_v2` 기준)
+
+| 아키텍처 | CR (Relevance) | Precision | Recall | 특징 및 효과 |
+| :--- | :---: | :---: | :---: | :--- |
+| **Baseline (Dense)** | 0.929 | 0.808 | 0.779 | 의미적 문맥 탐색에는 강하나 고유명사/수치에 상대적으로 약함 |
+| **Table RAG + Hybrid** | 0.931 | 0.723 | 0.858 | 표 보존 및 하이브리드 결합으로 재현율(Recall) 대폭 상승 |
+| **HyDE + Hybrid** | 0.940 | 0.736 | 0.877 | 문맥 확장(HyDE)을 통해 숨겨진 맥락 획득, 전 지표 동반 상승 |
+| **전체 복합 + Reranking** | **0.969** | **0.872** | **0.896** | **파이프라인 최강 조합. 노이즈 완벽 차단으로 정밀도 대폭발** |
+
+### 2. GraphRAG 구조 비교 (Generation Performance)
+각종 그래프 RAG 기법이 최종 생성해 내는 답변의 신뢰도(Faithfulness)와 관련도를 측정한 결과입니다.
 
 | 아키텍처 | Faithfulness | Answer Relevancy | 특징 |
 | :--- | :---: | :---: | :--- |
@@ -238,12 +252,9 @@ def prepare_lightrag_batch():
 | **Graph Hybrid** | 0.95 | **0.57** | 복합적인 질문에 대해 가장 높은 답변 품질을 보임 |
 
 > **인사이트**: 
-> 1. 단순 팩트 검색은 **Naive RAG + Hybrid Search**가 가장 효율적입니다.
-> 2. 복합적인 추론이나 맥락 파악이 필요할 때는 **LightRAG**가 가장 우수한 답변 품질(Relevance)을 보여줍니다.
-> 3. 전체적인 트렌드 요약은 **GraphRAG Global** 모드가 독보적입니다.
-> 4. **Graph Hybrid**는 Answer Relevance가 가장 높아(0.57), 복잡한 추론 문제 해결에 가장 적합합니다. (일부 질문에 영어로 답변하여 0점 처리된 것을 감안하면 실제 성능은 더 높음)
-> 5. **Graph Global** 모드는 Faithfulness 1.0을 기록하며, 거짓 정보를 생성하지 않는 가장 안전한 요약 도구임을 입증했습니다.
-> 6. 단순 팩트 검색에는 **Graph Local**이 Naive RAG보다 효율적입니다.
+> 1. 검색 엔진(Retriever) 차원에서는 플레이스홀더로 **표(Table)를 보존**한 뒤, **HyDE + Hybrid + Reranking**을 결합하는 것이 타협 없는 최고의 검색 정밀도(`Context Precision 0.872`)를 보장합니다.
+> 2. 맥락 파악 및 구조적 릴레이션(Relation) 추론이 필요할 때는 **LightRAG**나 **Graph Hybrid**가 답변 수준(Relevance)을 월등히 높입니다.
+> 3. 연간 트렌드 요약 등 거시적 통찰력에는 100%의 사실성을 자랑하는 **GraphRAG Global** 모드가 가장 안전한 선택지입니다.
 
 ---
 

@@ -51,3 +51,5 @@ Thumbs.db
 # data
 data/papers/
 docs/
+portfolio.md
+commit*.txt

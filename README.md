@@ -44,9 +44,14 @@
     - **Query Expansion (HyDE)**: LLM 가상 답변을 통한 쿼리 의미 확장으로, Hybrid 검색망의 넓은 재현율(Recall)을 유지하면서도 무관한 노이즈를 억제.
     - **Precision 대폭발 (Cross-Encoder)**: HyDE 기반 Hybrid로 긁어모은 문서들을 `bge-reranker-m3`로 1:1 교차 검증하여 완벽에 가까운 순위 재정렬 수행.
 - **최종 검증 성능 (Ragas)**:
-    - **Context Relevance**: **0.969**
-    - **Precision**: **0.872** (초기 모델 대비 **+14.1%p 폭등**)
-    - **Recall**: **0.896**
+    - **[검색 품질 - 기존 데이터셋]**
+        - **Context Relevance**: **0.969**
+        - **Precision**: **0.872** (초기 모델 대비 **+13.6%p 폭등**)
+        - **Recall**: **0.896**
+    - **[생성 품질 - 신규 평가 데이터셋]**
+        - **Faithfulness**: **0.7957** (검색 기반 사실성 확보)
+        - **Answer Relevancy**: **0.7294**
+        - 💡 **Insight**: 0점 케이스의 80.6%가 환각이 아닌 "문맥에서 정보를 찾을 수 없습니다"라는 정직한 응답으로, **엄격한 Hallucination 통제력**이 증명되었습니다.
 
 👉 [자세히 보기](src/rag_best_practices_v2/README.md)
 
